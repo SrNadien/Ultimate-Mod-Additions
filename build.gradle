@@ -1,0 +1,166 @@
+plugins {
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.143'
+}
+
+version = "${mcversion}-${mod_version}-${tag_lanzador}"
+group = "${group}"
+base {
+    archivesName = "${mod_named}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+boolean withKubeJs = project.findProperty("compat_kubejs").toString().toBoolean()
+boolean withDevMods = project.findProperty("dev_runtime_mods").toString().toBoolean()
+
+neoForge {
+    version = "${neoversion}"
+
+    parchment {
+        minecraftVersion = "1.21.1"
+        mappingsVersion = "2024.11.17"
+    }
+
+    runs {
+        client {
+            client()
+            systemProperty 'forge.enabledGameTestNamespaces', "${modid}"
+        }
+
+        server {
+            server()
+            systemProperty 'forge.enabledGameTestNamespaces', "${modid}"
+            programArgument '--nogui'
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', "${modid}", '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        "${modid}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+    exclude '.cache'
+}
+
+sourceSets.main.java {
+    if (!withKubeJs) exclude 'nadiendev/ultimateminecraftadditions/compat/kubejs/**'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'BlameJared'
+        url = 'https://maven.blamejared.com'
+    }
+    maven {
+        name = 'Saps'
+        url = 'https://maven.saps.dev/releases'
+    }
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content {
+            includeGroup 'maven.modrinth'
+        }
+    }
+}
+
+dependencies {
+    compileOnly "mezz.jei:jei-${mcversion}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${mcversion}-neoforge-api:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${mcversion}-neoforge:${jei_version}"
+
+    if (withKubeJs) {
+        compileOnly("dev.latvian.mods:kubejs-neoforge:${kubejs_version}") { transitive = false }
+        compileOnly("dev.latvian.mods:rhino:${rhino_version}") { transitive = false }
+    }
+
+    if (withDevMods) {
+        runtimeOnly("dev.latvian.mods:kubejs-neoforge:${kubejs_version}") { transitive = false }
+        runtimeOnly("dev.latvian.mods:rhino:${rhino_version}") { transitive = false }
+    }
+}
+
+test {
+    enabled = false
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": archivesBaseName,
+                "Specification-Vendor": "${author}",
+                "Specification-Version": "1",
+                "Implementation-Title": archivesBaseName,
+                "Implementation-Version": "${version}",
+                "Implementation-Vendor" :"${author}",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            mcversion      : mcversion,
+            mod_version    : mod_version,
+            modid          : modid,
+            author         : author,
+            mod_named      : mod_named,
+            mod_name       : mod_name,
+            tag_lanzador   : tag_lanzador,
+            description    : description,
+            license        : license,
+            neoversion     : neoversion,
+            loader_version : loader_version,
+            jei_version    : jei_version,
+            kubejs_version : kubejs_version
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.getRelease().set(21)
+}
