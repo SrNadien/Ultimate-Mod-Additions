@@ -1,0 +1,1 @@
+nadiendev.ultimatemodadditions.compat.kubejs.UMAKubeJsPlugin

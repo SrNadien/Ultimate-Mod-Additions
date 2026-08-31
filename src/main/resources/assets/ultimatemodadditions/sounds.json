@@ -1,0 +1,14 @@
+{
+  "loot_bag_open": {
+    "category": "player",
+    "sounds": [ { "name": "minecraft:random/orb", "stream": false } ]
+  },
+  "coin_gained": {
+    "category": "player",
+    "sounds": [ { "name": "minecraft:random/pop", "stream": false } ]
+  },
+  "coliseum_portal": {
+    "category": "block",
+    "sounds": [ { "name": "minecraft:portal/travel", "stream": false } ]
+  }
+}

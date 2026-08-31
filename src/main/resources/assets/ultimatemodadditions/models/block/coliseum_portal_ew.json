@@ -1,0 +1,18 @@
+{
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "ultimatemodadditions:block/coliseum_portal",
+    "portal": "ultimatemodadditions:block/coliseum_portal"
+  },
+  "elements": [
+    {
+      "from": [6, 0, 0],
+      "to": [10, 16, 16],
+      "shade": false,
+      "faces": {
+        "west": { "uv": [0, 0, 16, 16], "texture": "#portal" },
+        "east": { "uv": [0, 0, 16, 16], "texture": "#portal" }
+      }
+    }
+  ]
+}

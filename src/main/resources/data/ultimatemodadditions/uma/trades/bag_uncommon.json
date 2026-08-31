@@ -1,0 +1,7 @@
+{
+  "name": "Bolsa poco comun",
+  "category": "bags",
+  "sort_order": 20,
+  "price": 700,
+  "result": { "bag": "ultimatemodadditions:uncommon", "count": 1 }
+}

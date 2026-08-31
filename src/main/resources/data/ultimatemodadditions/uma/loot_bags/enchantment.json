@@ -1,0 +1,33 @@
+{
+  "name": "Bolsa de encantamientos",
+  "tier": "enchantment",
+  "color": 8292607,
+  "sort_order": 80,
+  "rolls": { "min": 2, "max": 3 },
+  "unique_rolls": true,
+  "open_sound": "ultimatemodadditions:loot_bag_open",
+  "guaranteed": [
+    { "item": "minecraft:lapis_lazuli", "count": { "min": 8, "max": 24 } }
+  ],
+  "entries": [
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 14,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:mending": 1 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 14,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:unbreaking": 3 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 12,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:sharpness": 5 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 12,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:protection": 4 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 12,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:efficiency": 5 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 10,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:fortune": 3 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 10,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:looting": 3 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 8,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:silk_touch": 1 } } } },
+    { "item": "minecraft:enchanted_book", "count": 1, "weight": 6,
+      "components": { "minecraft:stored_enchantments": { "levels": { "minecraft:infinity": 1 } } } },
+    { "item": "minecraft:experience_bottle", "count": { "min": 8, "max": 16 }, "weight": 14 }
+  ]
+}

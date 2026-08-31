@@ -1,0 +1,40 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version}"
+license = "${license}"
+issueTrackerURL = "https://github.com/NadienDev"
+
+[[mods]]
+modId = "${modid}"
+version = "${mod_version}"
+displayName = "${mod_named}"
+authors = "${author}"
+description = '''${description}'''
+logoFile = "logo.png"
+
+[[dependencies.${modid}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${modid}]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${modid}]]
+modId = "jei"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${modid}]]
+modId = "kubejs"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"

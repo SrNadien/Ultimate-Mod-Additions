@@ -1,0 +1,13 @@
+{
+  "type": "ultimatemodadditions:coliseum",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minecraft:desert",
+      "lakes": false,
+      "features": false,
+      "structure_overrides": [],
+      "layers": []
+    }
+  }
+}

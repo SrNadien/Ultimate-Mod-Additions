@@ -1,0 +1,22 @@
+{
+  "name": "Bolsa epica",
+  "tier": "epic",
+  "color": 12213503,
+  "sort_order": 30,
+  "rolls": { "min": 3, "max": 5 },
+  "unique_rolls": true,
+  "open_sound": "ultimatemodadditions:loot_bag_open",
+  "guaranteed": [
+    { "item": "ultimatemodadditions:coin_500", "count": { "min": 1, "max": 3 } }
+  ],
+  "entries": [
+    { "item": "minecraft:diamond_block", "count": 1, "weight": 16 },
+    { "item": "minecraft:netherite_scrap", "count": { "min": 1, "max": 3 }, "weight": 14 },
+    { "item": "minecraft:gold_block", "count": { "min": 1, "max": 3 }, "weight": 14 },
+    { "item": "minecraft:enchanted_golden_apple", "count": 1, "weight": 10 },
+    { "item": "minecraft:shulker_shell", "count": { "min": 1, "max": 2 }, "weight": 10 },
+    { "item": "minecraft:experience_bottle", "count": { "min": 4, "max": 8 }, "weight": 12 },
+    { "bag": "ultimatemodadditions:enchantment", "count": 1, "weight": 8 },
+    { "item": "minecraft:experience_bottle", "count": { "min": 8, "max": 20 }, "weight": 12 }
+  ]
+}

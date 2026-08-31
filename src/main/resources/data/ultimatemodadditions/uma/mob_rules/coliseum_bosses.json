@@ -1,0 +1,18 @@
+{
+  "priority": 100,
+  "match": {
+    "boss": true
+  },
+  "dimensions": ["ultimatemodadditions:coliseum"],
+  "difficulty": "ultimatemodadditions:nightmare",
+  "replace_vanilla_drops": false,
+  "experience_multiplier": 5.0,
+  "coins": [
+    { "tier": "1000", "count": { "min": 3, "max": 8 }, "chance": 1.0 },
+    { "tier": "10000", "count": 1, "chance": 0.35 }
+  ],
+  "bags": [
+    { "bag": "ultimatemodadditions:legendary", "chance": 1.0 },
+    { "bag": "ultimatemodadditions:omega", "chance": 0.08 }
+  ]
+}

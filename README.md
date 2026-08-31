@@ -4,12 +4,14 @@ NeoForge 21.1.240 · Minecraft 1.21.1 · modid `ultimatemodadditions`
 
 Coliseo como dimensión propia con un anfiteatro construido de verdad, mobs escalados por dificultad,
 botín editable, monedas con denominaciones argentinas, bolsas de botín por rareza, sistema de
-habilidades tipo Reskillable con ventajas y experiencia. Todo se define en JSON y, si KubeJS está
+monedas y bolsas de botín. Todo se define en JSON y, si KubeJS está
 instalado, también por script.
 
 ## Wiki
 
-La documentación completa de los JSON y de la API de KubeJS está en [wiki/Ultimate-Mod-Additions.md](wiki/Ultimate-Mod-Additions.md).
+La documentación completa de los JSON y de la API de KubeJS está en la **wiki de GitHub**, en
+español y en inglés. Los archivos fuente viven en `wiki/` fuera del control de versiones, porque la
+wiki de GitHub es un repositorio aparte.
 
 ## Contenido
 
@@ -20,7 +22,6 @@ La documentación completa de los JSON y de la API de KubeJS está en [wiki/Ulti
 | Puesto de intercambio | `ultimatemodadditions:exchange_stand` |
 | Monedas | `coin_10`, `coin_20`, `coin_50`, `coin_100`, `coin_200`, `coin_500`, `coin_1000`, `coin_10000`, `coin_20000` |
 | Bolsas | `loot_bag_common`, `loot_bag_uncommon`, `loot_bag_epic`, `loot_bag_mythic`, `loot_bag_legendary`, `loot_bag_omega`, `loot_bag_food`, `loot_bag_enchantment` |
-| Tomo de habilidad | `skill_tome` |
 
 ## Monedas
 
@@ -48,8 +49,6 @@ devuelve el vuelto automáticamente.
   y tope de vida.
 - `[coins]` / `[loot_bags]` — activar, si solo dentro del coliseo, probabilidad y cantidades base,
   y si solo cuentan las muertes hechas por un jugador.
-- `[skills]` — activar, si se bloquean los objetos sin requisito, nivel máximo, puntos iniciales,
-  puntos por nivel de experiencia, reinicio al morir, multiplicador de experiencia de habilidad
   (`xp_multiplier`) y corazones extra por niveles totales (`levels_per_bonus_heart`,
   `max_bonus_hearts`).
 
@@ -213,7 +212,6 @@ las bolsas, así que funcionan sobre las del mod, las de otro datapack o las de 
   "price": 700,
   "cost": [ { "item": "minecraft:emerald", "count": 4 } ],
   "result": { "bag": "ultimatemodadditions:uncommon", "count": 1 },
-  "requirements": [ { "skill": "ultimatemodadditions:magic", "level": 5 } ],
   "enabled": true
 }
 ```
@@ -226,96 +224,6 @@ El puesto **rechaza** las ofertas cuyo resultado no se puede comprar, aunque est
 bolsas de rareza `epic` o superior, bolsas de comida y encantamiento, y cualquier item que esté en
 la etiqueta `ultimatemodadditions:not_purchasable` (donde ya está la llave del coliseo). Esas
 ofertas tampoco se muestran en la GUI ni en JEI.
-
-### `uma/skills/<id>.json`
-
-```json
-{
-  "name": "Mineria",
-  "icon": "minecraft:iron_pickaxe",
-  "color": 11579576,
-  "max_level": 32,
-  "sort_order": 30,
-  "base_point_cost": 1,
-  "point_cost_growth": 0.15,
-  "xp_base": 30,
-  "xp_growth": 1.2,
-  "description": ["Picos avanzados y velocidad de picado."],
-  "traits": [
-    { "attribute": "minecraft:player.block_break_speed", "per_level": 0.02,
-      "operation": "add_multiplied_base", "start_level": 2 }
-  ],
-  "perks": [
-    { "level": 5, "name": "Pico veloz", "description": ["+10% de velocidad de picado"],
-      "attribute": "minecraft:player.block_break_speed", "amount": 0.1,
-      "operation": "add_multiplied_base" }
-  ]
-}
-```
-
-- `traits` escala con cada nivel; `perks` es un bono fijo que se desbloquea al llegar a `level`.
-  Una ventaja puede no tener `attribute` y ser solo texto informativo.
-- `operation`: `add_value`, `add_multiplied_base` o `add_multiplied_total`.
-- Coste de subir al nivel N = `base_point_cost + point_cost_growth * (N - 1)`.
-- `xp_base: 0` deja la habilidad como "solo puntos". Con `xp_base > 0` la habilidad también sube
-  sola al acumular experiencia; lo que hace falta para el nivel N es
-  `xp_base * xp_growth^(N - 2)`.
-
-Vienen ocho de serie: ataque, defensa, minería, recolección, construcción, agricultura, agilidad y magia.
-
-### `uma/skill_xp/<id>.json`
-
-De dónde sale la experiencia de cada habilidad.
-
-```json
-{
-  "skill": "ultimatemodadditions:mining",
-  "actions": ["break"],
-  "match": { "block_tags": ["minecraft:mineable/pickaxe"] },
-  "entity": { "categories": ["monster"] },
-  "amount": 2,
-  "chance": 1.0,
-  "priority": 0
-}
-```
-
-Acciones disponibles:
-
-| acción | cuándo | qué se compara |
-| --- | --- | --- |
-| `break` | romper un bloque | `match` contra el bloque |
-| `place` | colocar un bloque | `match` contra el bloque |
-| `craft` | fabricar | `match` contra el resultado |
-| `smelt` | fundir | `match` contra el resultado |
-| `kill` | matar una entidad | `entity` contra la víctima |
-| `damage_taken` | recibir daño | nada; la cantidad se multiplica por el daño |
-| `sprint` | correr, una vez por segundo | nada |
-
-`chance` permite que la regla solo dé experiencia parte de las veces.
-
-### `uma/skill_requirements/<id>.json`
-
-```json
-{
-  "priority": 10,
-  "match": {
-    "items": ["minecraft:diamond_pickaxe"],
-    "tags": ["c:tools/pickaxe"],
-    "blocks": ["minecraft:enchanting_table"],
-    "block_tags": [],
-    "regex": [],
-    "exclude": []
-  },
-  "entity": { "boss": true },
-  "requirements": [ { "skill": "ultimatemodadditions:mining", "level": 8 } ],
-  "actions": ["use", "attack", "harvest", "place", "equip", "craft", "attack_entity"]
-}
-```
-
-Si no cumples el requisito, la acción se cancela y sale un aviso. La armadura no permitida se
-desequipa sola, lo fabricado se pierde antes de llegar al inventario y no podés pegarle a una
-entidad bloqueada por `attack_entity`. Los requisitos aparecen en el tooltip del objeto, en verde
-o rojo.
 
 ## KubeJS (opcional)
 
@@ -364,27 +272,6 @@ UMA.addTrade('mipack:mitica', {
   result: { bag: 'mipack:mitica' }
 })
 
-UMA.addSkill('mipack:alquimia', {
-  name: 'Alquimia',
-  icon: 'minecraft:brewing_stand',
-  max_level: 20,
-  xp_base: 40,
-  perks: [{ level: 5, name: 'Destilador', attribute: 'minecraft:generic.luck', amount: 0.5 }]
-})
-
-UMA.addSkillXp('mipack:alquimia_pociones', {
-  skill: 'mipack:alquimia',
-  actions: ['craft'],
-  match: { items: ['minecraft:potion'] },
-  amount: 8
-})
-
-UMA.addSkillRequirement('mipack:pociones', {
-  match: { items: ['minecraft:potion'] },
-  requirements: [{ skill: 'mipack:alquimia', level: 4 }],
-  actions: ['use']
-})
-```
 
 Cada método acepta un objeto JS o una cadena JSON. Los ids sin namespace se resuelven a
 `ultimatemodadditions:`.
@@ -403,10 +290,6 @@ incluida `uma/loot_bag_additions/`.
 /uma coliseum enter | leave
 /uma rebuild_arena
 /uma difficulty get | list | set <id>
-/uma skills info
-/uma skills points <jugadores> <cantidad>
-/uma skills set <jugadores> <skill> <nivel>
-/uma skills reset <jugadores>
 /uma bag <jugadores> <bolsa> [cantidad]
 ```
 
@@ -418,25 +301,6 @@ incluida `uma/loot_bag_additions/`.
 
 `difficulty set` cambia la dificultad activa del coliseo para toda la partida; es lo que usan las
 reglas que no declaran una dificultad propia.
-
-## Habilidades
-
-Se abren con **K**. Hay dos formas de subir, y conviven:
-
-- **Puntos.** Se ganan al subir de nivel de experiencia (`points_per_player_level`) y con el tomo
-  de habilidad. Clic sobre una habilidad para gastarlos.
-- **Experiencia de habilidad.** Cada habilidad con `xp_base > 0` sube sola al usarla: minar, talar,
-  cosechar, construir, matar, aguantar daño, fabricar objetos mágicos o correr, según lo que
-  digan los archivos de `uma/skill_xp/`. La barra azul de cada fila muestra el progreso.
-
-Además:
-
-- Las **ventajas** se desbloquean en niveles concretos y dan un bono fijo de atributo. Se ven en el
-  tooltip de cada habilidad, en verde si ya las tenés.
-- Los **niveles totales** dan corazones extra (`levels_per_bonus_heart`, con tope
-  `max_bonus_hearts`).
-- Los requisitos bloquean usar, atacar, picar, colocar, equipar, **fabricar** y **pegarle a
-  entidades concretas**.
 
 ## JEI
 

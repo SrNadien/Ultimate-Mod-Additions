@@ -1,0 +1,25 @@
+{
+  "name": "Bolsa omega",
+  "tier": "omega",
+  "color": 4648703,
+  "sort_order": 60,
+  "rolls": { "min": 6, "max": 8 },
+  "unique_rolls": true,
+  "announce": true,
+  "open_sound": "ultimatemodadditions:loot_bag_open",
+  "guaranteed": [
+    { "item": "ultimatemodadditions:coin_20000", "count": { "min": 2, "max": 5 } },
+    { "item": "minecraft:experience_bottle", "count": { "min": 16, "max": 32 } }
+  ],
+  "entries": [
+    { "item": "minecraft:netherite_block", "count": { "min": 2, "max": 4 }, "weight": 12 },
+    { "item": "minecraft:elytra", "count": 1, "weight": 10 },
+    { "item": "minecraft:nether_star", "count": { "min": 3, "max": 6 }, "weight": 12 },
+    { "item": "minecraft:beacon", "count": { "min": 1, "max": 2 }, "weight": 10 },
+    { "item": "minecraft:dragon_egg", "count": 1, "weight": 4 },
+    { "item": "minecraft:totem_of_undying", "count": { "min": 4, "max": 8 }, "weight": 12 },
+    { "bag": "ultimatemodadditions:legendary", "count": { "min": 1, "max": 2 }, "weight": 14 },
+    { "bag": "ultimatemodadditions:enchantment", "count": { "min": 2, "max": 3 }, "weight": 14 },
+    { "item": "minecraft:experience_bottle", "count": { "min": 32, "max": 64 }, "weight": 12 }
+  ]
+}

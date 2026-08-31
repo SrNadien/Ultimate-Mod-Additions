@@ -1,0 +1,17 @@
+{
+  "name": "Dificil",
+  "health_multiplier": 2.5,
+  "damage_multiplier": 1.75,
+  "speed_multiplier": 1.1,
+  "armor_bonus": 4.0,
+  "armor_toughness_bonus": 2.0,
+  "knockback_resistance": 0.2,
+  "follow_range_bonus": 12.0,
+  "experience_multiplier": 2.0,
+  "coin_multiplier": 2.0,
+  "bag_chance_bonus": 0.05,
+  "extra_loot_rolls": 1,
+  "effects": [
+    { "effect": "minecraft:strength", "amplifier": 0, "duration": -1 }
+  ]
+}

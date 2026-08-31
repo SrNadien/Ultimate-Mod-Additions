@@ -1,0 +1,25 @@
+{
+  "name": "Pesadilla",
+  "health_multiplier": 6.0,
+  "damage_multiplier": 3.0,
+  "speed_multiplier": 1.25,
+  "armor_bonus": 10.0,
+  "armor_toughness_bonus": 6.0,
+  "knockback_resistance": 0.6,
+  "follow_range_bonus": 24.0,
+  "experience_multiplier": 4.0,
+  "coin_multiplier": 4.0,
+  "bag_chance_bonus": 0.15,
+  "extra_loot_rolls": 2,
+  "glowing": true,
+  "effects": [
+    { "effect": "minecraft:strength", "amplifier": 1, "duration": -1 },
+    { "effect": "minecraft:fire_resistance", "amplifier": 0, "duration": -1 },
+    { "effect": "minecraft:speed", "amplifier": 0, "duration": -1, "chance": 0.5 }
+  ],
+  "equipment": {
+    "mainhand": { "item": "minecraft:netherite_sword", "chance": 0.35, "drop_chance": 0.02 },
+    "head": { "item": "minecraft:diamond_helmet", "chance": 0.5, "drop_chance": 0.02 },
+    "chest": { "item": "minecraft:diamond_chestplate", "chance": 0.5, "drop_chance": 0.02 }
+  }
+}

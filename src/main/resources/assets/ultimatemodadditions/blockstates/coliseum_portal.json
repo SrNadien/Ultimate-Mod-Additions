@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "axis=x": { "model": "ultimatemodadditions:block/coliseum_portal_ns" },
+    "axis=z": { "model": "ultimatemodadditions:block/coliseum_portal_ew" }
+  }
+}

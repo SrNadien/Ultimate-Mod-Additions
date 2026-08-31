@@ -1,0 +1,23 @@
+{
+  "name": "Bolsa de comida",
+  "tier": "food",
+  "color": 14979650,
+  "sort_order": 70,
+  "rolls": { "min": 3, "max": 5 },
+  "open_sound": "ultimatemodadditions:loot_bag_open",
+  "guaranteed": [
+    { "item": "minecraft:bread", "count": { "min": 4, "max": 10 } }
+  ],
+  "entries": [
+    { "item": "minecraft:cooked_beef", "count": { "min": 4, "max": 12 }, "weight": 18 },
+    { "item": "minecraft:cooked_porkchop", "count": { "min": 4, "max": 12 }, "weight": 18 },
+    { "item": "minecraft:cooked_chicken", "count": { "min": 4, "max": 12 }, "weight": 16 },
+    { "item": "minecraft:cooked_salmon", "count": { "min": 4, "max": 10 }, "weight": 14 },
+    { "item": "minecraft:golden_carrot", "count": { "min": 3, "max": 8 }, "weight": 12 },
+    { "item": "minecraft:pumpkin_pie", "count": { "min": 2, "max": 6 }, "weight": 12 },
+    { "item": "minecraft:cake", "count": { "min": 1, "max": 2 }, "weight": 8 },
+    { "item": "minecraft:golden_apple", "count": { "min": 1, "max": 3 }, "weight": 8 },
+    { "item": "minecraft:honey_bottle", "count": { "min": 2, "max": 5 }, "weight": 10 },
+    { "item": "minecraft:suspicious_stew", "count": { "min": 1, "max": 3 }, "weight": 6 }
+  ]
+}

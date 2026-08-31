@@ -1,0 +1,10 @@
+{
+  "name": "Facil",
+  "health_multiplier": 0.75,
+  "damage_multiplier": 0.75,
+  "speed_multiplier": 1.0,
+  "experience_multiplier": 0.75,
+  "coin_multiplier": 0.5,
+  "bag_chance_bonus": 0.0,
+  "extra_loot_rolls": 0
+}

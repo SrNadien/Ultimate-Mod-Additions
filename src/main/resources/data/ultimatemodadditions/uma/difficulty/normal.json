@@ -1,0 +1,10 @@
+{
+  "name": "Normal",
+  "health_multiplier": 1.0,
+  "damage_multiplier": 1.0,
+  "speed_multiplier": 1.0,
+  "experience_multiplier": 1.0,
+  "coin_multiplier": 1.0,
+  "bag_chance_bonus": 0.0,
+  "extra_loot_rolls": 0
+}

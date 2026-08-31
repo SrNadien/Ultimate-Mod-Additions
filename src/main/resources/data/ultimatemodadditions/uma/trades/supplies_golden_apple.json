@@ -1,0 +1,7 @@
+{
+  "name": "Manzana dorada",
+  "category": "general",
+  "sort_order": 70,
+  "price": 800,
+  "result": { "item": "minecraft:golden_apple", "count": 1 }
+}

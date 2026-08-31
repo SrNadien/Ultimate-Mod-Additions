@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ultimatemodadditions:item/loot_bag_mythic"
+  }
+}

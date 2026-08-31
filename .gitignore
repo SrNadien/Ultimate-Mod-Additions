@@ -5,3 +5,7 @@ run-data/
 .idea/
 *.iml
 mcmodsrepo/
+
+# Texto de publicacion, no forma parte del mod
+docs/curseforge.md
+wiki/

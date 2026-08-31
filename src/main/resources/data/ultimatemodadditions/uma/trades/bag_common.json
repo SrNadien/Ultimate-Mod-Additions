@@ -1,0 +1,7 @@
+{
+  "name": "Bolsa comun",
+  "category": "bags",
+  "sort_order": 10,
+  "price": 150,
+  "result": { "bag": "ultimatemodadditions:common", "count": 1 }
+}
