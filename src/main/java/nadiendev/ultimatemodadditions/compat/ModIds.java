@@ -6,6 +6,8 @@ public final class ModIds {
 
     public static final String JEI = "jei";
     public static final String KUBEJS = "kubejs";
+    public static final String FTB_CHUNKS = "ftbchunks";
+    public static final String FTB_QUESTS = "ftbquests";
     public static final String AVARITIA = "avaritia";
     public static final String IRON_FURNACES = "ironfurnaces";
     public static final String ALLTHEMODIUM = "allthemodium";

@@ -48,6 +48,25 @@ public class UMAKubeJsBindings {
         return new UMABuilders.Trade(id);
     }
 
+    public UMABuilders.Daily dailyReward(String id) {
+        checkScope("dailyReward");
+        return new UMABuilders.Daily(id);
+    }
+
+    public void addDailyReward(Context cx, String id, Object json) {
+        store(cx, ScriptedEntries.Kind.DAILY, id, json);
+    }
+
+    public UMABuilders.ShopCategory shopCategory(String id) {
+        checkScope("shopCategory");
+        return new UMABuilders.ShopCategory(id);
+    }
+
+    public UMABuilders.ShopItems shopItems(String id) {
+        checkScope("shopItems");
+        return new UMABuilders.ShopItems(id);
+    }
+
 
     public void addDifficulty(Context cx, String id, Object json) {
         store(cx, ScriptedEntries.Kind.DIFFICULTY, id, json);
@@ -67,6 +86,14 @@ public class UMAKubeJsBindings {
 
     public void addTrade(Context cx, String id, Object json) {
         store(cx, ScriptedEntries.Kind.TRADE, id, json);
+    }
+
+    public void addShopCategory(Context cx, String id, Object json) {
+        store(cx, ScriptedEntries.Kind.SHOP_CATEGORY, id, json);
+    }
+
+    public void addShopItems(Context cx, String id, Object json) {
+        store(cx, ScriptedEntries.Kind.SHOP_ADDITION, id, json);
     }
 
     private void store(Context cx, ScriptedEntries.Kind kind, String id, Object json) {

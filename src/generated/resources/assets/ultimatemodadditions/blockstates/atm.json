@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "ultimatemodadditions:block/atm",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "ultimatemodadditions:block/atm"
+    },
+    "facing=south": {
+      "model": "ultimatemodadditions:block/atm",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "ultimatemodadditions:block/atm",
+      "y": 270
+    }
+  }
+}

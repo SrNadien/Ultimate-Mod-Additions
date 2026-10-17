@@ -1,5 +1,6 @@
 package nadiendev.ultimatemodadditions.data;
 
+import nadiendev.ultimatemodadditions.UMA;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Map;
@@ -31,6 +32,26 @@ public final class RuntimeDataSink {
                 entry.setValue(addition.applyTo(entry.getValue()));
             }
         }
+        return this;
+    }
+
+    public RuntimeDataSink addDailyReward(ResourceLocation id, DailyReward reward) {
+        UMAData.DAILY.values().put(id, reward);
+        return this;
+    }
+
+    public RuntimeDataSink addShopCategory(ResourceLocation id, ShopCategory category) {
+        UMAData.SHOP.values().put(id, category);
+        return this;
+    }
+
+    public RuntimeDataSink addShopAddition(ResourceLocation id, ShopAddition addition) {
+        ShopCategory base = UMAData.SHOP.values().get(addition.category());
+        if (base == null) {
+            UMA.LOGGER.error("Shop addition {} targets the unknown category {}", id, addition.category());
+            return this;
+        }
+        UMAData.SHOP.values().put(addition.category(), addition.applyTo(base));
         return this;
     }
 

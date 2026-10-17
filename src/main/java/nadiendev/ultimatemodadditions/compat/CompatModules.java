@@ -16,6 +16,8 @@ public final class CompatModules {
 
     public static void init(IEventBus modBus) {
         load(ModIds.KUBEJS, "nadiendev.ultimatemodadditions.compat.kubejs.KubeJsModule");
+        load(ModIds.FTB_CHUNKS, "nadiendev.ultimatemodadditions.compat.ftb.FtbChunksModule");
+        load(ModIds.FTB_QUESTS, "nadiendev.ultimatemodadditions.compat.ftb.FtbQuestsModule");
 
         for (CompatModule module : ACTIVE) {
             module.onConstruct(modBus);

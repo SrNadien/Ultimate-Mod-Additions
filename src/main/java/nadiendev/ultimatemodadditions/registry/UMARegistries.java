@@ -15,5 +15,7 @@ public final class UMARegistries {
         UMASounds.register(modBus);
         UMAAttachments.register(modBus);
         UMACreativeTabs.register(modBus);
+        UMALootModifiers.register(modBus);
+        UMAVillagers.register(modBus);
     }
 }

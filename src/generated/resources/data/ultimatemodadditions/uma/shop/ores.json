@@ -1,0 +1,231 @@
+{
+  "icon": "minecraft:diamond_ore",
+  "items": [
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:coal_ore"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 45.0,
+      "item": {
+        "id": "minecraft:deepslate_coal_ore"
+      },
+      "sell": 7.0
+    },
+    {
+      "buy": 120.0,
+      "item": {
+        "id": "minecraft:iron_ore"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 130.0,
+      "item": {
+        "id": "minecraft:deepslate_iron_ore"
+      },
+      "sell": 16.0
+    },
+    {
+      "buy": 60.0,
+      "item": {
+        "id": "minecraft:copper_ore"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 65.0,
+      "item": {
+        "id": "minecraft:deepslate_copper_ore"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:gold_ore"
+      },
+      "sell": 38.0
+    },
+    {
+      "buy": 320.0,
+      "item": {
+        "id": "minecraft:deepslate_gold_ore"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 70.0,
+      "item": {
+        "id": "minecraft:redstone_ore"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 75.0,
+      "item": {
+        "id": "minecraft:deepslate_redstone_ore"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:lapis_ore"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 95.0,
+      "item": {
+        "id": "minecraft:deepslate_lapis_ore"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:diamond_ore"
+      },
+      "sell": 190.0
+    },
+    {
+      "buy": 1600.0,
+      "item": {
+        "id": "minecraft:deepslate_diamond_ore"
+      },
+      "sell": 200.0
+    },
+    {
+      "buy": 800.0,
+      "item": {
+        "id": "minecraft:emerald_ore"
+      },
+      "sell": 100.0
+    },
+    {
+      "buy": 850.0,
+      "item": {
+        "id": "minecraft:deepslate_emerald_ore"
+      },
+      "sell": 105.0
+    },
+    {
+      "buy": 80.0,
+      "item": {
+        "id": "minecraft:nether_gold_ore"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 70.0,
+      "item": {
+        "id": "minecraft:nether_quartz_ore"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 6000.0,
+      "item": {
+        "id": "minecraft:ancient_debris"
+      },
+      "sell": 700.0
+    },
+    {
+      "buy": 650.0,
+      "item": {
+        "id": "minecraft:raw_iron_block"
+      },
+      "sell": 75.0
+    },
+    {
+      "buy": 230.0,
+      "item": {
+        "id": "minecraft:raw_copper_block"
+      },
+      "sell": 28.0
+    },
+    {
+      "buy": 1650.0,
+      "item": {
+        "id": "minecraft:raw_gold_block"
+      },
+      "sell": 190.0
+    },
+    {
+      "buy": 144.0,
+      "item": {
+        "id": "minecraft:coal_block"
+      },
+      "sell": 36.0
+    },
+    {
+      "buy": 900.0,
+      "item": {
+        "id": "minecraft:iron_block"
+      },
+      "sell": 108.0
+    },
+    {
+      "buy": 360.0,
+      "item": {
+        "id": "minecraft:copper_block"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 2250.0,
+      "item": {
+        "id": "minecraft:gold_block"
+      },
+      "sell": 270.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "id": "minecraft:redstone_block"
+      },
+      "sell": 27.0
+    },
+    {
+      "buy": 270.0,
+      "item": {
+        "id": "minecraft:lapis_block"
+      },
+      "sell": 36.0
+    },
+    {
+      "buy": 5400.0,
+      "item": {
+        "id": "minecraft:emerald_block"
+      },
+      "sell": 630.0
+    },
+    {
+      "buy": 10800.0,
+      "item": {
+        "id": "minecraft:diamond_block"
+      },
+      "sell": 1350.0
+    },
+    {
+      "buy": 120.0,
+      "item": {
+        "id": "minecraft:amethyst_block"
+      },
+      "sell": 16.0
+    },
+    {
+      "buy": 162000.0,
+      "item": {
+        "id": "minecraft:netherite_block"
+      },
+      "sell": 18000.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.ores",
+  "order": 5
+}

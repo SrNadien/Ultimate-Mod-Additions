@@ -1,0 +1,18 @@
+{
+  "period": "weekly",
+  "rewards": [
+    {
+      "items": [
+        {
+          "count": 2,
+          "item": "minecraft:diamond"
+        },
+        {
+          "count": 2,
+          "item": "minecraft:golden_apple"
+        }
+      ],
+      "money": 150.0
+    }
+  ]
+}

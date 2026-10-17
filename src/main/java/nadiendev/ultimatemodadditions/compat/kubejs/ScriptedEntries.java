@@ -5,10 +5,13 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.JsonOps;
 import nadiendev.ultimatemodadditions.UMA;
+import nadiendev.ultimatemodadditions.data.DailyReward;
 import nadiendev.ultimatemodadditions.data.DifficultyProfile;
 import nadiendev.ultimatemodadditions.data.LootBagDefinition;
 import nadiendev.ultimatemodadditions.data.MobRule;
 import nadiendev.ultimatemodadditions.data.RuntimeDataSink;
+import nadiendev.ultimatemodadditions.data.ShopAddition;
+import nadiendev.ultimatemodadditions.data.ShopCategory;
 import nadiendev.ultimatemodadditions.data.TradeOffer;
 import nadiendev.ultimatemodadditions.data.UMAData;
 import net.minecraft.core.HolderLookup;
@@ -21,7 +24,7 @@ import java.util.Map;
 public final class ScriptedEntries {
 
     public enum Kind {
-        DIFFICULTY, MOB_RULE, LOOT_BAG, BAG_ADDITION, TRADE
+        DIFFICULTY, MOB_RULE, LOOT_BAG, BAG_ADDITION, TRADE, SHOP_CATEGORY, SHOP_ADDITION, DAILY
     }
 
     private static final Map<Kind, Map<ResourceLocation, JsonElement>> ENTRIES = new LinkedHashMap<>();
@@ -43,6 +46,9 @@ public final class ScriptedEntries {
         each(Kind.LOOT_BAG, LootBagDefinition.CODEC, sink::addLootBag);
         each(Kind.BAG_ADDITION, nadiendev.ultimatemodadditions.data.LootBagAddition.CODEC, sink::addBagAddition);
         each(Kind.TRADE, TradeOffer.CODEC, sink::addTrade);
+        each(Kind.SHOP_CATEGORY, ShopCategory.CODEC, sink::addShopCategory);
+        each(Kind.DAILY, DailyReward.CODEC, sink::addDailyReward);
+        each(Kind.SHOP_ADDITION, ShopAddition.CODEC, sink::addShopAddition);
     }
 
     private static <T> void each(Kind kind, Codec<T> codec, java.util.function.BiConsumer<ResourceLocation, T> consumer) {

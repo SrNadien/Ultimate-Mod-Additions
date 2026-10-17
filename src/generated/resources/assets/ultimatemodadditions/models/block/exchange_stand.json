@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:block/block",
+  "automatic_culling": false,
+  "flip_v": true,
+  "loader": "neoforge:obj",
+  "model": "ultimatemodadditions:models/block/stall.obj",
+  "shade_quads": true,
+  "textures": {
+    "palette": "ultimatemodadditions:block/stall/palette",
+    "particle": "ultimatemodadditions:block/stall/t0",
+    "t0": "ultimatemodadditions:block/stall/t0",
+    "t1": "ultimatemodadditions:block/stall/t1",
+    "t10": "ultimatemodadditions:block/stall/t10",
+    "t11": "ultimatemodadditions:block/stall/t11",
+    "t12": "ultimatemodadditions:block/stall/t12",
+    "t13": "ultimatemodadditions:block/stall/t13",
+    "t14": "ultimatemodadditions:block/stall/t14",
+    "t15": "ultimatemodadditions:block/stall/t15",
+    "t16": "ultimatemodadditions:block/stall/t16",
+    "t17": "ultimatemodadditions:block/stall/t17",
+    "t18": "ultimatemodadditions:block/stall/t18",
+    "t2": "ultimatemodadditions:block/stall/t2",
+    "t3": "ultimatemodadditions:block/stall/t3",
+    "t4": "ultimatemodadditions:block/stall/t4",
+    "t5": "ultimatemodadditions:block/stall/t5",
+    "t6": "ultimatemodadditions:block/stall/t6",
+    "t7": "ultimatemodadditions:block/stall/t7",
+    "t8": "ultimatemodadditions:block/stall/t8",
+    "t9": "ultimatemodadditions:block/stall/t9"
+  }
+}

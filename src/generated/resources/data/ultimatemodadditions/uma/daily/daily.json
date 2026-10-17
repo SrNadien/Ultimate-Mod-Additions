@@ -1,0 +1,43 @@
+{
+  "period": "daily",
+  "rewards": [
+    {
+      "money": 10.0
+    },
+    {
+      "money": 15.0
+    },
+    {
+      "items": [
+        {
+          "count": 8,
+          "item": "minecraft:bread"
+        }
+      ],
+      "money": 20.0
+    },
+    {
+      "money": 30.0
+    },
+    {
+      "items": [
+        {
+          "count": 4,
+          "item": "minecraft:iron_ingot"
+        }
+      ],
+      "money": 40.0
+    },
+    {
+      "money": 60.0
+    },
+    {
+      "items": [
+        {
+          "item": "minecraft:diamond"
+        }
+      ],
+      "money": 100.0
+    }
+  ]
+}

@@ -8,7 +8,7 @@
   "announce": true,
   "open_sound": "ultimatemodadditions:loot_bag_open",
   "guaranteed": [
-    { "item": "ultimatemodadditions:coin_10000", "count": 1 },
+    { "item": "ultimatemodadditions:10_lucas", "count": 1 },
     { "item": "minecraft:experience_bottle", "count": { "min": 8, "max": 16 } }
   ],
   "entries": [

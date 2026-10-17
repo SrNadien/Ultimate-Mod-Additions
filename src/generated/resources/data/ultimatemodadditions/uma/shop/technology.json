@@ -1,0 +1,406 @@
+{
+  "icon": "minecraft:redstone",
+  "items": [
+    {
+      "buy": 30.0,
+      "item": {
+        "id": "minecraft:redstone_torch"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 120.0,
+      "item": {
+        "id": "minecraft:repeater"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 160.0,
+      "item": {
+        "id": "minecraft:comparator"
+      },
+      "sell": 16.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:piston"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "id": "minecraft:sticky_piston"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 180.0,
+      "item": {
+        "id": "minecraft:observer"
+      },
+      "sell": 18.0
+    },
+    {
+      "buy": 260.0,
+      "item": {
+        "id": "minecraft:hopper"
+      },
+      "sell": 26.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:dropper"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 110.0,
+      "item": {
+        "id": "minecraft:dispenser"
+      },
+      "sell": 11.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:tnt"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:rail"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "id": "minecraft:powered_rail"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:detector_rail"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:activator_rail"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 220.0,
+      "item": {
+        "id": "minecraft:daylight_detector"
+      },
+      "sell": 22.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:lever"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:stone_button"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 220.0,
+      "item": {
+        "id": "minecraft:redstone_lamp"
+      },
+      "sell": 22.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:bucket"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 320.0,
+      "item": {
+        "id": "minecraft:water_bucket"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 380.0,
+      "item": {
+        "id": "minecraft:lava_bucket"
+      },
+      "sell": 35.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:shears"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "id": "minecraft:compass"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:clock"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 350.0,
+      "item": {
+        "id": "minecraft:minecart"
+      },
+      "sell": 35.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:target"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 130.0,
+      "item": {
+        "id": "minecraft:lightning_rod"
+      },
+      "sell": 13.0
+    },
+    {
+      "buy": 540.0,
+      "item": {
+        "id": "minecraft:slime_block"
+      },
+      "sell": 54.0
+    },
+    {
+      "buy": 330.0,
+      "item": {
+        "id": "minecraft:honey_block"
+      },
+      "sell": 33.0
+    },
+    {
+      "buy": 220.0,
+      "item": {
+        "id": "minecraft:iron_door"
+      },
+      "sell": 22.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "id": "minecraft:anvil"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 80.0,
+      "item": {
+        "id": "minecraft:fishing_rod"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 25.0,
+      "item": {
+        "id": "minecraft:redstone"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "id": "minecraft:redstone_block"
+      },
+      "sell": 27.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:oak_button"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:polished_blackstone_button"
+      },
+      "sell": 0.7
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:stone_pressure_plate"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:oak_pressure_plate"
+      },
+      "sell": 0.7
+    },
+    {
+      "buy": 9.0,
+      "item": {
+        "id": "minecraft:polished_blackstone_pressure_plate"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 60.0,
+      "item": {
+        "id": "minecraft:light_weighted_pressure_plate"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:heavy_weighted_pressure_plate"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 30.0,
+      "item": {
+        "id": "minecraft:tripwire_hook"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "id": "minecraft:sculk_sensor"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 500.0,
+      "item": {
+        "id": "minecraft:calibrated_sculk_sensor"
+      },
+      "sell": 50.0
+    },
+    {
+      "buy": 160.0,
+      "item": {
+        "id": "minecraft:note_block"
+      },
+      "sell": 16.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "id": "minecraft:jukebox"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 650.0,
+      "item": {
+        "id": "minecraft:tnt_minecart"
+      },
+      "sell": 65.0
+    },
+    {
+      "buy": 500.0,
+      "item": {
+        "id": "minecraft:hopper_minecart"
+      },
+      "sell": 50.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "id": "minecraft:chest_minecart"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 380.0,
+      "item": {
+        "id": "minecraft:furnace_minecart"
+      },
+      "sell": 38.0
+    },
+    {
+      "buy": 110.0,
+      "item": {
+        "id": "minecraft:iron_trapdoor"
+      },
+      "sell": 11.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:trapped_chest"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 250.0,
+      "item": {
+        "id": "minecraft:copper_bulb"
+      },
+      "sell": 25.0
+    },
+    {
+      "buy": 140.0,
+      "item": {
+        "id": "minecraft:copper_door"
+      },
+      "sell": 14.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "id": "minecraft:copper_trapdoor"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 700.0,
+      "item": {
+        "id": "minecraft:bell"
+      },
+      "sell": 70.0
+    },
+    {
+      "buy": 500.0,
+      "item": {
+        "id": "minecraft:crafter"
+      },
+      "sell": 50.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.technology",
+  "order": 8
+}

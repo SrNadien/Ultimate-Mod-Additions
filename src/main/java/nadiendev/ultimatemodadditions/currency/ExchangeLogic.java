@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public final class ExchangeLogic {
@@ -39,12 +40,12 @@ public final class ExchangeLogic {
         int affordable = Math.min(times, maxAffordable(player, offer));
         if (affordable <= 0) {
             player.displayClientMessage(Component.translatable("message.ultimatemodadditions.trade_too_poor",
-                    Money.format(offer.price())).withStyle(ChatFormatting.RED), true);
+                    Money.format(Money.toCents(offer.price()))).withStyle(ChatFormatting.RED), true);
             return false;
         }
-        if (offer.price() > 0 && !Money.take(player, (long) offer.price() * affordable)) {
+        if (offer.price() > 0 && !Payment.pay(player, Money.toCents(offer.price()) * affordable)) {
             player.displayClientMessage(Component.translatable("message.ultimatemodadditions.trade_too_poor",
-                    Money.format(offer.price())).withStyle(ChatFormatting.RED), true);
+                    Money.format(Money.toCents(offer.price()))).withStyle(ChatFormatting.RED), true);
             return false;
         }
         takeCost(player, offer, affordable);
@@ -63,7 +64,8 @@ public final class ExchangeLogic {
     public static int maxAffordable(Player player, TradeOffer offer) {
         int best = Integer.MAX_VALUE;
         if (offer.price() > 0) {
-            best = (int) Math.min(best, Money.total(player) / offer.price());
+            BigInteger affordable = Payment.available(player).divide(BigInteger.valueOf(Money.toCents(offer.price())));
+            best = (int) Math.min(best, Wealth.clamp(affordable.min(BigInteger.valueOf(Integer.MAX_VALUE))));
         }
         for (TradeOffer.CostEntry entry : offer.cost()) {
             if (entry.count() <= 0) {

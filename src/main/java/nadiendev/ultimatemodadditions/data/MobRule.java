@@ -41,7 +41,7 @@ public record MobRule(int priority,
 
     public record CoinDrop(String tier, IntRange count, float chance) {
         public static final Codec<CoinDrop> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-                Codec.STRING.optionalFieldOf("tier", "bronze").forGetter(CoinDrop::tier),
+                Codec.STRING.optionalFieldOf("tier", "5_centavos").forGetter(CoinDrop::tier),
                 IntRange.CODEC.optionalFieldOf("count", IntRange.exactly(1)).forGetter(CoinDrop::count),
                 Codec.FLOAT.optionalFieldOf("chance", 1.0F).forGetter(CoinDrop::chance)
         ).apply(instance, CoinDrop::new));

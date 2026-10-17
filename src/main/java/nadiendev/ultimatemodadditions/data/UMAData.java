@@ -40,6 +40,22 @@ public final class UMAData {
             new UMAJsonLoader<>("uma/loot_bag_additions", LootBagAddition.CODEC, UMAData::registries, map -> {
             });
 
+    public static final UMAJsonLoader<JobDefinition> JOBS =
+            new UMAJsonLoader<>("uma/jobs", JobDefinition.CODEC, UMAData::registries, map -> {
+            });
+
+    public static final UMAJsonLoader<ShopCategory> SHOP =
+            new UMAJsonLoader<>("uma/shop", ShopCategory.CODEC, UMAData::registries, map -> {
+            });
+
+    public static final UMAJsonLoader<ShopAddition> SHOP_ADDITIONS =
+            new UMAJsonLoader<>("uma/shop_additions", ShopAddition.CODEC, UMAData::registries, map -> {
+            });
+
+    public static final UMAJsonLoader<DailyReward> DAILY =
+            new UMAJsonLoader<>("uma/daily", DailyReward.CODEC, UMAData::registries, map -> {
+            });
+
     public static final UMAJsonLoader<TradeOffer> TRADES =
             new UMAJsonLoader<>("uma/trades", TradeOffer.CODEC, UMAData::registries, map -> {
             });
@@ -63,6 +79,10 @@ public final class UMAData {
         event.addListener(LOOT_BAGS);
         event.addListener(BAG_ADDITIONS);
         event.addListener(TRADES);
+        event.addListener(JOBS);
+        event.addListener(SHOP);
+        event.addListener(DAILY);
+        event.addListener(SHOP_ADDITIONS);
         event.addListener(new RuntimeHookListener());
     }
 
@@ -72,6 +92,18 @@ public final class UMAData {
 
     public static Map<ResourceLocation, LootBagDefinition> lootBags() {
         return LOOT_BAGS.values();
+    }
+
+    public static Map<ResourceLocation, JobDefinition> jobs() {
+        return JOBS.values();
+    }
+
+    public static Map<ResourceLocation, DailyReward> daily() {
+        return DAILY.values();
+    }
+
+    public static Map<ResourceLocation, ShopCategory> shop() {
+        return SHOP.values();
     }
 
     public static Map<ResourceLocation, TradeOffer> trades() {
@@ -95,6 +127,10 @@ public final class UMAData {
         BAG_ADDITIONS.values().forEach(sink::addBagAddition);
     }
 
+    private static void applyJsonShopAdditions(RuntimeDataSink sink) {
+        SHOP_ADDITIONS.values().forEach(sink::addShopAddition);
+    }
+
     private static final class RuntimeHookListener implements net.minecraft.server.packs.resources.PreparableReloadListener {
 
         @Override
@@ -108,6 +144,7 @@ public final class UMAData {
                 RuntimeDataSink sink = new RuntimeDataSink();
                 CompatModules.onDataReload(sink);
                 applyJsonBagAdditions(sink);
+                applyJsonShopAdditions(sink);
                 if (sink.mobRulesDirty()) {
                     SORTED_MOB_RULES.clear();
                     SORTED_MOB_RULES.addAll(MOB_RULES.values().values());

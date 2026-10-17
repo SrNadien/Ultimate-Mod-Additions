@@ -1,0 +1,508 @@
+{
+  "actions": [
+    {
+      "type": "craft",
+      "pay": 3.0,
+      "target": "minecraft:iron_pickaxe",
+      "xp": 3.0
+    },
+    {
+      "type": "craft",
+      "pay": 3.0,
+      "target": "minecraft:iron_sword",
+      "xp": 3.0
+    },
+    {
+      "type": "craft",
+      "pay": 12.0,
+      "target": "minecraft:diamond_pickaxe",
+      "xp": 10.0
+    },
+    {
+      "type": "craft",
+      "pay": 12.0,
+      "target": "minecraft:diamond_sword",
+      "xp": 10.0
+    },
+    {
+      "type": "craft",
+      "pay": 0.4,
+      "target": "minecraft:bread",
+      "xp": 0.5
+    },
+    {
+      "type": "craft",
+      "pay": 0.1,
+      "target": "minecraft:torch",
+      "xp": 0.2
+    },
+    {
+      "type": "craft",
+      "pay": 0.15,
+      "xp": 0.3
+    }
+  ],
+  "description": "Cobra por fabricar objetos.",
+  "icon": "minecraft:crafting_table",
+  "name": "Artesano",
+  "rewards": [
+    {
+      "level": 2,
+      "money": 15.0
+    },
+    {
+      "level": 3,
+      "money": 15.6
+    },
+    {
+      "level": 4,
+      "money": 16.22
+    },
+    {
+      "items": [
+        {
+          "count": 16,
+          "item": "minecraft:bread"
+        }
+      ],
+      "level": 5,
+      "money": 16.87
+    },
+    {
+      "level": 6,
+      "money": 17.55
+    },
+    {
+      "level": 7,
+      "money": 18.25
+    },
+    {
+      "level": 8,
+      "money": 18.98
+    },
+    {
+      "level": 9,
+      "money": 19.74
+    },
+    {
+      "items": [
+        {
+          "item": "minecraft:golden_apple"
+        }
+      ],
+      "level": 10,
+      "money": 20.53
+    },
+    {
+      "level": 11,
+      "money": 21.35
+    },
+    {
+      "level": 12,
+      "money": 22.2
+    },
+    {
+      "level": 13,
+      "money": 23.09
+    },
+    {
+      "level": 14,
+      "money": 24.02
+    },
+    {
+      "level": 15,
+      "money": 24.98
+    },
+    {
+      "level": 16,
+      "money": 25.98
+    },
+    {
+      "level": 17,
+      "money": 27.01
+    },
+    {
+      "level": 18,
+      "money": 28.09
+    },
+    {
+      "level": 19,
+      "money": 29.22
+    },
+    {
+      "level": 20,
+      "money": 30.39
+    },
+    {
+      "level": 21,
+      "money": 31.6
+    },
+    {
+      "level": 22,
+      "money": 32.87
+    },
+    {
+      "level": 23,
+      "money": 34.18
+    },
+    {
+      "level": 24,
+      "money": 35.55
+    },
+    {
+      "items": [
+        {
+          "count": 4,
+          "item": "minecraft:diamond"
+        }
+      ],
+      "level": 25,
+      "money": 36.97
+    },
+    {
+      "level": 26,
+      "money": 38.45
+    },
+    {
+      "level": 27,
+      "money": 39.99
+    },
+    {
+      "level": 28,
+      "money": 41.59
+    },
+    {
+      "level": 29,
+      "money": 43.25
+    },
+    {
+      "level": 30,
+      "money": 44.98
+    },
+    {
+      "level": 31,
+      "money": 46.78
+    },
+    {
+      "level": 32,
+      "money": 48.65
+    },
+    {
+      "level": 33,
+      "money": 50.6
+    },
+    {
+      "level": 34,
+      "money": 52.62
+    },
+    {
+      "level": 35,
+      "money": 54.73
+    },
+    {
+      "level": 36,
+      "money": 56.91
+    },
+    {
+      "level": 37,
+      "money": 59.19
+    },
+    {
+      "level": 38,
+      "money": 61.56
+    },
+    {
+      "level": 39,
+      "money": 64.02
+    },
+    {
+      "level": 40,
+      "money": 66.58
+    },
+    {
+      "level": 41,
+      "money": 69.25
+    },
+    {
+      "level": 42,
+      "money": 72.02
+    },
+    {
+      "level": 43,
+      "money": 74.9
+    },
+    {
+      "level": 44,
+      "money": 77.89
+    },
+    {
+      "level": 45,
+      "money": 81.01
+    },
+    {
+      "level": 46,
+      "money": 84.25
+    },
+    {
+      "level": 47,
+      "money": 87.62
+    },
+    {
+      "level": 48,
+      "money": 91.12
+    },
+    {
+      "level": 49,
+      "money": 94.77
+    },
+    {
+      "items": [
+        {
+          "count": 16,
+          "item": "minecraft:emerald"
+        }
+      ],
+      "level": 50,
+      "money": 98.56
+    },
+    {
+      "level": 51,
+      "money": 102.5
+    },
+    {
+      "level": 52,
+      "money": 106.6
+    },
+    {
+      "level": 53,
+      "money": 110.86
+    },
+    {
+      "level": 54,
+      "money": 115.3
+    },
+    {
+      "level": 55,
+      "money": 119.91
+    },
+    {
+      "level": 56,
+      "money": 124.71
+    },
+    {
+      "level": 57,
+      "money": 129.7
+    },
+    {
+      "level": 58,
+      "money": 134.88
+    },
+    {
+      "level": 59,
+      "money": 140.28
+    },
+    {
+      "level": 60,
+      "money": 145.89
+    },
+    {
+      "level": 61,
+      "money": 151.73
+    },
+    {
+      "level": 62,
+      "money": 157.79
+    },
+    {
+      "level": 63,
+      "money": 164.11
+    },
+    {
+      "level": 64,
+      "money": 170.67
+    },
+    {
+      "level": 65,
+      "money": 177.5
+    },
+    {
+      "level": 66,
+      "money": 184.6
+    },
+    {
+      "level": 67,
+      "money": 191.98
+    },
+    {
+      "level": 68,
+      "money": 199.66
+    },
+    {
+      "level": 69,
+      "money": 207.65
+    },
+    {
+      "level": 70,
+      "money": 215.95
+    },
+    {
+      "level": 71,
+      "money": 224.59
+    },
+    {
+      "level": 72,
+      "money": 233.57
+    },
+    {
+      "level": 73,
+      "money": 242.92
+    },
+    {
+      "level": 74,
+      "money": 252.63
+    },
+    {
+      "items": [
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "level": 75,
+      "money": 262.74
+    },
+    {
+      "level": 76,
+      "money": 273.25
+    },
+    {
+      "level": 77,
+      "money": 284.18
+    },
+    {
+      "level": 78,
+      "money": 295.55
+    },
+    {
+      "level": 79,
+      "money": 307.37
+    },
+    {
+      "level": 80,
+      "money": 319.66
+    },
+    {
+      "level": 81,
+      "money": 332.45
+    },
+    {
+      "level": 82,
+      "money": 345.75
+    },
+    {
+      "level": 83,
+      "money": 359.58
+    },
+    {
+      "level": 84,
+      "money": 373.96
+    },
+    {
+      "level": 85,
+      "money": 388.92
+    },
+    {
+      "level": 86,
+      "money": 404.48
+    },
+    {
+      "level": 87,
+      "money": 420.65
+    },
+    {
+      "level": 88,
+      "money": 437.48
+    },
+    {
+      "level": 89,
+      "money": 454.98
+    },
+    {
+      "level": 90,
+      "money": 473.18
+    },
+    {
+      "level": 91,
+      "money": 492.11
+    },
+    {
+      "level": 92,
+      "money": 511.79
+    },
+    {
+      "level": 93,
+      "money": 532.26
+    },
+    {
+      "level": 94,
+      "money": 553.55
+    },
+    {
+      "level": 95,
+      "money": 575.69
+    },
+    {
+      "level": 96,
+      "money": 598.72
+    },
+    {
+      "level": 97,
+      "money": 622.67
+    },
+    {
+      "level": 98,
+      "money": 647.58
+    },
+    {
+      "level": 99,
+      "money": 673.48
+    },
+    {
+      "items": [
+        {
+          "count": 2,
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ],
+      "level": 100,
+      "money": 700.42
+    }
+  ],
+  "titles": [
+    {
+      "level": 1,
+      "name": "Aprendiz de taller"
+    },
+    {
+      "level": 10,
+      "name": "Artesano"
+    },
+    {
+      "level": 25,
+      "name": "Oficial"
+    },
+    {
+      "level": 50,
+      "name": "Maestro artesano"
+    },
+    {
+      "level": 75,
+      "name": "Gran maestro"
+    },
+    {
+      "level": 100,
+      "name": "Artífice"
+    }
+  ],
+  "xp_base": 20000.0,
+  "xp_growth": 1.06
+}

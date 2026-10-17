@@ -1,0 +1,231 @@
+{
+  "icon": "minecraft:oak_log",
+  "items": [
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:oak_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:spruce_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:birch_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:jungle_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:acacia_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:dark_oak_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:cherry_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:mangrove_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:cobblestone"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:stone"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 1.0,
+      "item": {
+        "id": "minecraft:dirt"
+      },
+      "sell": 0.2
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:sand"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:gravel"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 16.0,
+      "item": {
+        "id": "minecraft:coal"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:charcoal"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 1.0,
+      "item": {
+        "id": "minecraft:stick"
+      },
+      "sell": 0.2
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:string"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:feather"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:flint"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 14.0,
+      "item": {
+        "id": "minecraft:leather"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:bone"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:clay_ball"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:snowball"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:paper"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:sugar_cane"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:cactus"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:bamboo"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:kelp"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:wheat_seeds"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:pumpkin_seeds"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:melon_seeds"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:beetroot_seeds"
+      },
+      "sell": 0.5
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.basics",
+  "order": 1
+}

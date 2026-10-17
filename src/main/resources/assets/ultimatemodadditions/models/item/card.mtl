@@ -1,0 +1,31 @@
+newmtl 123
+Kd 1.0 1.0 1.0
+map_Kd #t0
+
+newmtl back
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl black_back
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl border
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl border_card
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl card_face_1
+Kd 1.0 1.0 1.0
+map_Kd #t1
+
+newmtl inside
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl numbers
+Kd 1.0 1.0 1.0
+map_Kd #palette

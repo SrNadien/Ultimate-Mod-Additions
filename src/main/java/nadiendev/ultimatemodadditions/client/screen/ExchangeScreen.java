@@ -3,6 +3,7 @@ package nadiendev.ultimatemodadditions.client.screen;
 import nadiendev.ultimatemodadditions.currency.ExchangeLogic;
 import nadiendev.ultimatemodadditions.currency.ExchangeMenu;
 import nadiendev.ultimatemodadditions.currency.Money;
+import nadiendev.ultimatemodadditions.currency.Payment;
 import nadiendev.ultimatemodadditions.data.TradeOffer;
 import nadiendev.ultimatemodadditions.network.SyncedData;
 import nadiendev.ultimatemodadditions.network.payload.BuyOfferPayload;
@@ -14,6 +15,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.PacketDistributor;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -124,9 +126,19 @@ public class ExchangeScreen extends AbstractContainerScreen<ExchangeMenu> {
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         graphics.drawString(font, title, titleLabelX, titleLabelY, 0xFFE7C25A, true);
-        Component balance = Component.translatable("screen.ultimatemodadditions.balance",
-                Money.format(minecraft != null && minecraft.player != null ? Money.total(minecraft.player) : 0L));
-        graphics.drawString(font, balance, imageWidth - 8 - font.width(balance), titleLabelY, 0xFF8AE28A, true);
+        BigInteger total = minecraft != null && minecraft.player != null
+                ? Payment.available(minecraft.player) : BigInteger.ZERO;
+        Component balance = total.signum() > 0
+                ? Component.translatable("screen.ultimatemodadditions.balance", Money.format(total))
+                : Component.translatable("screen.ultimatemodadditions.broke");
+        int available = imageWidth - 8 - (46 + font.width(playerInventoryTitle) + 8);
+        float fit = Math.min(1.0F, (float) available / Math.max(1, font.width(balance)));
+        graphics.pose().pushPose();
+        graphics.pose().translate(imageWidth - 8, inventoryLabelY + (1.0F - fit) * 4.0F, 0.0F);
+        graphics.pose().scale(fit, fit, 1.0F);
+        graphics.drawString(font, balance, -font.width(balance), 0,
+                total.signum() > 0 ? 0xFF8AE28A : 0xFFCC5555, true);
+        graphics.pose().popPose();
         graphics.drawString(font, playerInventoryTitle, 46, inventoryLabelY, 0xFFB0B0B0, true);
 
         if (offers.isEmpty()) {
@@ -172,8 +184,8 @@ public class ExchangeScreen extends AbstractContainerScreen<ExchangeMenu> {
 
         if (offer.price() > 0) {
             boolean affordable = minecraft != null && minecraft.player != null
-                    && Money.total(minecraft.player) >= offer.price();
-            Component price = Money.format(offer.price());
+                    && Payment.available(minecraft.player).compareTo(BigInteger.valueOf(Money.toCents(offer.price()))) >= 0;
+            Component price = Money.format(Money.toCents(offer.price()));
             graphics.drawString(font, price, LIST_LEFT + 26, y + 15,
                     affordable ? 0xFFE7C25A : 0xFFCC5555, true);
         } else if (offer.cost().isEmpty()) {

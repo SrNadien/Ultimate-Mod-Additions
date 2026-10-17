@@ -1,0 +1,687 @@
+newmtl Material__10
+Kd 1.0 1.0 1.0
+map_Kd #t0
+
+newmtl Material__10.001
+Kd 1.0 1.0 1.0
+map_Kd #t0
+
+newmtl Material__10.002
+Kd 1.0 1.0 1.0
+map_Kd #t0
+
+newmtl Material__10.003
+Kd 1.0 1.0 1.0
+map_Kd #t0
+
+newmtl Material__109
+Kd 1.0 1.0 1.0
+map_Kd #t1
+
+newmtl Material__11
+Kd 1.0 1.0 1.0
+map_Kd #t2
+
+newmtl Material__11.001
+Kd 1.0 1.0 1.0
+map_Kd #t2
+
+newmtl Material__11.002
+Kd 1.0 1.0 1.0
+map_Kd #t2
+
+newmtl Material__11.003
+Kd 1.0 1.0 1.0
+map_Kd #t2
+
+newmtl Material__11.004
+Kd 1.0 1.0 1.0
+map_Kd #t2
+
+newmtl Material__12
+Kd 1.0 1.0 1.0
+map_Kd #t3
+
+newmtl Material__12.001
+Kd 1.0 1.0 1.0
+map_Kd #t3
+
+newmtl Material__133
+Kd 1.0 1.0 1.0
+map_Kd #t4
+
+newmtl Material__133.001
+Kd 1.0 1.0 1.0
+map_Kd #t4
+
+newmtl Material__15
+Kd 1.0 1.0 1.0
+map_Kd #t5
+
+newmtl Material__15.001
+Kd 1.0 1.0 1.0
+map_Kd #t5
+
+newmtl Material__15.002
+Kd 1.0 1.0 1.0
+map_Kd #t5
+
+newmtl Material__15.003
+Kd 1.0 1.0 1.0
+map_Kd #t5
+
+newmtl Material__16
+Kd 1.0 1.0 1.0
+map_Kd #t6
+
+newmtl Material__16.001
+Kd 1.0 1.0 1.0
+map_Kd #t6
+
+newmtl Material__16.002
+Kd 1.0 1.0 1.0
+map_Kd #t6
+
+newmtl Material__17
+Kd 1.0 1.0 1.0
+map_Kd #t7
+
+newmtl Material__17.001
+Kd 1.0 1.0 1.0
+map_Kd #t7
+
+newmtl Material__17.002
+Kd 1.0 1.0 1.0
+map_Kd #t7
+
+newmtl Material__18
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.001
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.002
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.003
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.004
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.005
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.006
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.007
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.008
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.009
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.010
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.011
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.012
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.013
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.014
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.015
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__18.016
+Kd 1.0 1.0 1.0
+map_Kd #t8
+
+newmtl Material__19
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.001
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.002
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.003
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.004
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.005
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.006
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__19.007
+Kd 1.0 1.0 1.0
+map_Kd #t9
+
+newmtl Material__32
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.001
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.002
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.003
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.004
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.005
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.006
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.007
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.008
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.009
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.010
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__32.011
+Kd 1.0 1.0 1.0
+map_Kd #t10
+
+newmtl Material__33
+Kd 1.0 1.0 1.0
+map_Kd #t11
+
+newmtl Material__33.001
+Kd 1.0 1.0 1.0
+map_Kd #t11
+
+newmtl Material__33.002
+Kd 1.0 1.0 1.0
+map_Kd #t11
+
+newmtl Material__34
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.001
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.002
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.003
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.004
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.005
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.006
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.007
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.008
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__34.009
+Kd 1.0 1.0 1.0
+map_Kd #t12
+
+newmtl Material__35
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl Material__35.001
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl Material__37
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl Material__4
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.001
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.002
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.003
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.004
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.005
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.006
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.007
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.008
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.009
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.010
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.011
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.012
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.013
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.014
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.015
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.016
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.017
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.018
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.019
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.020
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.021
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.022
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.023
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.024
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.025
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.026
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.027
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__4.028
+Kd 1.0 1.0 1.0
+map_Kd #t13
+
+newmtl Material__40
+Kd 1.0 1.0 1.0
+map_Kd #palette
+
+newmtl Material__5
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.001
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.002
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.003
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.004
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.005
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.006
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.007
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.008
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.009
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.010
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.011
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.012
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.013
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.014
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.015
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.016
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__5.017
+Kd 1.0 1.0 1.0
+map_Kd #t14
+
+newmtl Material__6
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.001
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.002
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.003
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.004
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.005
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.006
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.007
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.008
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.009
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.010
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.011
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__6.012
+Kd 1.0 1.0 1.0
+map_Kd #t15
+
+newmtl Material__7
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.001
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.002
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.003
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.004
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.005
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.006
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.007
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.008
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.009
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.010
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.011
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__7.012
+Kd 1.0 1.0 1.0
+map_Kd #t16
+
+newmtl Material__8
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.001
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.002
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.003
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.004
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.005
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.006
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__8.007
+Kd 1.0 1.0 1.0
+map_Kd #t17
+
+newmtl Material__9
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.001
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.002
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.003
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.004
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.005
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.006
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.007
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.008
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.009
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.010
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.011
+Kd 1.0 1.0 1.0
+map_Kd #t18
+
+newmtl Material__9.012
+Kd 1.0 1.0 1.0
+map_Kd #t18

@@ -55,3 +55,47 @@ jobs:
             build/libs/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to CurseForge
+        if: ${{ contains(github.event.head_commit.message, '[curseforge') }}
+        env:
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          CURSEFORGE_PROJECT_ID: ${{ vars.CURSEFORGE_PROJECT_ID }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          MOD_VERSION: ${{ steps.gradle_props.outputs.mod_version }}
+        run: |
+          set -euo pipefail
+          : "${CURSEFORGE_TOKEN:?Add the CURSEFORGE_TOKEN secret to the repository}"
+          : "${CURSEFORGE_PROJECT_ID:?Add the CURSEFORGE_PROJECT_ID variable to the repository}"
+          MC="1.21.1"
+
+          RELEASE_TYPE=release
+          if [[ "$COMMIT_MESSAGE" =~ \[curseforge\ (alpha|beta|release)\] ]]; then RELEASE_TYPE="${BASH_REMATCH[1]}"; fi
+
+          CHANGELOG=$(awk -v v="$MOD_VERSION" '/^## /{ if (found) exit; if (index($0, "## " v " ") == 1 || index($0, "## Ultimate Mod Additions " v " ") == 1) found=1 } found' CHANGELOG.md)
+          [ -n "$CHANGELOG" ] || CHANGELOG="Ultimate Mod Additions $MOD_VERSION for Minecraft $MC."
+
+          tag="curseforge-neoforge-$MC-$MOD_VERSION"
+          if git rev-parse -q --verify "refs/tags/$tag" > /dev/null; then
+            echo "NeoForge $MC $MOD_VERSION is already on CurseForge (tag $tag), not uploading it again"
+            exit 0
+          fi
+
+          jar=$(ls build/libs/*.jar | grep -v -- '-sources' | head -n1)
+
+          metadata=$(jq -nc \
+            --arg changelog "$CHANGELOG" \
+            --arg type "$RELEASE_TYPE" \
+            --arg name "UltimateModAdditions-$MC-$MOD_VERSION-NeoForge" \
+            --arg mc "$MC" \
+            '{changelog: $changelog, changelogType: "markdown", releaseType: $type, displayName: $name,
+              gameVersionNames: [$mc, "NeoForge", "Client", "Server"]}')
+
+          echo "Uploading $jar to CurseForge as a $RELEASE_TYPE for NeoForge $MC"
+          curl -sS --fail-with-body -X POST \
+            "https://minecraft.curseforge.com/api/projects/$CURSEFORGE_PROJECT_ID/upload-file" \
+            -H "X-Api-Token: $CURSEFORGE_TOKEN" \
+            -F "metadata=$metadata" -F "file=@$jar"
+          echo
+          git tag "$tag"
+          git push origin "$tag"

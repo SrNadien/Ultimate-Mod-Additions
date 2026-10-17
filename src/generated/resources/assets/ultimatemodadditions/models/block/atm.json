@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/block",
+  "automatic_culling": false,
+  "flip_v": true,
+  "loader": "neoforge:obj",
+  "model": "ultimatemodadditions:models/block/atm.obj",
+  "shade_quads": true,
+  "textures": {
+    "particle": "ultimatemodadditions:block/atm/t0",
+    "t0": "ultimatemodadditions:block/atm/t0"
+  }
+}

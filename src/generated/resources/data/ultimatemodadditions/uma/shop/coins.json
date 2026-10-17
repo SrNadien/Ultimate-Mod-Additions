@@ -1,0 +1,142 @@
+{
+  "icon": "ultimatemodadditions:100_mangos",
+  "items": [
+    {
+      "buy": 0.05,
+      "item": {
+        "id": "ultimatemodadditions:5_centavos"
+      },
+      "sell": 0.05,
+      "taxed": false
+    },
+    {
+      "buy": 0.1,
+      "item": {
+        "id": "ultimatemodadditions:10_centavos"
+      },
+      "sell": 0.1,
+      "taxed": false
+    },
+    {
+      "buy": 0.25,
+      "item": {
+        "id": "ultimatemodadditions:25_centavos"
+      },
+      "sell": 0.25,
+      "taxed": false
+    },
+    {
+      "buy": 0.5,
+      "item": {
+        "id": "ultimatemodadditions:50_centavos"
+      },
+      "sell": 0.5,
+      "taxed": false
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "ultimatemodadditions:2_pe"
+      },
+      "sell": 2.0,
+      "taxed": false
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "ultimatemodadditions:5_pe"
+      },
+      "sell": 5.0,
+      "taxed": false
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "ultimatemodadditions:10_pe"
+      },
+      "sell": 10.0,
+      "taxed": false
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "ultimatemodadditions:2_mangos"
+      },
+      "sell": 2.0,
+      "taxed": false
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "ultimatemodadditions:5_mangos"
+      },
+      "sell": 5.0,
+      "taxed": false
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "ultimatemodadditions:10_mangos"
+      },
+      "sell": 10.0,
+      "taxed": false
+    },
+    {
+      "buy": 20.0,
+      "item": {
+        "id": "ultimatemodadditions:20_mangos"
+      },
+      "sell": 20.0,
+      "taxed": false
+    },
+    {
+      "buy": 50.0,
+      "item": {
+        "id": "ultimatemodadditions:50_mangos"
+      },
+      "sell": 50.0,
+      "taxed": false
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "id": "ultimatemodadditions:100_mangos"
+      },
+      "sell": 100.0,
+      "taxed": false
+    },
+    {
+      "buy": 1000.0,
+      "item": {
+        "id": "ultimatemodadditions:1_lucas"
+      },
+      "sell": 1000.0,
+      "taxed": false
+    },
+    {
+      "buy": 2000.0,
+      "item": {
+        "id": "ultimatemodadditions:2_lucas"
+      },
+      "sell": 2000.0,
+      "taxed": false
+    },
+    {
+      "buy": 10000.0,
+      "item": {
+        "id": "ultimatemodadditions:10_lucas"
+      },
+      "sell": 10000.0,
+      "taxed": false
+    },
+    {
+      "buy": 20000.0,
+      "item": {
+        "id": "ultimatemodadditions:20_lucas"
+      },
+      "sell": 20000.0,
+      "taxed": false
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.coins"
+}

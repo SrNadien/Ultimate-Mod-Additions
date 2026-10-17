@@ -1,0 +1,231 @@
+{
+  "icon": "minecraft:painting",
+  "items": [
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:torch"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 80.0,
+      "item": {
+        "id": "minecraft:lantern"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:soul_lantern"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 20.0,
+      "item": {
+        "id": "minecraft:flower_pot"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:painting"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 50.0,
+      "item": {
+        "id": "minecraft:item_frame"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:glow_item_frame"
+      },
+      "sell": 9.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:white_bed"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 35.0,
+      "item": {
+        "id": "minecraft:candle"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 20.0,
+      "item": {
+        "id": "minecraft:oak_sign"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "minecraft:ladder"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "id": "minecraft:jukebox"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 160.0,
+      "item": {
+        "id": "minecraft:note_block"
+      },
+      "sell": 16.0
+    },
+    {
+      "buy": 120.0,
+      "item": {
+        "id": "minecraft:lectern"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:barrel"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:chest"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:ender_chest"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:white_carpet"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:dandelion"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:poppy"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:blue_orchid"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:allium"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:azure_bluet"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:rose_bush"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:peony"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:sunflower"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:lily_of_the_valley"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:cornflower"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:oak_sapling"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:spruce_sapling"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:birch_sapling"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:fern"
+      },
+      "sell": 0.5
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.decoration",
+  "order": 7
+}

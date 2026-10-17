@@ -2,6 +2,7 @@ package nadiendev.ultimatemodadditions.registry;
 
 import com.mojang.serialization.Codec;
 import nadiendev.ultimatemodadditions.UMA;
+import nadiendev.ultimatemodadditions.currency.CardOwner;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,16 @@ public final class UMADataComponents {
             COMPONENTS.registerComponentType("difficulty", builder -> builder
                     .persistent(ResourceLocation.CODEC)
                     .networkSynchronized(ResourceLocation.STREAM_CODEC));
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> WALLET_BALANCE =
+            COMPONENTS.registerComponentType("wallet_balance", builder -> builder
+                    .persistent(Codec.STRING)
+                    .networkSynchronized(ByteBufCodecs.STRING_UTF8));
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<CardOwner>> CARD_OWNER =
+            COMPONENTS.registerComponentType("card_owner", builder -> builder
+                    .persistent(CardOwner.CODEC)
+                    .networkSynchronized(CardOwner.STREAM_CODEC));
 
     private UMADataComponents() {
     }

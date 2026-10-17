@@ -16,6 +16,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 boolean withKubeJs = project.findProperty("compat_kubejs").toString().toBoolean()
 boolean withDevMods = project.findProperty("dev_runtime_mods").toString().toBoolean()
+boolean withFtb = project.findProperty("compat_ftb").toString().toBoolean()
 
 neoForge {
     version = "${neoversion}"
@@ -29,6 +30,10 @@ neoForge {
         client {
             client()
             systemProperty 'forge.enabledGameTestNamespaces', "${modid}"
+            def quickWorld = project.findProperty('quick_world') ?: 'New World'
+            if (!quickWorld.toString().isBlank()) {
+                programArguments.addAll '--quickPlaySingleplayer', quickWorld.toString()
+            }
         }
 
         server {
@@ -62,6 +67,7 @@ sourceSets.main.resources {
 
 sourceSets.main.java {
     if (!withKubeJs) exclude 'nadiendev/ultimateminecraftadditions/compat/kubejs/**'
+    if (!withFtb) exclude 'nadiendev/ultimatemodadditions/compat/ftb/**'
 }
 
 repositories {
@@ -73,6 +79,20 @@ repositories {
     maven {
         name = 'Saps'
         url = 'https://maven.saps.dev/releases'
+    }
+    maven {
+        name = 'FTB'
+        url = 'https://maven.ftb.dev/releases'
+        content {
+            includeGroup 'dev.ftb.mods'
+        }
+    }
+    maven {
+        name = 'Architectury'
+        url = 'https://maven.architectury.dev'
+        content {
+            includeGroup 'dev.architectury'
+        }
     }
     maven {
         name = 'Modrinth'
@@ -93,9 +113,25 @@ dependencies {
         compileOnly("dev.latvian.mods:rhino:${rhino_version}") { transitive = false }
     }
 
+    if (withFtb) {
+        compileOnly("dev.ftb.mods:ftb-library-neoforge:${ftb_library_version}") { transitive = false }
+        compileOnly("dev.ftb.mods:ftb-teams-neoforge:${ftb_teams_version}") { transitive = false }
+        compileOnly("dev.ftb.mods:ftb-chunks-neoforge:${ftb_chunks_version}") { transitive = false }
+        compileOnly("dev.ftb.mods:ftb-quests-neoforge:${ftb_quests_version}") { transitive = false }
+        compileOnly("dev.architectury:architectury-neoforge:${architectury_version}") { transitive = false }
+    }
+
     if (withDevMods) {
         runtimeOnly("dev.latvian.mods:kubejs-neoforge:${kubejs_version}") { transitive = false }
         runtimeOnly("dev.latvian.mods:rhino:${rhino_version}") { transitive = false }
+    }
+
+    if (withDevMods && withFtb) {
+        runtimeOnly("dev.ftb.mods:ftb-library-neoforge:${ftb_library_version}") { transitive = false }
+        runtimeOnly("dev.ftb.mods:ftb-teams-neoforge:${ftb_teams_version}") { transitive = false }
+        runtimeOnly("dev.ftb.mods:ftb-chunks-neoforge:${ftb_chunks_version}") { transitive = false }
+        runtimeOnly("dev.ftb.mods:ftb-quests-neoforge:${ftb_quests_version}") { transitive = false }
+        runtimeOnly("dev.architectury:architectury-neoforge:${architectury_version}") { transitive = false }
     }
 }
 

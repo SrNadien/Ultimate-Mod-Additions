@@ -1,0 +1,20 @@
+{
+  "period": "monthly",
+  "rewards": [
+    {
+      "items": [
+        {
+          "item": "minecraft:netherite_ingot"
+        },
+        {
+          "count": 8,
+          "item": "minecraft:diamond"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ],
+      "money": 600.0
+    }
+  ]
+}

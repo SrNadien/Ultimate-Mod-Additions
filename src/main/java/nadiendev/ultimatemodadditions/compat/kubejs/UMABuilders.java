@@ -72,6 +72,94 @@ public final class UMABuilders {
         }
     }
 
+    private static JsonObject shopItem(String item, double buy, double sell) {
+        JsonObject entry = new JsonObject();
+        entry.addProperty("item", item);
+        entry.addProperty("buy", buy);
+        entry.addProperty("sell", sell);
+        return entry;
+    }
+
+    public static final class Daily extends Base {
+
+        private JsonObject current;
+
+        public Daily(String id) {
+            super(ScriptedEntries.Kind.DAILY, id);
+            json.addProperty("period", "daily");
+        }
+
+        public Daily period(String period) {
+            json.addProperty("period", period);
+            return this;
+        }
+
+        public Daily reward(double money) {
+            current = new JsonObject();
+            current.addProperty("money", money);
+            array("rewards").add(current);
+            return this;
+        }
+
+        public Daily item(String item, int count) {
+            if (current == null) {
+                reward(0.0D);
+            }
+            if (!current.has("items")) {
+                current.add("items", new JsonArray());
+            }
+            JsonObject entry = new JsonObject();
+            entry.addProperty("item", item);
+            entry.addProperty("count", count);
+            current.getAsJsonArray("items").add(entry);
+            return this;
+        }
+    }
+
+    public static final class ShopCategory extends Base {
+
+        public ShopCategory(String id) {
+            super(ScriptedEntries.Kind.SHOP_CATEGORY, id);
+        }
+
+        public ShopCategory name(String name) {
+            json.addProperty("name", name);
+            return this;
+        }
+
+        public ShopCategory icon(String item) {
+            json.addProperty("icon", item);
+            return this;
+        }
+
+        public ShopCategory order(int order) {
+            json.addProperty("order", order);
+            return this;
+        }
+
+        public ShopCategory item(String item, double buy, double sell) {
+            array("items").add(shopItem(item, buy, sell));
+            return this;
+        }
+    }
+
+    public static final class ShopItems extends Base {
+
+        public ShopItems(String id) {
+            super(ScriptedEntries.Kind.SHOP_ADDITION, id);
+        }
+
+        public ShopItems category(String category) {
+            json.addProperty("category", category);
+            return this;
+        }
+
+        public ShopItems item(String item, double buy, double sell) {
+            array("items").add(shopItem(item, buy, sell));
+            return this;
+        }
+    }
+
     public static final class LootBag extends Base {
 
         public LootBag(String id) {

@@ -8,8 +8,8 @@
   "replace_vanilla_drops": false,
   "experience_multiplier": 5.0,
   "coins": [
-    { "tier": "1000", "count": { "min": 3, "max": 8 }, "chance": 1.0 },
-    { "tier": "10000", "count": 1, "chance": 0.35 }
+    { "tier": "1_lucas", "count": { "min": 3, "max": 8 }, "chance": 1.0 },
+    { "tier": "10_lucas", "count": 1, "chance": 0.35 }
   ],
   "bags": [
     { "bag": "ultimatemodadditions:legendary", "chance": 1.0 },
