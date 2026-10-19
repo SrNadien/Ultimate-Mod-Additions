@@ -484,13 +484,13 @@ public final class UMAConfig {
 
             builder.push("shop");
             shopEnabled = builder
-                    .comment("Enable the shop screen. The exchange stand and the /shop command open the same one.")
+                    .comment("Enable the shop screen. The exchange stand and the /uma shop command open the same one.")
                     .define("enabled", true);
             shopPermissionLevel = builder
-                    .comment("Permission level needed to use /shop. 0 is everyone.")
+                    .comment("Permission level needed to use /uma shop. 0 is everyone.")
                     .defineInRange("permission_level", 0, 0, 4);
             shopRequireStallNearby = builder
-                    .comment("Only allow /shop within reach of an exchange stand.")
+                    .comment("Only allow /uma shop within reach of an exchange stand.")
                     .define("require_stall_nearby", false);
             shopStallRadius = builder
                     .comment("How close an exchange stand has to be, in blocks.")
@@ -539,7 +539,7 @@ public final class UMAConfig {
 
             builder.push("daily");
             dailyEnabled = builder
-                    .comment("Enable the daily, weekly and monthly rewards and the /daily command.")
+                    .comment("Enable the daily, weekly and monthly rewards and the /uma daily command.")
                     .define("enabled", true);
             dailyResetHour = builder
                     .comment("Hour of the real day (server time) at which the daily rewards reset.")
@@ -576,7 +576,7 @@ public final class UMAConfig {
 
             builder.push("jobs");
             jobsEnabled = builder
-                    .comment("Enable jobs and the /jobs command.")
+                    .comment("Enable jobs and the /uma jobs command.")
                     .define("enabled", true);
             jobsMaxPerPlayer = builder
                     .comment("How many jobs one player can hold at once.")
@@ -606,7 +606,7 @@ public final class UMAConfig {
                     .comment("Most mangos one job can pay a player per real day. 0 keeps it unlimited.")
                     .defineInRange("daily_income_limit_mangos", 0.0D, 0.0D, 1.0E12D);
             jobsTopSize = builder
-                    .comment("How many players /jobs top lists.")
+                    .comment("How many players /uma jobs top lists.")
                     .defineInRange("top_size", 10, 3, 50);
             jobsExploreLimit = builder
                     .comment("Most chunks one player can be paid for exploring.")

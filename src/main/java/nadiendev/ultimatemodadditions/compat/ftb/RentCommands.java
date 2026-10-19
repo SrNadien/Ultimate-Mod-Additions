@@ -16,7 +16,6 @@ import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
 import java.math.BigInteger;
 
@@ -30,11 +29,7 @@ public final class RentCommands {
     private RentCommands() {
     }
 
-    public static void onRegister(RegisterCommandsEvent event) {
-        event.getDispatcher().register(root());
-    }
-
-    private static LiteralArgumentBuilder<CommandSourceStack> root() {
+    public static LiteralArgumentBuilder<CommandSourceStack> root() {
         return Commands.literal("rent")
                 .executes(RentCommands::open)
                 .then(Commands.literal("status").executes(RentCommands::status))

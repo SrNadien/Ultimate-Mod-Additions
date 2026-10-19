@@ -22,7 +22,7 @@ Seven coins and ten bills with the real Argentine artwork. Coins: **5, 10, 25 an
 
 No conversion recipes. Right-click a coin or bill and it sweeps every loose piece of cash in your inventory into the fewest possible; sneak + right-click breaks one down into smaller change. The **Exchange Stand** takes any combination and gives correct change automatically, and shows "estás re seco xD" when you have nothing.
 
-The **wallet** (leather and a gold ingot) keeps a balance of up to 100 quintillion that counts toward everything you buy. The **ATM** (iron, glass and redstone) takes your personal **Visa debit card** and manages your bank account, which the exchange stand can charge too; `/money` checks, pays and, for operators, gives money to an account. Mobs drop coins and bills anywhere, from 70 % for 5 centavos down to 1 % for lucas, loot chests of any mod (Lootr included) can hide one at 0.01 %, and **El Tío To Flashero**, a villager who works at the exchange stand, swaps coins for bills. Every chance, count, slot and trade is in the config.
+The **wallet** (leather and a gold ingot) keeps a balance of up to 100 quintillion that counts toward everything you buy. The **ATM** (iron, glass and redstone) takes your personal **Visa debit card** and manages your bank account, which the exchange stand can charge too; `/uma money` checks, pays and, for operators, gives money to an account. Mobs drop coins and bills anywhere, from 70 % for 5 centavos down to 1 % for lucas, loot chests of any mod (Lootr included) can hide one at 0.01 %, and **El Tío To Flashero**, a villager who works at the exchange stand, swaps coins for bills. Every chance, count, slot and trade is in the config.
 
 ### Loot bags
 
@@ -41,10 +41,11 @@ Only common and uncommon can be bought at the Exchange Stand. The Coliseum Key c
 
 And on their own:
 
-*   **`/money balance | pay | give | take | set`** — bank accounts. Operators can give, take or set money on any account.
-*   **`/shop`** — opens the exchange stand from anywhere (can be limited to the stand's surroundings in the config).
-*   **`/jobs`** — list, join and leave jobs, with clickable buttons. Jobs pay for breaking blocks, killing mobs and fishing, level up and pay more. Each one is a JSON file in `uma/jobs/`.
-*   **`/rent`** — with FTB Chunks and FTB Teams: your team's claim rent, `status`, `pay`, and for operators `extend` and `reset`.
+*   **`/uma help [section]`** — says what each command is for; it only lists the ones you can use.
+*   **`/uma money balance | pay | give | take | set`** — bank accounts. Operators can give, take or set money on any account.
+*   **`/uma shop`** — opens the exchange stand from anywhere (can be limited to the stand's surroundings in the config).
+*   **`/uma jobs`** — list, join and leave jobs, with clickable buttons. Jobs pay for breaking blocks, killing mobs and fishing, level up and pay more. Each one is a JSON file in `uma/jobs/`.
+*   **`/uma rent`** — with FTB Chunks and FTB Teams: your team's claim rent, `status`, `pay`, and for operators `extend` and `reset`.
 
 ***
 

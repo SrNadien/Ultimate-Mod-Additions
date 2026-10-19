@@ -17,7 +17,7 @@ public final class DailyPermissions {
     public static final PermissionNode<Boolean> CONFIGURE = new PermissionNode<>("uma", "daily.config",
             PermissionTypes.BOOLEAN, (player, uuid, context) -> player != null && player.hasPermissions(2))
             .setInformation(Component.literal("Daily rewards: configure"),
-                    Component.literal("Lets a player change the daily rewards and their settings with /daily config."));
+                    Component.literal("Lets a player change the daily rewards and their settings with /uma daily config."));
 
     private DailyPermissions() {
     }

@@ -18,7 +18,6 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
 import java.math.BigInteger;
 import java.util.UUID;
@@ -41,11 +40,7 @@ public final class TeamBankCommands {
     private TeamBankCommands() {
     }
 
-    public static void onRegister(RegisterCommandsEvent event) {
-        event.getDispatcher().register(root());
-    }
-
-    private static LiteralArgumentBuilder<CommandSourceStack> root() {
+    public static LiteralArgumentBuilder<CommandSourceStack> root() {
         return Commands.literal("money")
                 .then(Commands.literal("pay")
                         .then(Commands.literal("team")

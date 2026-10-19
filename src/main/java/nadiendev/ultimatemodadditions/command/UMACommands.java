@@ -74,20 +74,17 @@ public final class UMACommands {
     @SubscribeEvent
     public static void onRegister(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-        LiteralCommandNode<CommandSourceStack> node = dispatcher.register(root());
-        dispatcher.register(Commands.literal("ums").redirect(node));
+        LiteralArgumentBuilder<CommandSourceStack> root = root();
+        root.then(UMAHelp.command());
         for (LiteralArgumentBuilder<CommandSourceStack> builder : List.of(moneyCommand(), shopCommand(), jobsCommand(), dailyCommand())) {
-            LiteralCommandNode<CommandSourceStack> registered = dispatcher.register(builder);
-            node.addChild(Commands.literal(registered.getLiteral()).redirect(registered).build());
-            if (registered.getLiteral().equals("jobs")) {
-                dispatcher.register(Commands.literal("job").requires(registered.getRequirement())
-                        .executes(UMACommands::jobsOpen).redirect(registered));
-            }
+            root.then(builder);
         }
         if (ModIds.loaded(ModIds.FTB_CHUNKS)) {
-            RentCommands.onRegister(event);
-            TeamBankCommands.onRegister(event);
+            root.then(RentCommands.root());
+            root.then(TeamBankCommands.root());
         }
+        LiteralCommandNode<CommandSourceStack> node = dispatcher.register(root);
+        dispatcher.register(Commands.literal("ums").redirect(node));
     }
 
     private static LiteralArgumentBuilder<CommandSourceStack> root() {
@@ -761,10 +758,10 @@ public final class UMACommands {
                 line.append(Component.translatable("command.ultimatemodadditions.job_level", progress.level(),
                         Math.round(progress.xp()), Math.round(job.xpNeeded(progress.level())))
                         .withStyle(ChatFormatting.GRAY));
-                line.append(button("command.ultimatemodadditions.job_leave_button", "/jobs leave " + id.getPath(),
+                line.append(button("command.ultimatemodadditions.job_leave_button", "/uma jobs leave " + id.getPath(),
                         ChatFormatting.RED));
             } else {
-                line.append(button("command.ultimatemodadditions.job_join_button", "/jobs join " + id.getPath(),
+                line.append(button("command.ultimatemodadditions.job_join_button", "/uma jobs join " + id.getPath(),
                         ChatFormatting.GREEN));
             }
             if (!job.description().isEmpty()) {

@@ -26,7 +26,7 @@ public final class ShopPermissions {
     public static final PermissionNode<Boolean> RESET = new PermissionNode<>("uma", "shop.reset", PermissionTypes.BOOLEAN,
             (player, uuid, context) -> player != null && player.hasPermissions(2))
             .setInformation(Component.literal("Shop: restore"),
-                    Component.literal("Lets a player undo every shop edit with /shop reset."));
+                    Component.literal("Lets a player undo every shop edit with /uma shop reset."));
 
     public static final PermissionNode<Boolean> REMOVE = new PermissionNode<>("uma", "shop.remove", PermissionTypes.BOOLEAN,
             (player, uuid, context) -> player != null && player.hasPermissions(2))
