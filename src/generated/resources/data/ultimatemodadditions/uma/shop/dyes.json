@@ -1,0 +1,91 @@
+{
+  "icon": "minecraft:red_dye",
+  "items": [
+    {
+      "buy": 20.0,
+      "item": {
+        "id": "minecraft:ink_sac"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 60.0,
+      "item": {
+        "id": "minecraft:glow_ink_sac"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:dandelion"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:poppy"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:blue_orchid"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:allium"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:azure_bluet"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:rose_bush"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:peony"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:sunflower"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:lily_of_the_valley"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:cornflower"
+      },
+      "sell": 1.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.dyes",
+  "order": 16
+}

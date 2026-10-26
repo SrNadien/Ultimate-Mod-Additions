@@ -1,6 +1,7 @@
 package nadiendev.ultimatemodadditions.network;
 
 import nadiendev.ultimatemodadditions.UMA;
+import nadiendev.ultimatemodadditions.ban.ClientBans;
 import nadiendev.ultimatemodadditions.client.ClientHooks;
 import nadiendev.ultimatemodadditions.config.UMAConfig;
 import nadiendev.ultimatemodadditions.currency.BankService;
@@ -16,6 +17,7 @@ import nadiendev.ultimatemodadditions.network.payload.DailyClaimPayload;
 import nadiendev.ultimatemodadditions.network.payload.DailyConfigActionPayload;
 import nadiendev.ultimatemodadditions.network.payload.DailyConfigPayload;
 import nadiendev.ultimatemodadditions.network.payload.DailySyncPayload;
+import nadiendev.ultimatemodadditions.network.payload.BanSyncPayload;
 import nadiendev.ultimatemodadditions.network.payload.BuyOfferPayload;
 import nadiendev.ultimatemodadditions.network.payload.MoneyActionPayload;
 import nadiendev.ultimatemodadditions.network.payload.DataSyncPayload;
@@ -64,6 +66,7 @@ public final class UMANetwork {
                     UMANetwork::handleDailyConfigAction);
             registrar.playToClient(ShopSyncPayload.TYPE, ShopSyncPayload.STREAM_CODEC, UMANetwork::handleShopSync);
             registrar.playToServer(ShopActionPayload.TYPE, ShopActionPayload.STREAM_CODEC, UMANetwork::handleShopAction);
+            registrar.playToClient(BanSyncPayload.TYPE, BanSyncPayload.STREAM_CODEC, UMANetwork::handleBanSync);
         }
     }
 
@@ -111,6 +114,14 @@ public final class UMANetwork {
         context.enqueueWork(() -> {
             if (context.player() instanceof ServerPlayer serverPlayer) {
                 DailyConfigService.handle(serverPlayer, payload);
+            }
+        });
+    }
+
+    private static void handleBanSync(BanSyncPayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (FMLEnvironment.dist.isClient()) {
+                ClientBans.accept(payload);
             }
         });
     }

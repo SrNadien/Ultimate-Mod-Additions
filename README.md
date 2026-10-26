@@ -46,6 +46,9 @@ And on their own:
 *   **`/uma shop`** — opens the exchange stand from anywhere (can be limited to the stand's surroundings in the config).
 *   **`/uma jobs`** — list, join and leave jobs, with clickable buttons. Jobs pay for breaking blocks, killing mobs and fishing, level up and pay more. Each one is a JSON file in `uma/jobs/`.
 *   **`/uma rent`** — with FTB Chunks and FTB Teams: your team's claim rent, `status`, `pay`, and for operators `extend` and `reset`.
+*   **`/uma ban`** — operators ban items by action and dimension (`add`, `in`, `disable`, `remove`, `list`, `check`, `log`, `watch`, `clear`, `purge`, `reload`). Configured in `bans.yml`.
+*   **`/uma event`** — turn the charged bee, periodic boss, NPC missions and welcome events on and off, or trigger them.
+*   `/shop` and `/jobs` also work without `/uma` (set in the config).
 
 ***
 

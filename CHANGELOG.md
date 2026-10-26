@@ -1,5 +1,31 @@
 # Changelog
 
+## Ultimate Mod Additions 1.0.5 — 2026-10-26
+
+### Additions
+
+- **Item bans.** Ban items by action (craft, smelt, smith, pickup, drop, equip, place, break, use, click, interact, consume, attack,
+  entity interact, entity drop, hold, swap, delete, rename, armor stand), per dimension, with blacklist and whitelist, custom
+  items (name, lore, durability, enchantments), messages with color codes, cooldown, game mode, bypass level and commands. Set up in
+  `config/ultimatemodadditions/bans.yml` (YAML or JSON5), from KubeJS (`UMA.ban`, `UMA.config`) or in game with `/uma ban add | in |
+  disable | remove | list | check | log | watch | clear | purge | reload`. Changes apply at once: recipes, tooltips and JEI search
+  aliases update without `/reload`. Operators are not affected by default (`ops_bypass`) and the permissions `uma.ban.bypass` and
+  `uma.ban.bypass.<action>` skip it too.
+- **Events.** Charged bee, periodic boss (x5, x10, x20 with seven abilities), NPCs with delivery missions, starting money and quest
+  notice, each with its own JSON5 file, `/uma event` and the same options from KubeJS.
+- **Shop search.** A magnifier button opens a search across every category.
+
+### Changes
+
+- **Shop sorted like EconomyShopGUI:** Stone, Wood, Natural, Decorative blocks, Farming, Food, Resources, Mob drops, Weapons, Armor,
+  Tools, Redstone, Workstations, Storage, Decoration, Dyes, Potions, Music and Miscellaneous. Buy prices are multiplied by
+  `[shop] price_multiplier` (10 by default). Items added automatically must have a recipe, cannot be creative only and ignore what
+  KubeJS adds. The mod's creative tab now comes before the redstone tab.
+- **Shop deliveries removed:** what does not fit in the inventory drops at the player's feet.
+- **/shop and /jobs** also work on their own (`[commands] root_shortcuts`).
+- **Claim rent on servers:** one failing team no longer stops the others, evictions are checked and the network payloads are optional.
+- **New command `/uma help`.**
+
 ## Ultimate Mod Additions 1.0.4 — 2026-10-19
 
 ### Changes

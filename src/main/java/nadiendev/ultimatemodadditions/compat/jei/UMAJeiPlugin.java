@@ -1,20 +1,27 @@
 package nadiendev.ultimatemodadditions.compat.jei;
 
 import mezz.jei.api.IModPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.registration.IIngredientAliasRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.runtime.IJeiRuntime;
 import nadiendev.ultimatemodadditions.UMA;
+import nadiendev.ultimatemodadditions.ban.BanService;
+import nadiendev.ultimatemodadditions.ban.ClientBans;
 import nadiendev.ultimatemodadditions.network.SyncedData;
 import nadiendev.ultimatemodadditions.registry.UMABlocks;
 import nadiendev.ultimatemodadditions.registry.UMAItems;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @JeiPlugin
 public class UMAJeiPlugin implements IModPlugin {
@@ -52,6 +59,28 @@ public class UMAJeiPlugin implements IModPlugin {
     @Override
     public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
         runtime = jeiRuntime;
+    }
+
+    @Override
+    public void registerIngredientAliases(IIngredientAliasRegistration registration) {
+        Map<Item, Boolean> listed = new HashMap<>();
+        if (ClientBans.hasData()) {
+            ClientBans.all().forEach((item, entry) -> listed.put(item, entry.disabled()));
+        } else {
+            listed.putAll(BanService.listedItems());
+        }
+        List<ItemStack> banned = new ArrayList<>();
+        List<ItemStack> disabled = new ArrayList<>();
+        listed.forEach((item, off) -> (off ? disabled : banned).add(new ItemStack(item)));
+        UMA.LOGGER.info("JEI search aliases for banned items: {} banned, {} disabled", banned.size(), disabled.size());
+        if (!banned.isEmpty()) {
+            registration.addAliases(VanillaTypes.ITEM_STACK, banned,
+                    List.of("baneado", "baneados", "ban", "banned", "prohibido", "tuto nene"));
+        }
+        if (!disabled.isEmpty()) {
+            registration.addAliases(VanillaTypes.ITEM_STACK, disabled,
+                    List.of("deshabilitado", "deshabilita", "desactivado", "disabled"));
+        }
     }
 
     @Override

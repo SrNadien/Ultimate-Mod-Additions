@@ -1,0 +1,112 @@
+{
+  "icon": "minecraft:iron_chestplate",
+  "items": [
+    {
+      "buy": 8000.0,
+      "item": {
+        "id": "minecraft:netherite_upgrade_smithing_template"
+      },
+      "sell": 800.0
+    },
+    {
+      "buy": 500.0,
+      "item": {
+        "id": "minecraft:iron_helmet"
+      },
+      "sell": 50.0
+    },
+    {
+      "buy": 800.0,
+      "item": {
+        "id": "minecraft:iron_chestplate"
+      },
+      "sell": 80.0
+    },
+    {
+      "buy": 700.0,
+      "item": {
+        "id": "minecraft:iron_leggings"
+      },
+      "sell": 70.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "id": "minecraft:iron_boots"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 6000.0,
+      "item": {
+        "id": "minecraft:diamond_helmet"
+      },
+      "sell": 600.0
+    },
+    {
+      "buy": 9600.0,
+      "item": {
+        "id": "minecraft:diamond_chestplate"
+      },
+      "sell": 960.0
+    },
+    {
+      "buy": 8400.0,
+      "item": {
+        "id": "minecraft:diamond_leggings"
+      },
+      "sell": 840.0
+    },
+    {
+      "buy": 4800.0,
+      "item": {
+        "id": "minecraft:diamond_boots"
+      },
+      "sell": 480.0
+    },
+    {
+      "buy": 1100.0,
+      "item": {
+        "id": "minecraft:golden_helmet"
+      },
+      "sell": 110.0
+    },
+    {
+      "buy": 900.0,
+      "item": {
+        "id": "minecraft:chainmail_chestplate"
+      },
+      "sell": 90.0
+    },
+    {
+      "buy": 24000.0,
+      "item": {
+        "id": "minecraft:netherite_helmet"
+      },
+      "sell": 2400.0
+    },
+    {
+      "buy": 27600.0,
+      "item": {
+        "id": "minecraft:netherite_chestplate"
+      },
+      "sell": 2760.0
+    },
+    {
+      "buy": 26400.0,
+      "item": {
+        "id": "minecraft:netherite_leggings"
+      },
+      "sell": 2640.0
+    },
+    {
+      "buy": 22800.0,
+      "item": {
+        "id": "minecraft:netherite_boots"
+      },
+      "sell": 2280.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.armor",
+  "order": 10
+}

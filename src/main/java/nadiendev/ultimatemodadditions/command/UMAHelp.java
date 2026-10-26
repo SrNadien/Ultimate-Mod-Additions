@@ -38,7 +38,8 @@ public final class UMAHelp {
             new Section("daily", ANYONE),
             new Section("rent", FTB),
             new Section("coliseum", ANYONE),
-            new Section("tools", ANYONE));
+            new Section("tools", ANYONE),
+            new Section("admin", OPERATOR));
 
     private static final List<Entry> ENTRIES = List.of(
             new Entry("money", "money_balance", "/uma money balance", ANYONE),
@@ -77,7 +78,21 @@ public final class UMAHelp {
             new Entry("tools", "ping", "/uma ping [players]", ANYONE),
             new Entry("tools", "spawners_list", "/uma spawners list", ANYONE),
             new Entry("tools", "spawners_edit", "/uma spawners place|clear", OPERATOR),
-            new Entry("tools", "bag", "/uma bag <players> <bag> [count]", OPERATOR));
+            new Entry("tools", "bag", "/uma bag <players> <bag> [count]", OPERATOR),
+            new Entry("admin", "ban_add", "/uma ban add <actions> [item] [message]", OPERATOR),
+            new Entry("admin", "ban_in", "/uma ban in <dimension> add <actions> [item] [message]", OPERATOR),
+            new Entry("admin", "ban_disable", "/uma ban disable [item] [message]", OPERATOR),
+            new Entry("admin", "ban_remove", "/uma ban remove <item>", OPERATOR),
+            new Entry("admin", "ban_clear", "/uma ban clear", OPERATOR),
+            new Entry("admin", "ban_purge", "/uma ban purge [player]", OPERATOR),
+            new Entry("admin", "ban_list", "/uma ban list [page]", OPERATOR),
+            new Entry("admin", "ban_check", "/uma ban check [item]", OPERATOR),
+            new Entry("admin", "ban_log", "/uma ban log [player]", OPERATOR),
+            new Entry("admin", "ban_watch", "/uma ban watch", OPERATOR),
+            new Entry("admin", "ban_reload", "/uma ban reload", OPERATOR),
+            new Entry("admin", "event_list", "/uma event list [active]", OPERATOR),
+            new Entry("admin", "event_status", "/uma event <event> status [true|false]", OPERATOR),
+            new Entry("admin", "event_spawn", "/uma event bee|boss|npc_missions spawn [player]", OPERATOR));
 
     private UMAHelp() {
     }

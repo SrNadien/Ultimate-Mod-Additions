@@ -195,7 +195,11 @@ public final class RentService {
             if (team == null || (UMAConfig.COMMON.rentSkipServerTeams.get() && team.isServerTeam())) {
                 continue;
             }
-            processTeam(server, team, entry.getValue().size());
+            try {
+                processTeam(server, team, entry.getValue().size());
+            } catch (RuntimeException exception) {
+                UMA.LOGGER.error("Claim rent check failed for team {}", team.getId(), exception);
+            }
         }
     }
 
@@ -269,6 +273,10 @@ public final class RentService {
         long overdue = rent.getLong(OVERDUE_SINCE);
         if (now - overdue >= grace) {
             int removed = unclaimAll(server, team);
+            if (removed == 0) {
+                UMA.LOGGER.warn("Could not remove the claims of team {}; trying again on the next check", team.getId());
+                return;
+            }
             reset(team);
             state(team).putBoolean(EVICTED, true);
             team.markDirty();

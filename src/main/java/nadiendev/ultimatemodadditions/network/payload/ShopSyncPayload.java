@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public record ShopSyncPayload(boolean open, boolean stand, boolean tiendita, boolean reload, boolean canAdd, boolean canRemove, String balance,
-                              int deliveries, double commission, List<Entry> categories)
+                              double commission, List<Entry> categories)
         implements CustomPacketPayload {
 
     public record Entry(ResourceLocation id, ShopCategory category) {
@@ -37,7 +37,6 @@ public record ShopSyncPayload(boolean open, boolean stand, boolean tiendita, boo
         buffer.writeBoolean(payload.canAdd);
         buffer.writeBoolean(payload.canRemove);
         buffer.writeUtf(payload.balance);
-        buffer.writeVarInt(payload.deliveries);
         buffer.writeDouble(payload.commission);
         if (!payload.reload && !payload.open) {
             return;
@@ -67,7 +66,6 @@ public record ShopSyncPayload(boolean open, boolean stand, boolean tiendita, boo
         boolean canAdd = buffer.readBoolean();
         boolean canRemove = buffer.readBoolean();
         String balance = buffer.readUtf();
-        int deliveries = buffer.readVarInt();
         double commission = buffer.readDouble();
         List<Entry> categories = new ArrayList<>();
         if (reload || open) {
@@ -86,7 +84,7 @@ public record ShopSyncPayload(boolean open, boolean stand, boolean tiendita, boo
                 categories.add(new Entry(id, new ShopCategory(name, icon, order, items)));
             }
         }
-        return new ShopSyncPayload(open, stand, tiendita, reload, canAdd, canRemove, balance, deliveries, commission, categories);
+        return new ShopSyncPayload(open, stand, tiendita, reload, canAdd, canRemove, balance, commission, categories);
     }
 
     @Override

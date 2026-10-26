@@ -12,7 +12,6 @@ public record ShopActionPayload(Action action, ResourceLocation category, int in
     public enum Action {
         BUY,
         SELL,
-        CLAIM,
         ADD_ITEM,
         EDIT_PRICE,
         REMOVE_ITEM,
@@ -29,10 +28,6 @@ public record ShopActionPayload(Action action, ResourceLocation category, int in
 
     public static ShopActionPayload trade(Action action, ResourceLocation category, int index, int amount) {
         return new ShopActionPayload(action, category, index, amount, "", 0.0D, 0.0D);
-    }
-
-    public static ShopActionPayload claim() {
-        return new ShopActionPayload(Action.CLAIM, NONE, 0, 1, "", 0.0D, 0.0D);
     }
 
     public static ShopActionPayload edit(Action action, ResourceLocation category, int index, String text,

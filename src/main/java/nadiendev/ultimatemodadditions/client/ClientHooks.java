@@ -21,7 +21,7 @@ public final class ClientHooks {
     private static RentSyncPayload rent;
     private static DailyConfigPayload dailyConfig;
     private static DailySyncPayload daily = new DailySyncPayload(false, 0, List.of());
-    private static ShopSyncPayload shop = new ShopSyncPayload(false, false, false, false, false, false, "0", 0, 0.0D, List.of());
+    private static ShopSyncPayload shop = new ShopSyncPayload(false, false, false, false, false, false, "0", 0.0D, List.of());
 
     private ClientHooks() {
     }
@@ -67,7 +67,7 @@ public final class ClientHooks {
         boolean keepCategories = !payload.open() && !payload.reload();
         shop = keepCategories
                 ? new ShopSyncPayload(false, false, false, false, payload.canAdd(), payload.canRemove(), payload.balance(),
-                payload.deliveries(), payload.commission(), shop.categories())
+                payload.commission(), shop.categories())
                 : payload;
         if (payload.open()) {
             minecraft.setScreen(payload.stand() ? new StandScreen(payload.tiendita()) : new ShopScreen());

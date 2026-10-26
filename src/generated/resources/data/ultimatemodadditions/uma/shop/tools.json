@@ -1,0 +1,84 @@
+{
+  "icon": "minecraft:iron_pickaxe",
+  "items": [
+    {
+      "buy": 380.0,
+      "item": {
+        "id": "minecraft:iron_axe"
+      },
+      "sell": 38.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "id": "minecraft:iron_pickaxe"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:iron_shovel"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 250.0,
+      "item": {
+        "id": "minecraft:iron_hoe"
+      },
+      "sell": 25.0
+    },
+    {
+      "buy": 3800.0,
+      "item": {
+        "id": "minecraft:diamond_pickaxe"
+      },
+      "sell": 380.0
+    },
+    {
+      "buy": 3800.0,
+      "item": {
+        "id": "minecraft:diamond_axe"
+      },
+      "sell": 380.0
+    },
+    {
+      "buy": 1400.0,
+      "item": {
+        "id": "minecraft:diamond_shovel"
+      },
+      "sell": 140.0
+    },
+    {
+      "buy": 21800.0,
+      "item": {
+        "id": "minecraft:netherite_pickaxe"
+      },
+      "sell": 2180.0
+    },
+    {
+      "buy": 21800.0,
+      "item": {
+        "id": "minecraft:netherite_axe"
+      },
+      "sell": 2180.0
+    },
+    {
+      "buy": 19400.0,
+      "item": {
+        "id": "minecraft:netherite_shovel"
+      },
+      "sell": 1940.0
+    },
+    {
+      "buy": 20400.0,
+      "item": {
+        "id": "minecraft:netherite_hoe"
+      },
+      "sell": 2040.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.tools",
+  "order": 11
+}

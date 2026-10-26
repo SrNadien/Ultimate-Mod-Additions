@@ -1,11 +1,21 @@
-// 1.21.1	2026-10-19T19:26:42.399378	Shop zones
-edc6c69cba89c7a0c879bcf6ddfca09123b55077 data/ultimatemodadditions/uma/shop/basics.json
-535ceb6573fea7d473bef40567abc4bad6dd5559 data/ultimatemodadditions/uma/shop/blocks.json
+// 1.21.1	2026-10-26T17:59:21.3771811	Shop zones
+78cc58220f4e96e5422f005512cf0876c5098af7 data/ultimatemodadditions/uma/shop/armor.json
 148e43d66afb46fd4d2361bf6028ef6acd750bb6 data/ultimatemodadditions/uma/shop/coins.json
-fc0f145eff7a2d3777bd4bfff5cfab12a6bb404f data/ultimatemodadditions/uma/shop/combat.json
-f43b77ab643dcafc28b6e3342c4a55412d62de6d data/ultimatemodadditions/uma/shop/decoration.json
-dd1dc173c288b53c3ee59397d2e96d39b7289122 data/ultimatemodadditions/uma/shop/food.json
-b8a9521d50e5d373a152216af54e7236b5167f37 data/ultimatemodadditions/uma/shop/materials.json
-bd44072fa5f4e745480066f60676612d97752035 data/ultimatemodadditions/uma/shop/ores.json
-7002401d15570dcdf5b2f54538ff3c52c9559142 data/ultimatemodadditions/uma/shop/technology.json
-ebc4ad7e793ee47251f95176db1ce27be20affa1 data/ultimatemodadditions/uma/shop/workstations.json
+8cea1a4afbdac7bfdc629ebb442a2364085f225c data/ultimatemodadditions/uma/shop/crops.json
+5df3955256699bbe1cd9119ee05a9145786be7ee data/ultimatemodadditions/uma/shop/decoration.json
+b2f8fb2e4c9fab9f644fad98350d583b983bab72 data/ultimatemodadditions/uma/shop/decorative_blocks.json
+7f71576a173196a20eef951422ff54edc8218382 data/ultimatemodadditions/uma/shop/dyes.json
+4b5673405ce448048fe6a053035ea34883dbe6c7 data/ultimatemodadditions/uma/shop/food.json
+7e6bb970ca517af008f15791002abecf9d25ff28 data/ultimatemodadditions/uma/shop/misc.json
+ec8854796a5328ac016f1ff8a4dbb02a9aabb7df data/ultimatemodadditions/uma/shop/mob_drops.json
+2e52a80688258291e249cf7d749d3012b91c4568 data/ultimatemodadditions/uma/shop/music.json
+94bce010b8c0e32396bcb37d8937c163ba800150 data/ultimatemodadditions/uma/shop/natural.json
+66c57fae212331724b1292eee613b1be7e5de0a1 data/ultimatemodadditions/uma/shop/potions.json
+84a042475c185d874a1d86d0ad0ef6e2c20f4b5c data/ultimatemodadditions/uma/shop/redstone.json
+48e48c5362e90354ba53763ad698ca19896d04ae data/ultimatemodadditions/uma/shop/resources.json
+892b793a7971ecbaa423b46ef0e76c38cafa2330 data/ultimatemodadditions/uma/shop/stone.json
+ce2783be3328ea5bb40cdfe1c72996bff3d12716 data/ultimatemodadditions/uma/shop/storage.json
+79105c355193e4cbe6ac34135d2a85e5e42492a0 data/ultimatemodadditions/uma/shop/tools.json
+235c578fba2c7641485f40a654608b30fce02eed data/ultimatemodadditions/uma/shop/weapons.json
+a038cf7d4889116089fa37b0e9e00ab509943e3b data/ultimatemodadditions/uma/shop/wood.json
+39ebcea7839ae94afb383be6ab9785b4accca9b3 data/ultimatemodadditions/uma/shop/workstations.json

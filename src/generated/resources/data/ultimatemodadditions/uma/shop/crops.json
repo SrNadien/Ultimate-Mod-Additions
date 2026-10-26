@@ -1,0 +1,154 @@
+{
+  "icon": "minecraft:wheat",
+  "items": [
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:sugar_cane"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:cactus"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:bamboo"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:kelp"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:wheat_seeds"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:pumpkin_seeds"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:melon_seeds"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:beetroot_seeds"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 70.0,
+      "item": {
+        "id": "minecraft:hay_block"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:carrot"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "minecraft:potato"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "minecraft:beetroot"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:sweet_berries"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "minecraft:glow_berries"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:egg"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:wheat"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:sugar"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 10.0,
+      "item": {
+        "id": "minecraft:cocoa_beans"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:bone_meal"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 25.0,
+      "item": {
+        "id": "minecraft:nether_wart"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 30.0,
+      "item": {
+        "id": "minecraft:honeycomb"
+      },
+      "sell": 3.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.crops",
+  "order": 5
+}

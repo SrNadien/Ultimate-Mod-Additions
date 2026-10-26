@@ -1,0 +1,105 @@
+{
+  "icon": "minecraft:oak_planks",
+  "items": [
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:oak_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:spruce_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:birch_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:jungle_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:acacia_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 7.0,
+      "item": {
+        "id": "minecraft:dark_oak_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:cherry_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:mangrove_log"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:oak_planks"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:spruce_planks"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:birch_planks"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:jungle_planks"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:acacia_planks"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:dark_oak_planks"
+      },
+      "sell": 0.5
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.wood",
+  "order": 2
+}

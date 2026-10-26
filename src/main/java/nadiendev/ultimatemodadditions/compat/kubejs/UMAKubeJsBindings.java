@@ -5,6 +5,7 @@ import com.google.gson.JsonParser;
 import dev.latvian.mods.kubejs.util.JsonUtils;
 import dev.latvian.mods.rhino.Context;
 import nadiendev.ultimatemodadditions.UMA;
+import nadiendev.ultimatemodadditions.config.ScriptedConfigs;
 import dev.latvian.mods.kubejs.script.ScriptType;
 import net.minecraft.resources.ResourceLocation;
 
@@ -21,6 +22,25 @@ public class UMAKubeJsBindings {
             UMA.LOGGER.warn("UMA.{} se llamo desde {} scripts. Los datos de UMA solo sobreviven en "
                     + "server_scripts: esta entrada se va a descartar al cargar el mundo.", what, type);
         }
+    }
+
+    public void config(Context cx, String system, Object json) {
+        checkScope("config");
+        JsonElement element = json instanceof String text ? JsonParser.parseString(text) : JsonUtils.of(cx, json);
+        if (element == null || !element.isJsonObject()) {
+            UMA.LOGGER.error("UMA.config('{}') needs an object", system);
+            return;
+        }
+        ScriptedConfigs.merge(system, element.getAsJsonObject());
+    }
+
+    public void ban(String mode, String item) {
+        ban(mode, item, "");
+    }
+
+    public void ban(String mode, String item, String message) {
+        checkScope("ban");
+        ScriptedConfigs.addBan(mode, message == null || message.isEmpty() ? item : item + "|" + message);
     }
 
     public UMABuilders.Difficulty difficulty(String id) {

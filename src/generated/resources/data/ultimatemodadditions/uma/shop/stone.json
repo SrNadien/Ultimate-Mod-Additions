@@ -1,0 +1,105 @@
+{
+  "icon": "minecraft:stone_bricks",
+  "items": [
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:cobblestone"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:stone"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 6.0,
+      "item": {
+        "id": "minecraft:stone_bricks"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 24.0,
+      "item": {
+        "id": "minecraft:bricks"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:deepslate"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:cobbled_deepslate"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:andesite"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:diorite"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:granite"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:calcite"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:tuff"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:smooth_stone"
+      },
+      "sell": 1.5
+    },
+    {
+      "buy": 20.0,
+      "item": {
+        "id": "minecraft:nether_bricks"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 14.0,
+      "item": {
+        "id": "minecraft:end_stone"
+      },
+      "sell": 2.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.stone",
+  "order": 1
+}

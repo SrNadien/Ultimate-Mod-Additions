@@ -80,7 +80,6 @@ public class ShopScreen extends Screen {
     private EditBox search;
     private EditBox quantity;
     private Button sortButton;
-    private Button deliveriesButton;
     private final List<Button> cardButtons = new ArrayList<>();
     private final List<AbstractWidget> adminWidgets = new ArrayList<>();
     private boolean adminMode;
@@ -126,10 +125,6 @@ public class ShopScreen extends Screen {
             rebuild();
         }).bounds(left + 280, top + 8, 92, 16).build());
 
-        deliveriesButton = addRenderableWidget(Button.builder(deliveriesLabel(), button ->
-                        PacketDistributor.sendToServer(ShopActionPayload.claim()))
-                .bounds(left + GRID_LEFT, top + BOTTOM, 100, 16).build());
-
         if (ClientHooks.shop().canAdd() || ClientHooks.shop().canRemove()) {
             addRenderableWidget(Button.builder(Component.translatable("screen.ultimatemodadditions.shop_admin"), button -> {
                 adminMode = !adminMode;
@@ -163,14 +158,7 @@ public class ShopScreen extends Screen {
                 Component.translatable("screen.ultimatemodadditions." + sort.key));
     }
 
-    private Component deliveriesLabel() {
-        return Component.translatable("screen.ultimatemodadditions.shop_deliveries", ClientHooks.shop().deliveries());
-    }
-
     public void refresh(boolean reloaded) {
-        if (deliveriesButton != null) {
-            deliveriesButton.setMessage(deliveriesLabel());
-        }
         if (reloaded) {
             int count = categories().size();
             selected = Math.max(0, Math.min(selected, count - 1));

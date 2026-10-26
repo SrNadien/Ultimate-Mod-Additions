@@ -4,6 +4,7 @@ import nadiendev.ultimatemodadditions.UMA;
 import nadiendev.ultimatemodadditions.config.UMAConfig;
 import nadiendev.ultimatemodadditions.config.UMAConfig.PayTarget;
 import nadiendev.ultimatemodadditions.currency.BankService;
+import nadiendev.ultimatemodadditions.currency.CashItem;
 import nadiendev.ultimatemodadditions.currency.ExchangeLogic;
 import nadiendev.ultimatemodadditions.currency.Money;
 import nadiendev.ultimatemodadditions.currency.Payout;
@@ -18,11 +19,13 @@ import nadiendev.ultimatemodadditions.network.payload.ShopSyncPayload;
 import nadiendev.ultimatemodadditions.registry.UMAAttachments;
 import nadiendev.ultimatemodadditions.registry.UMATags;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -40,8 +43,7 @@ import java.util.Set;
 
 public final class ShopService {
 
-    private static final Set<String> TRANSLATED = Set.of("bags", "general", "coins", "basics", "blocks", "food",
-            "materials", "ores", "workstations", "decoration", "technology", "combat");
+    private static final Set<String> TRANSLATED = Set.of("bags", "general");
     private static final BigDecimal CENTS_PER_MANGO = BigDecimal.valueOf(100L);
 
     private ShopService() {
@@ -55,14 +57,40 @@ public final class ShopService {
                 List<ShopItem> items = new ArrayList<>(base.items());
                 items.addAll(extra);
                 merged.put(id, new ShopCategory(base.name(), base.icon(), base.order(), items));
+                return;
+            }
+            ShopLayout.Def def = ShopLayout.def(id.getPath());
+            if (def != null && UMA.MODID.equals(id.getNamespace()) && !extra.isEmpty()) {
+                Item icon = BuiltInRegistries.ITEM.get(ResourceLocation.parse(def.icon()));
+                merged.put(id, new ShopCategory(categoryName(id), icon, def.order(), new ArrayList<>(extra)));
             }
         });
         addTrades(merged);
         merged.putAll(ModShops.get(server));
+        scalePrices(merged);
         ShopEdits edits = ShopEdits.get(server);
         merged.putAll(edits.custom());
         edits.hidden().forEach(merged::remove);
         return merged;
+    }
+
+    private static void scalePrices(Map<ResourceLocation, ShopCategory> merged) {
+        double buyScale = UMAConfig.COMMON.shopPriceMultiplier.get();
+        double sellScale = UMAConfig.COMMON.shopSellMultiplier.get();
+        if (buyScale == 1.0D && sellScale == 1.0D) {
+            return;
+        }
+        merged.replaceAll((id, category) -> {
+            List<ShopItem> items = new ArrayList<>(category.items().size());
+            for (ShopItem item : category.items()) {
+                if (item.stack().getItem() instanceof CashItem) {
+                    items.add(item);
+                } else {
+                    items.add(new ShopItem(item.stack(), item.buy() * buyScale, item.sell() * sellScale, item.taxed()));
+                }
+            }
+            return new ShopCategory(category.name(), category.icon(), category.order(), items);
+        });
     }
 
     private static void addTrades(Map<ResourceLocation, ShopCategory> merged) {
@@ -97,7 +125,7 @@ public final class ShopService {
 
     private static String categoryName(ResourceLocation id) {
         String path = id.getPath();
-        if (TRANSLATED.contains(path)) {
+        if (TRANSLATED.contains(path) || ShopLayout.IDS.contains(path)) {
             return "shop.ultimatemodadditions.category." + path;
         }
         String spaced = path.replace('_', ' ').trim();
@@ -155,12 +183,8 @@ public final class ShopService {
             }
         }
         PacketDistributor.sendToPlayer(player, new ShopSyncPayload(open, stand, tiendita, reload, ShopPermissions.canAdd(player),
-                ShopPermissions.canRemove(player), balance(player).toString(), deliveries(player).size(),
+                ShopPermissions.canRemove(player), balance(player).toString(),
                 UMAConfig.COMMON.shopSellCommission.get(), entries));
-    }
-
-    private static List<ItemStack> deliveries(ServerPlayer player) {
-        return player.getData(UMAAttachments.DELIVERIES);
     }
 
     public static void handle(ServerPlayer player, ShopActionPayload payload) {
@@ -169,7 +193,6 @@ public final class ShopService {
         }
         boolean edited = false;
         switch (payload.action()) {
-            case CLAIM -> claim(player);
             case BUY -> trade(player, payload, true);
             case SELL -> trade(player, payload, false);
             case ADD_ITEM -> edited = addItem(player, payload);
@@ -335,7 +358,7 @@ public final class ShopService {
         message(player, Component.translatable("message.ultimatemodadditions.shop_bought", times,
                 item.stack().getHoverName(), Money.format(total)), ChatFormatting.GREEN);
         if (overflow) {
-            message(player, Component.translatable("message.ultimatemodadditions.shop_to_deliveries"),
+            message(player, Component.translatable("message.ultimatemodadditions.shop_dropped"),
                     ChatFormatting.YELLOW);
         }
     }
@@ -367,7 +390,7 @@ public final class ShopService {
             ItemStack copy = template.copyWithCount(part);
             player.getInventory().add(copy);
             if (!copy.isEmpty()) {
-                deliveries(player).add(copy);
+                player.drop(copy, false);
                 overflow = true;
             }
             remaining -= part;
@@ -404,30 +427,6 @@ public final class ShopService {
         List<ItemStack> stacks = new ArrayList<>(inventory.items);
         stacks.addAll(inventory.offhand);
         return stacks;
-    }
-
-    private static void claim(ServerPlayer player) {
-        List<ItemStack> pending = deliveries(player);
-        if (pending.isEmpty()) {
-            message(player, Component.translatable("message.ultimatemodadditions.shop_nothing_to_claim"),
-                    ChatFormatting.YELLOW);
-            return;
-        }
-        List<ItemStack> left = new ArrayList<>();
-        int moved = 0;
-        for (ItemStack stack : pending) {
-            int before = stack.getCount();
-            ItemStack copy = stack.copy();
-            player.getInventory().add(copy);
-            moved += before - copy.getCount();
-            if (!copy.isEmpty()) {
-                left.add(copy);
-            }
-        }
-        pending.clear();
-        pending.addAll(left);
-        message(player, Component.translatable(left.isEmpty() ? "message.ultimatemodadditions.shop_claimed"
-                : "message.ultimatemodadditions.shop_claimed_partial", moved), ChatFormatting.GREEN);
     }
 
     private static void message(ServerPlayer player, Component text, ChatFormatting color) {

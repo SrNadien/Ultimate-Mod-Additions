@@ -2,6 +2,13 @@
   "icon": "minecraft:redstone",
   "items": [
     {
+      "buy": 500.0,
+      "item": {
+        "id": "minecraft:crafter"
+      },
+      "sell": 50.0
+    },
+    {
       "buy": 30.0,
       "item": {
         "id": "minecraft:redstone_torch"
@@ -128,55 +135,6 @@
       "sell": 22.0
     },
     {
-      "buy": 300.0,
-      "item": {
-        "id": "minecraft:bucket"
-      },
-      "sell": 30.0
-    },
-    {
-      "buy": 320.0,
-      "item": {
-        "id": "minecraft:water_bucket"
-      },
-      "sell": 30.0
-    },
-    {
-      "buy": 380.0,
-      "item": {
-        "id": "minecraft:lava_bucket"
-      },
-      "sell": 35.0
-    },
-    {
-      "buy": 150.0,
-      "item": {
-        "id": "minecraft:shears"
-      },
-      "sell": 15.0
-    },
-    {
-      "buy": 200.0,
-      "item": {
-        "id": "minecraft:compass"
-      },
-      "sell": 20.0
-    },
-    {
-      "buy": 300.0,
-      "item": {
-        "id": "minecraft:clock"
-      },
-      "sell": 30.0
-    },
-    {
-      "buy": 350.0,
-      "item": {
-        "id": "minecraft:minecart"
-      },
-      "sell": 35.0
-    },
-    {
       "buy": 150.0,
       "item": {
         "id": "minecraft:target"
@@ -191,53 +149,11 @@
       "sell": 13.0
     },
     {
-      "buy": 540.0,
-      "item": {
-        "id": "minecraft:slime_block"
-      },
-      "sell": 54.0
-    },
-    {
-      "buy": 330.0,
-      "item": {
-        "id": "minecraft:honey_block"
-      },
-      "sell": 33.0
-    },
-    {
       "buy": 220.0,
       "item": {
         "id": "minecraft:iron_door"
       },
       "sell": 22.0
-    },
-    {
-      "buy": 600.0,
-      "item": {
-        "id": "minecraft:anvil"
-      },
-      "sell": 60.0
-    },
-    {
-      "buy": 80.0,
-      "item": {
-        "id": "minecraft:fishing_rod"
-      },
-      "sell": 8.0
-    },
-    {
-      "buy": 25.0,
-      "item": {
-        "id": "minecraft:redstone"
-      },
-      "sell": 3.0
-    },
-    {
-      "buy": 225.0,
-      "item": {
-        "id": "minecraft:redstone_block"
-      },
-      "sell": 27.0
     },
     {
       "buy": 4.0,
@@ -310,20 +226,6 @@
       "sell": 50.0
     },
     {
-      "buy": 160.0,
-      "item": {
-        "id": "minecraft:note_block"
-      },
-      "sell": 16.0
-    },
-    {
-      "buy": 600.0,
-      "item": {
-        "id": "minecraft:jukebox"
-      },
-      "sell": 60.0
-    },
-    {
       "buy": 650.0,
       "item": {
         "id": "minecraft:tnt_minecart"
@@ -359,48 +261,13 @@
       "sell": 11.0
     },
     {
-      "buy": 90.0,
-      "item": {
-        "id": "minecraft:trapped_chest"
-      },
-      "sell": 10.0
-    },
-    {
       "buy": 250.0,
       "item": {
         "id": "minecraft:copper_bulb"
       },
       "sell": 25.0
-    },
-    {
-      "buy": 140.0,
-      "item": {
-        "id": "minecraft:copper_door"
-      },
-      "sell": 14.0
-    },
-    {
-      "buy": 100.0,
-      "item": {
-        "id": "minecraft:copper_trapdoor"
-      },
-      "sell": 10.0
-    },
-    {
-      "buy": 700.0,
-      "item": {
-        "id": "minecraft:bell"
-      },
-      "sell": 70.0
-    },
-    {
-      "buy": 500.0,
-      "item": {
-        "id": "minecraft:crafter"
-      },
-      "sell": 50.0
     }
   ],
-  "name": "shop.ultimatemodadditions.category.technology",
-  "order": 8
+  "name": "shop.ultimatemodadditions.category.redstone",
+  "order": 12
 }

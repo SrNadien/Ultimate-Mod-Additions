@@ -1,0 +1,182 @@
+{
+  "icon": "minecraft:bone",
+  "items": [
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:string"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 5.0,
+      "item": {
+        "id": "minecraft:feather"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 14.0,
+      "item": {
+        "id": "minecraft:leather"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:bone"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "id": "minecraft:ender_pearl"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:blaze_rod"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 60.0,
+      "item": {
+        "id": "minecraft:slime_ball"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 50.0,
+      "item": {
+        "id": "minecraft:gunpowder"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 500.0,
+      "item": {
+        "id": "minecraft:ghast_tear"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:shulker_shell"
+      },
+      "sell": 200.0
+    },
+    {
+      "buy": 120.0,
+      "item": {
+        "id": "minecraft:phantom_membrane"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:rotten_flesh"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:spider_eye"
+      },
+      "sell": 1.5
+    },
+    {
+      "buy": 25.0,
+      "item": {
+        "id": "minecraft:fermented_spider_eye"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 80.0,
+      "item": {
+        "id": "minecraft:magma_cream"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:rabbit_foot"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:rabbit_hide"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:skeleton_skull"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:zombie_head"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:creeper_head"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 8000.0,
+      "item": {
+        "id": "minecraft:wither_skeleton_skull"
+      },
+      "sell": 900.0
+    },
+    {
+      "buy": 80.0,
+      "item": {
+        "id": "minecraft:armadillo_scute"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:breeze_rod"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 60.0,
+      "item": {
+        "id": "minecraft:wind_charge"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 7000.0,
+      "item": {
+        "id": "minecraft:totem_of_undying"
+      },
+      "sell": 700.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.mob_drops",
+  "order": 8
+}

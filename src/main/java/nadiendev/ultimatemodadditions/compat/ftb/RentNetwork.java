@@ -26,7 +26,7 @@ public final class RentNetwork {
     }
 
     public static void register(RegisterPayloadHandlersEvent event) {
-        PayloadRegistrar registrar = event.registrar("1");
+        PayloadRegistrar registrar = event.registrar("1").optional();
         registrar.playToClient(RentSyncPayload.TYPE, RentSyncPayload.STREAM_CODEC, RentNetwork::handleSync);
         registrar.playToServer(RentActionPayload.TYPE, RentActionPayload.STREAM_CODEC, RentNetwork::handleAction);
     }

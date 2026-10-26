@@ -67,9 +67,6 @@ public final class ModShops {
     private static final Pattern ORE = Pattern.compile(
             "(_ore|^raw_.+|^ancient_debris|^(iron|gold|copper|diamond|emerald|lapis|redstone|coal)_block)$");
     private static final Pattern NETHERITE = Pattern.compile("^(netherite_.+|crying_obsidian)$");
-    private static final Pattern DROPS = Pattern.compile(
-            "(_skull|_head|scute|membrane|ink_sac|_horn|_egg|honeycomb|rabbit_.+|ghast_tear|blaze_.+|breeze_rod|wind_charge|"
-                    + "magma_cream|nether_star|dragon_breath|shulker_shell|phantom_.+|spider_eye|rotten_flesh|slime_ball)$");
     private static final Pattern WORKSTATION = Pattern.compile(
             "^(crafting_table|furnace|blast_furnace|smoker|smithing_table|cartography_table|fletching_table|loom|"
                     + "stonecutter|grindstone|(chipped_|damaged_)?anvil|enchanting_table|brewing_stand|cauldron|composter|"
@@ -86,16 +83,6 @@ public final class ModShops {
                     + "armor_stand|music_disc|_dye$|sherd|smithing_template|moss|sea_pickle|^kelp|hanging_roots|spore|"
                     + "cobweb|bookshelf|boat|raft|firework|dragon_egg|ladder|scaffolding|^map$|^compass$|^clock$|"
                     + "spyglass|ice$|snow|pumpkin$|carved_pumpkin|jack_o_lantern|head$|skull$)");
-    private static final Pattern MATERIAL = Pattern.compile(
-            "(ingot|nugget|^diamond$|^emerald$|lapis_lazuli|^quartz$|amethyst_shard|^coal$|charcoal|clay_ball|^brick$|"
-                    + "nether_brick$|glowstone_dust|prismarine_.+|dust|flint|^paper$|^book$|^string$|^stick$|^bone$|"
-                    + "^leather$|^feather$|gunpowder|^sugar$|^bone_meal$|^glass_bottle$|^bucket$|water_bucket|"
-                    + "lava_bucket|milk_bucket|powder_snow_bucket|.+_bucket$|^echo_shard$|^heart_of_the_sea$|"
-                    + "^nautilus_shell$|^ender_.+|^experience_bottle$|^name_tag$|^lead$|^saddle$|^totem_of_undying$)");
-    private static final Pattern BASICS = Pattern.compile(
-            "(seeds$|^wheat$|^beetroot$|^carrot$|^potato$|^sugar_cane$|^bamboo$|^cocoa_beans$|^nether_wart$|_log$|_stem$|"
-                    + "_hyphae$|^stick$|^dirt$|^sand$|^red_sand$|^gravel$|^cobblestone$|^netherrack$|^snowball$|"
-                    + "^egg$|^cactus$|^sweet_berries$|^glow_berries$|^chorus_fruit$|^pitcher_pod$|^torchflower_seeds$)");
 
     private static MinecraftServer cachedFor;
     private static Map<ResourceLocation, ShopCategory> zones = Map.of();
@@ -109,6 +96,8 @@ public final class ModShops {
     private final Map<Item, Double> memo = new HashMap<>();
     private final Set<Item> visiting = new HashSet<>();
     private final Map<Item, List<Source>> sources = new HashMap<>();
+    private final Set<String> ignored = new HashSet<>();
+    private CreativeIndex creative;
 
     private ModShops() {
     }
@@ -160,6 +149,9 @@ public final class ModShops {
     }
 
     private void prepare(MinecraftServer server) {
+        creative = CreativeIndex.build(server);
+        UMAConfig.COMMON.shopGeneratedIgnoredNamespaces.get()
+                .forEach(namespace -> ignored.add(namespace.toLowerCase(Locale.ROOT)));
         for (ShopCategory category : UMAData.shop().values()) {
             for (ShopItem item : category.items()) {
                 double price = item.buyable() ? item.buy() : item.sell() * 8.0D;
@@ -169,6 +161,9 @@ public final class ModShops {
             }
         }
         for (RecipeHolder<?> holder : server.getRecipeManager().getRecipes()) {
+            if (ignored.contains(holder.id().getNamespace())) {
+                continue;
+            }
             try {
                 Recipe<?> recipe = holder.value();
                 ItemStack result = recipe.getResultItem(server.registryAccess());
@@ -179,6 +174,19 @@ public final class ModShops {
             } catch (RuntimeException ignored) {
             }
         }
+    }
+
+    private boolean eligible(Item item, ResourceLocation key) {
+        ItemStack stack = new ItemStack(item);
+        if (stack.isEmpty() || stack.is(UMATags.NOT_PURCHASABLE) || ignored.contains(key.getNamespace())
+                || EXCLUDED.contains(key.getPath())) {
+            return false;
+        }
+        if (UMAConfig.COMMON.shopGeneratedRequireRecipe.get() && !sources.containsKey(item)) {
+            return false;
+        }
+        return !UMAConfig.COMMON.shopGeneratedSkipCreative.get() || !(creative.creativeOnly(item)
+                || item instanceof GameMasterBlockItem || item instanceof SpawnEggItem);
     }
 
     private Map<ResourceLocation, ShopCategory> buildZones() {
@@ -201,9 +209,8 @@ public final class ModShops {
         Map<String, List<Item>> byMod = new LinkedHashMap<>();
         for (Item item : BuiltInRegistries.ITEM) {
             ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
-            ItemStack stack = new ItemStack(item);
             Pattern filter = filters.get(key.getNamespace());
-            if (skipped.contains(key.getNamespace()) || stack.isEmpty() || stack.is(UMATags.NOT_PURCHASABLE)
+            if (skipped.contains(key.getNamespace()) || !eligible(item, key)
                     || filter != null && !filter.matcher(key.getPath()).find()) {
                 continue;
             }
@@ -278,11 +285,10 @@ public final class ModShops {
             ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
             ItemStack stack = new ItemStack(item);
             String path = key.getPath();
-            if (!VANILLA.equals(key.getNamespace()) || listed.contains(item) || stack.isEmpty()
-                    || EXCLUDED.contains(path) || path.endsWith("_spawn_egg") || stack.is(UMATags.NOT_PURCHASABLE)) {
+            if (!VANILLA.equals(key.getNamespace()) || listed.contains(item) || !eligible(item, key)) {
                 continue;
             }
-            grouped.computeIfAbsent(classify(item, stack, path), id -> new ArrayList<>()).add(item);
+            grouped.computeIfAbsent(classify(item, stack, path, creative.tab(item)), id -> new ArrayList<>()).add(item);
         }
         Map<ResourceLocation, List<ShopItem>> result = new LinkedHashMap<>();
         grouped.forEach((category, items) -> {
@@ -300,41 +306,92 @@ public final class ModShops {
         return ResourceLocation.fromNamespaceAndPath(UMA.MODID, name);
     }
 
-    private static ResourceLocation classify(Item item, ItemStack stack, String path) {
-        if (ORE.matcher(path).find()) {
-            return category("ores");
+    private static final Pattern WOOD = Pattern.compile(
+            "^(oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry|pale_oak|bamboo|crimson|warped)_"
+                    + "(log|wood|planks|stairs|slab|fence|fence_gate|door|trapdoor|button|pressure_plate|sign|hanging_sign|"
+                    + "boat|chest_boat|raft|hyphae|stem)$");
+    private static final Pattern PLANTS = Pattern.compile(
+            "(sapling|flower|tulip|orchid|allium|bluet|poppy|dandelion|cornflower|lily|rose_bush|peony|lilac|sunflower|"
+                    + "torchflower|petals|leaves|vine|fern|^short_grass|^tall_grass|bush|azalea|mushroom$|coral|sea_pickle|"
+                    + "hanging_roots|spore|cobweb|dripleaf|pitcher_plant|propagule|kelp)");
+    private static final Pattern FURNISHING = Pattern.compile(
+            "(banner|bed$|carpet|candle|sign$|hanging_sign|pot$|frame|painting|lantern|torch$|^chain$|armor_stand|"
+                    + "head$|skull$|music_disc|decorated_pot|flower_pot|^jukebox$|bookshelf|ladder|scaffolding)");
+
+    public static String categoryOf(Item item) {
+        ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
+        return classify(item, new ItemStack(item), key.getPath(), "").getPath();
+    }
+
+    private static ResourceLocation classify(Item item, ItemStack stack, String path, String tab) {
+        String section = ShopSections.of(path);
+        if (section != null) {
+            return category(section);
         }
-        if (item instanceof SwordItem || item instanceof AxeItem || item instanceof PickaxeItem
-                || item instanceof ShovelItem || item instanceof HoeItem || item instanceof ArmorItem
-                || item instanceof BowItem || item instanceof CrossbowItem || item instanceof TridentItem
-                || item instanceof ShieldItem || item instanceof MaceItem || item instanceof ElytraItem
-                || item instanceof ArrowItem || item instanceof FishingRodItem || item instanceof ShearsItem
-                || path.endsWith("_horse_armor") || path.equals("flint_and_steel") || path.equals("carrot_on_a_stick")
-                || path.equals("warped_fungus_on_a_stick") || path.equals("wolf_armor")) {
-            return category("combat");
+        if (ORE.matcher(path).find() || NETHERITE.matcher(path).find() || path.endsWith("_nugget") || path.endsWith("_ingot")) {
+            return category("resources");
         }
-        if (NETHERITE.matcher(path).find()) {
-            return item instanceof BlockItem ? category("blocks") : category("materials");
+        if (item instanceof SwordItem || item instanceof TridentItem || item instanceof BowItem || item instanceof CrossbowItem
+                || item instanceof MaceItem || item instanceof ArrowItem) {
+            return category("weapons");
+        }
+        if (item instanceof ArmorItem || item instanceof ElytraItem || item instanceof ShieldItem
+                || path.endsWith("_horse_armor") || path.equals("wolf_armor")) {
+            return category("armor");
+        }
+        if (item instanceof AxeItem || item instanceof PickaxeItem || item instanceof ShovelItem || item instanceof HoeItem
+                || item instanceof FishingRodItem || item instanceof ShearsItem || path.equals("flint_and_steel")
+                || path.equals("carrot_on_a_stick") || path.equals("warped_fungus_on_a_stick")) {
+            return category("tools");
         }
         if (stack.has(DataComponents.FOOD)) {
             return category("food");
         }
-        if (DROPS.matcher(path).find() || MATERIAL.matcher(path).find()) {
-            return category("materials");
+        if (path.endsWith("_dye")) {
+            return category("dyes");
+        }
+        if (path.startsWith("music_disc") || path.equals("goat_horn")) {
+            return category("music");
+        }
+        if (path.endsWith("shulker_box") || path.endsWith("chest") || path.endsWith("_bundle") || path.equals("bundle")
+                || path.equals("barrel") || path.equals("decorated_pot")) {
+            return category("storage");
         }
         if (WORKSTATION.matcher(path).find()) {
             return category("workstations");
         }
         if (REDSTONE.matcher(path).find()) {
-            return category("technology");
+            return category("redstone");
         }
-        if (DECORATION.matcher(path).find()) {
+        if (FURNISHING.matcher(path).find() || DECORATION.matcher(path).find()) {
             return category("decoration");
         }
-        if (BASICS.matcher(path).find()) {
-            return category("basics");
+        if (WOOD.matcher(path).find()) {
+            return category("wood");
         }
-        return item instanceof BlockItem ? category("blocks") : category("materials");
+        switch (tab) {
+            case "natural_blocks" -> {
+                return category(PLANTS.matcher(path).find() ? "decoration" : "natural");
+            }
+            case "redstone_blocks" -> {
+                return category("redstone");
+            }
+            case "tools_and_utilities" -> {
+                return category("tools");
+            }
+            case "combat" -> {
+                return category("weapons");
+            }
+            case "functional_blocks" -> {
+                return category("decoration");
+            }
+            case "ingredients" -> {
+                return category("misc");
+            }
+            default -> {
+            }
+        }
+        return item instanceof BlockItem ? category("decorative_blocks") : category("misc");
     }
 
     private ShopItem priced(Item item, double markup, double ratio) {
@@ -398,10 +455,10 @@ public final class ModShops {
 
     private static double fallback(Item item) {
         return switch (new ItemStack(item).getRarity()) {
-            case COMMON -> 12.0D;
-            case UNCOMMON -> 60.0D;
-            case RARE -> 250.0D;
-            case EPIC -> 1200.0D;
+            case COMMON -> 40.0D;
+            case UNCOMMON -> 200.0D;
+            case RARE -> 800.0D;
+            case EPIC -> 4000.0D;
         };
     }
 }

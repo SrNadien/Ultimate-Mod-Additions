@@ -1,0 +1,70 @@
+{
+  "icon": "minecraft:iron_sword",
+  "items": [
+    {
+      "buy": 5000.0,
+      "item": {
+        "id": "minecraft:trident"
+      },
+      "sell": 500.0
+    },
+    {
+      "buy": 4.0,
+      "item": {
+        "id": "minecraft:arrow"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "id": "minecraft:bow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 260.0,
+      "item": {
+        "id": "minecraft:crossbow"
+      },
+      "sell": 26.0
+    },
+    {
+      "buy": 180.0,
+      "item": {
+        "id": "minecraft:shield"
+      },
+      "sell": 18.0
+    },
+    {
+      "buy": 350.0,
+      "item": {
+        "id": "minecraft:iron_sword"
+      },
+      "sell": 35.0
+    },
+    {
+      "buy": 2600.0,
+      "item": {
+        "id": "minecraft:diamond_sword"
+      },
+      "sell": 260.0
+    },
+    {
+      "buy": 20.0,
+      "item": {
+        "id": "minecraft:spectral_arrow"
+      },
+      "sell": 2.0
+    },
+    {
+      "buy": 20600.0,
+      "item": {
+        "id": "minecraft:netherite_sword"
+      },
+      "sell": 2060.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.weapons",
+  "order": 9
+}

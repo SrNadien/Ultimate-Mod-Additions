@@ -1,0 +1,28 @@
+{
+  "icon": "minecraft:brewing_stand",
+  "items": [
+    {
+      "buy": 30.0,
+      "item": {
+        "id": "minecraft:glowstone_dust"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 75.0,
+      "item": {
+        "id": "minecraft:blaze_powder"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 9.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.potions",
+  "order": 17
+}

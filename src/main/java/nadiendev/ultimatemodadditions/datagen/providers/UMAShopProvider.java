@@ -2,6 +2,9 @@ package nadiendev.ultimatemodadditions.datagen.providers;
 
 import nadiendev.ultimatemodadditions.data.ShopCategory;
 import nadiendev.ultimatemodadditions.data.ShopItem;
+import nadiendev.ultimatemodadditions.shop.ModShops;
+import nadiendev.ultimatemodadditions.shop.ShopLayout;
+import nadiendev.ultimatemodadditions.shop.ShopSections;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -10,7 +13,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class UMAShopProvider extends UMAJsonProvider {
@@ -423,18 +430,48 @@ public class UMAShopProvider extends UMAJsonProvider {
         super(output, registries, "uma/shop", "Shop zones");
     }
 
+    private record Group(String file, String[] rows) {
+    }
+
     @Override
     void generate(Emitter emitter) {
-        category(emitter, "basics", "shop.ultimatemodadditions.category.basics", "minecraft:oak_log", 1, BASICS);
-        category(emitter, "blocks", "shop.ultimatemodadditions.category.blocks", "minecraft:bricks", 2, BLOCKS);
-        category(emitter, "coins", "shop.ultimatemodadditions.category.coins", "ultimatemodadditions:100_mangos", 0, COINS);
-        category(emitter, "combat", "shop.ultimatemodadditions.category.combat", "minecraft:iron_sword", 9, COMBAT);
-        category(emitter, "decoration", "shop.ultimatemodadditions.category.decoration", "minecraft:painting", 7, DECORATION);
-        category(emitter, "food", "shop.ultimatemodadditions.category.food", "minecraft:cooked_beef", 3, FOOD);
-        category(emitter, "materials", "shop.ultimatemodadditions.category.materials", "minecraft:diamond", 4, MATERIALS);
-        category(emitter, "ores", "shop.ultimatemodadditions.category.ores", "minecraft:diamond_ore", 5, ORES);
-        category(emitter, "technology", "shop.ultimatemodadditions.category.technology", "minecraft:redstone", 8, TECHNOLOGY);
-        category(emitter, "workstations", "shop.ultimatemodadditions.category.workstations", "minecraft:crafting_table", 6, WORKSTATIONS);
+        List<Group> groups = List.of(
+                new Group("coins", COINS),
+                new Group("basics", BASICS),
+                new Group("blocks", BLOCKS),
+                new Group("food", FOOD),
+                new Group("materials", MATERIALS),
+                new Group("ores", ORES),
+                new Group("workstations", WORKSTATIONS),
+                new Group("decoration", DECORATION),
+                new Group("technology", TECHNOLOGY),
+                new Group("combat", COMBAT));
+        Set<String> placed = new HashSet<>();
+        Map<String, List<String>> byCategory = new LinkedHashMap<>();
+        for (ShopLayout.Def def : ShopLayout.ALL) {
+            byCategory.put(def.id(), new ArrayList<>());
+        }
+        for (Group group : groups) {
+            for (String row : group.rows()) {
+                String id = row.split(" ")[0];
+                if (!placed.add(id)) {
+                    continue;
+                }
+                String path = id.substring(id.indexOf(':') + 1);
+                String category = group.file().equals("coins") ? "coins" : ShopSections.of(path);
+                if (category == null) {
+                    category = ModShops.categoryOf(item(id));
+                }
+                byCategory.get(category).add(row);
+            }
+        }
+        for (ShopLayout.Def def : ShopLayout.ALL) {
+            List<String> rows = byCategory.get(def.id());
+            if (!rows.isEmpty()) {
+                category(emitter, def.id(), "shop.ultimatemodadditions.category." + def.id(), def.icon(), def.order(),
+                        rows.toArray(new String[0]));
+            }
+        }
     }
 
     private static Item item(String id) {

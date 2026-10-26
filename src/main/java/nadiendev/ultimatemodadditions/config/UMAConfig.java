@@ -176,6 +176,12 @@ public final class UMAConfig {
         public final ModConfigSpec.DoubleValue shopSellCommission;
         public final ModConfigSpec.IntValue shopMaxAmount;
         public final ModConfigSpec.BooleanValue shopAdminGui;
+        public final ModConfigSpec.DoubleValue shopPriceMultiplier;
+        public final ModConfigSpec.DoubleValue shopSellMultiplier;
+        public final ModConfigSpec.BooleanValue shopGeneratedRequireRecipe;
+        public final ModConfigSpec.BooleanValue shopGeneratedSkipCreative;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> shopGeneratedIgnoredNamespaces;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> rootCommandShortcuts;
         public final ModConfigSpec.BooleanValue shopModZones;
         public final ModConfigSpec.ConfigValue<List<? extends String>> shopModZoneBlacklist;
         public final ModConfigSpec.ConfigValue<List<? extends String>> shopModZoneFilters;
@@ -482,6 +488,13 @@ public final class UMAConfig {
                     .define("pays_rent", true);
             builder.pop();
 
+            builder.push("commands");
+            rootCommandShortcuts = builder
+                    .comment("Subcommands of /uma that also work without the /uma prefix (for example shop makes /shop work).",
+                            "Leave it empty to keep every command under /uma and avoid clashes with other mods.")
+                    .defineListAllowEmpty("root_shortcuts", List.of("shop", "jobs"), () -> "shop", value -> value instanceof String);
+            builder.pop();
+
             builder.push("shop");
             shopEnabled = builder
                     .comment("Enable the shop screen. The exchange stand and the /uma shop command open the same one.")
@@ -505,6 +518,24 @@ public final class UMAConfig {
                     .comment("Players with the uma.shop.add or uma.shop.remove permission (LuckPerms, FTB Ranks or op level 2)",
                             "can add and remove zones and items from the shop screen.")
                     .define("admin_gui", true);
+            shopPriceMultiplier = builder
+                    .comment("Every buy price of the shop (files, trades and generated items, but not coins and bills) is multiplied by this.",
+                            "Prices set by hand in the shop screen are not touched.")
+                    .defineInRange("price_multiplier", 10.0D, 0.01D, 100000.0D);
+            shopSellMultiplier = builder
+                    .comment("Every sell price of the shop (but not coins and bills) is multiplied by this.")
+                    .defineInRange("sell_multiplier", 1.0D, 0.0D, 100000.0D);
+            shopGeneratedRequireRecipe = builder
+                    .comment("Items added automatically (mod zones and vanilla fill) must have a recipe.")
+                    .define("generated_require_recipe", true);
+            shopGeneratedSkipCreative = builder
+                    .comment("Items added automatically skip the ones that only exist in creative mode (operator blocks, spawn eggs).")
+                    .define("generated_skip_creative", true);
+            shopGeneratedIgnoredNamespaces = builder
+                    .comment("Recipes whose id belongs to one of these namespaces do not count as a recipe, and the items of these namespaces",
+                            "are not added automatically. The default leaves out everything that only exists because of KubeJS scripts.")
+                    .defineListAllowEmpty("generated_ignored_namespaces", List.of("kubejs"),
+                            () -> "kubejs", value -> value instanceof String);
             shopModZones = builder
                     .comment("Add one zone to the shop for every installed mod, priced from what its items cost to craft.")
                     .define("mod_zones", true);

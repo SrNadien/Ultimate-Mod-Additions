@@ -10,7 +10,9 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.tree.LiteralCommandNode;
+import nadiendev.ultimatemodadditions.ban.BanCommands;
 import nadiendev.ultimatemodadditions.coliseum.ColiseumState;
 import nadiendev.ultimatemodadditions.coliseum.ColiseumTravel;
 import nadiendev.ultimatemodadditions.compat.ftb.RentCommands;
@@ -21,6 +23,7 @@ import nadiendev.ultimatemodadditions.currency.BankService;
 import nadiendev.ultimatemodadditions.currency.LootBagItem;
 import nadiendev.ultimatemodadditions.currency.Money;
 import nadiendev.ultimatemodadditions.daily.DailyConfigService;
+import nadiendev.ultimatemodadditions.event.EventCommands;
 import nadiendev.ultimatemodadditions.daily.DailyEdits;
 import nadiendev.ultimatemodadditions.daily.DailyPermissions;
 import nadiendev.ultimatemodadditions.daily.DailyService;
@@ -61,6 +64,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -76,6 +80,8 @@ public final class UMACommands {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
         LiteralArgumentBuilder<CommandSourceStack> root = root();
         root.then(UMAHelp.command());
+        root.then(BanCommands.command());
+        root.then(EventCommands.command());
         for (LiteralArgumentBuilder<CommandSourceStack> builder : List.of(moneyCommand(), shopCommand(), jobsCommand(), dailyCommand())) {
             root.then(builder);
         }
@@ -85,6 +91,17 @@ public final class UMACommands {
         }
         LiteralCommandNode<CommandSourceStack> node = dispatcher.register(root);
         dispatcher.register(Commands.literal("ums").redirect(node));
+        for (String name : UMAConfig.COMMON.rootCommandShortcuts.get()) {
+            CommandNode<CommandSourceStack> target = node.getChild(name.trim().toLowerCase(Locale.ROOT));
+            if (target == null) {
+                continue;
+            }
+            LiteralArgumentBuilder<CommandSourceStack> shortcut = Commands.literal(target.getName()).requires(target.getRequirement());
+            if (target.getCommand() != null) {
+                shortcut.executes(target.getCommand());
+            }
+            dispatcher.register(shortcut.redirect(target));
+        }
     }
 
     private static LiteralArgumentBuilder<CommandSourceStack> root() {

@@ -1,6 +1,7 @@
 package nadiendev.ultimatemodadditions.compat.kubejs;
 
 import dev.latvian.mods.kubejs.plugin.ClassFilter;
+import nadiendev.ultimatemodadditions.config.ScriptedConfigs;
 import dev.latvian.mods.kubejs.plugin.KubeJSPlugin;
 import dev.latvian.mods.kubejs.script.BindingRegistry;
 import dev.latvian.mods.kubejs.script.ScriptType;
@@ -16,6 +17,7 @@ public class UMAKubeJsPlugin implements KubeJSPlugin {
     public void registerBindings(BindingRegistry bindings) {
         if (bindings.type() == ScriptType.SERVER) {
             ScriptedEntries.clear();
+            ScriptedConfigs.clear();
         }
         bindings.add("UMA", new UMAKubeJsBindings(bindings.type()));
     }

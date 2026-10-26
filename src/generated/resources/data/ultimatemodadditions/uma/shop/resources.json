@@ -1,6 +1,132 @@
 {
-  "icon": "minecraft:diamond_ore",
+  "icon": "minecraft:diamond",
   "items": [
+    {
+      "buy": 16.0,
+      "item": {
+        "id": "minecraft:coal"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 140.0,
+      "item": {
+        "id": "minecraft:quartz_block"
+      },
+      "sell": 18.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:copper_ingot"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "id": "minecraft:iron_ingot"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 250.0,
+      "item": {
+        "id": "minecraft:gold_ingot"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 1200.0,
+      "item": {
+        "id": "minecraft:diamond"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "id": "minecraft:emerald"
+      },
+      "sell": 70.0
+    },
+    {
+      "buy": 30.0,
+      "item": {
+        "id": "minecraft:lapis_lazuli"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 25.0,
+      "item": {
+        "id": "minecraft:redstone"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:quartz"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 4000.0,
+      "item": {
+        "id": "minecraft:netherite_scrap"
+      },
+      "sell": 400.0
+    },
+    {
+      "buy": 18000.0,
+      "item": {
+        "id": "minecraft:netherite_ingot"
+      },
+      "sell": 2000.0
+    },
+    {
+      "buy": 30.0,
+      "item": {
+        "id": "minecraft:amethyst_shard"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 70.0,
+      "item": {
+        "id": "minecraft:raw_iron"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 25.0,
+      "item": {
+        "id": "minecraft:raw_copper"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 180.0,
+      "item": {
+        "id": "minecraft:raw_gold"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 12.0,
+      "item": {
+        "id": "minecraft:iron_nugget"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 28.0,
+      "item": {
+        "id": "minecraft:gold_nugget"
+      },
+      "sell": 3.0
+    },
     {
       "buy": 40.0,
       "item": {
@@ -226,6 +352,6 @@
       "sell": 18000.0
     }
   ],
-  "name": "shop.ultimatemodadditions.category.ores",
-  "order": 5
+  "name": "shop.ultimatemodadditions.category.resources",
+  "order": 7
 }

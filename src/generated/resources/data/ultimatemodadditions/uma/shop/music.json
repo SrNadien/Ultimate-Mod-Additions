@@ -1,0 +1,28 @@
+{
+  "icon": "minecraft:jukebox",
+  "items": [
+    {
+      "buy": 400.0,
+      "item": {
+        "id": "minecraft:goat_horn"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "id": "minecraft:jukebox"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 160.0,
+      "item": {
+        "id": "minecraft:note_block"
+      },
+      "sell": 16.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.music",
+  "order": 18
+}

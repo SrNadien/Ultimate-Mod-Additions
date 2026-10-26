@@ -8,6 +8,7 @@ import nadiendev.ultimatemodadditions.currency.Denomination;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -22,6 +23,7 @@ public final class UMACreativeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.ultimatemodadditions"))
                     .icon(() -> new ItemStack(UMAItems.cash(Denomination.L1)))
+                    .withTabsBefore(CreativeModeTabs.REDSTONE_BLOCKS)
                     .displayItems((parameters, output) -> {
                         for (DeferredItem<CashItem> cash : UMAItems.allCash()) {
                             output.accept(cash.get());

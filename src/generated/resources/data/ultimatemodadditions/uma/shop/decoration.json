@@ -2,25 +2,11 @@
   "icon": "minecraft:painting",
   "items": [
     {
-      "buy": 5.0,
+      "buy": 400.0,
       "item": {
-        "id": "minecraft:torch"
+        "id": "minecraft:piglin_head"
       },
-      "sell": 1.0
-    },
-    {
-      "buy": 80.0,
-      "item": {
-        "id": "minecraft:lantern"
-      },
-      "sell": 8.0
-    },
-    {
-      "buy": 90.0,
-      "item": {
-        "id": "minecraft:soul_lantern"
-      },
-      "sell": 9.0
+      "sell": 40.0
     },
     {
       "buy": 20.0,
@@ -79,121 +65,9 @@
       "sell": 1.0
     },
     {
-      "buy": 600.0,
-      "item": {
-        "id": "minecraft:jukebox"
-      },
-      "sell": 60.0
-    },
-    {
-      "buy": 160.0,
-      "item": {
-        "id": "minecraft:note_block"
-      },
-      "sell": 16.0
-    },
-    {
-      "buy": 120.0,
-      "item": {
-        "id": "minecraft:lectern"
-      },
-      "sell": 12.0
-    },
-    {
-      "buy": 40.0,
-      "item": {
-        "id": "minecraft:barrel"
-      },
-      "sell": 5.0
-    },
-    {
-      "buy": 40.0,
-      "item": {
-        "id": "minecraft:chest"
-      },
-      "sell": 6.0
-    },
-    {
-      "buy": 1500.0,
-      "item": {
-        "id": "minecraft:ender_chest"
-      },
-      "sell": 150.0
-    },
-    {
       "buy": 8.0,
       "item": {
         "id": "minecraft:white_carpet"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 4.0,
-      "item": {
-        "id": "minecraft:dandelion"
-      },
-      "sell": 0.5
-    },
-    {
-      "buy": 4.0,
-      "item": {
-        "id": "minecraft:poppy"
-      },
-      "sell": 0.5
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:blue_orchid"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:allium"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:azure_bluet"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 8.0,
-      "item": {
-        "id": "minecraft:rose_bush"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 8.0,
-      "item": {
-        "id": "minecraft:peony"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 8.0,
-      "item": {
-        "id": "minecraft:sunflower"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:lily_of_the_valley"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:cornflower"
       },
       "sell": 1.0
     },
@@ -227,5 +101,5 @@
     }
   ],
   "name": "shop.ultimatemodadditions.category.decoration",
-  "order": 7
+  "order": 15
 }

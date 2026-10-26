@@ -1,0 +1,98 @@
+{
+  "icon": "minecraft:grass_block",
+  "items": [
+    {
+      "buy": 1.0,
+      "item": {
+        "id": "minecraft:dirt"
+      },
+      "sell": 0.2
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:sand"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 3.0,
+      "item": {
+        "id": "minecraft:gravel"
+      },
+      "sell": 0.5
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:sandstone"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:red_sandstone"
+      },
+      "sell": 1.0
+    },
+    {
+      "buy": 60.0,
+      "item": {
+        "id": "minecraft:prismarine"
+      },
+      "sell": 8.0
+    },
+    {
+      "buy": 2.0,
+      "item": {
+        "id": "minecraft:netherrack"
+      },
+      "sell": 0.3
+    },
+    {
+      "buy": 220.0,
+      "item": {
+        "id": "minecraft:obsidian"
+      },
+      "sell": 25.0
+    },
+    {
+      "buy": 160.0,
+      "item": {
+        "id": "minecraft:sea_lantern"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 250.0,
+      "item": {
+        "id": "minecraft:crying_obsidian"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "id": "minecraft:sponge"
+      },
+      "sell": 12.0
+    },
+    {
+      "buy": 540.0,
+      "item": {
+        "id": "minecraft:slime_block"
+      },
+      "sell": 54.0
+    },
+    {
+      "buy": 330.0,
+      "item": {
+        "id": "minecraft:honey_block"
+      },
+      "sell": 33.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.natural",
+  "order": 3
+}

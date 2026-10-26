@@ -1,0 +1,63 @@
+{
+  "icon": "minecraft:glass",
+  "items": [
+    {
+      "buy": 8.0,
+      "item": {
+        "id": "minecraft:glass"
+      },
+      "sell": 1.5
+    },
+    {
+      "buy": 24.0,
+      "item": {
+        "id": "minecraft:white_wool"
+      },
+      "sell": 4.0
+    },
+    {
+      "buy": 16.0,
+      "item": {
+        "id": "minecraft:terracotta"
+      },
+      "sell": 3.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:purpur_block"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 110.0,
+      "item": {
+        "id": "minecraft:glowstone"
+      },
+      "sell": 14.0
+    },
+    {
+      "buy": 160.0,
+      "item": {
+        "id": "minecraft:bookshelf"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 140.0,
+      "item": {
+        "id": "minecraft:copper_door"
+      },
+      "sell": 14.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "id": "minecraft:copper_trapdoor"
+      },
+      "sell": 10.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.decorative_blocks",
+  "order": 4
+}

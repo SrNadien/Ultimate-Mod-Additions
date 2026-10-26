@@ -72,46 +72,11 @@
       "sell": 3.0
     },
     {
-      "buy": 12.0,
-      "item": {
-        "id": "minecraft:carrot"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 10.0,
-      "item": {
-        "id": "minecraft:potato"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 10.0,
-      "item": {
-        "id": "minecraft:beetroot"
-      },
-      "sell": 1.0
-    },
-    {
       "buy": 6.0,
       "item": {
         "id": "minecraft:melon_slice"
       },
       "sell": 0.5
-    },
-    {
-      "buy": 8.0,
-      "item": {
-        "id": "minecraft:sweet_berries"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 10.0,
-      "item": {
-        "id": "minecraft:glow_berries"
-      },
-      "sell": 1.0
     },
     {
       "buy": 15.0,
@@ -170,48 +135,6 @@
       "sell": 6.0
     },
     {
-      "buy": 60.0,
-      "item": {
-        "id": "minecraft:milk_bucket"
-      },
-      "sell": 4.0
-    },
-    {
-      "buy": 8.0,
-      "item": {
-        "id": "minecraft:egg"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 8.0,
-      "item": {
-        "id": "minecraft:wheat"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:sugar"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 10.0,
-      "item": {
-        "id": "minecraft:cocoa_beans"
-      },
-      "sell": 1.0
-    },
-    {
-      "buy": 6.0,
-      "item": {
-        "id": "minecraft:bone_meal"
-      },
-      "sell": 1.0
-    },
-    {
       "buy": 25.0,
       "item": {
         "id": "minecraft:beef"
@@ -252,8 +175,22 @@
         "id": "minecraft:salmon"
       },
       "sell": 1.0
+    },
+    {
+      "buy": 15.0,
+      "item": {
+        "id": "minecraft:tropical_fish"
+      },
+      "sell": 1.5
+    },
+    {
+      "buy": 25.0,
+      "item": {
+        "id": "minecraft:pufferfish"
+      },
+      "sell": 2.5
     }
   ],
   "name": "shop.ultimatemodadditions.category.food",
-  "order": 3
+  "order": 6
 }

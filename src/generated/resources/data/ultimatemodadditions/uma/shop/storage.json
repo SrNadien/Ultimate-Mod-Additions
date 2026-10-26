@@ -1,0 +1,49 @@
+{
+  "icon": "minecraft:chest",
+  "items": [
+    {
+      "buy": 300.0,
+      "item": {
+        "id": "minecraft:cauldron"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:barrel"
+      },
+      "sell": 5.0
+    },
+    {
+      "buy": 40.0,
+      "item": {
+        "id": "minecraft:chest"
+      },
+      "sell": 6.0
+    },
+    {
+      "buy": 90.0,
+      "item": {
+        "id": "minecraft:trapped_chest"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:ender_chest"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 2000.0,
+      "item": {
+        "id": "minecraft:shulker_box"
+      },
+      "sell": 250.0
+    }
+  ],
+  "name": "shop.ultimatemodadditions.category.storage",
+  "order": 14
+}
