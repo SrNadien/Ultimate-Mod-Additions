@@ -10,7 +10,6 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import nadiendev.ultimatemodadditions.ban.BanCommands;
 import nadiendev.ultimatemodadditions.coliseum.ColiseumState;
@@ -66,6 +65,7 @@ import java.math.RoundingMode;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -91,16 +91,17 @@ public final class UMACommands {
         }
         LiteralCommandNode<CommandSourceStack> node = dispatcher.register(root);
         dispatcher.register(Commands.literal("ums").redirect(node));
+        Map<String, Supplier<LiteralArgumentBuilder<CommandSourceStack>>> shortcuts = Map.of(
+                "shop", UMACommands::shopCommand,
+                "jobs", UMACommands::jobsCommand,
+                "money", UMACommands::moneyCommand,
+                "daily", UMACommands::dailyCommand);
         for (String name : UMAConfig.COMMON.rootCommandShortcuts.get()) {
-            CommandNode<CommandSourceStack> target = node.getChild(name.trim().toLowerCase(Locale.ROOT));
-            if (target == null) {
-                continue;
+            String key = name.trim().toLowerCase(Locale.ROOT);
+            Supplier<LiteralArgumentBuilder<CommandSourceStack>> factory = shortcuts.get(key);
+            if (factory != null && dispatcher.getRoot().getChild(key) == null) {
+                dispatcher.register(factory.get());
             }
-            LiteralArgumentBuilder<CommandSourceStack> shortcut = Commands.literal(target.getName()).requires(target.getRequirement());
-            if (target.getCommand() != null) {
-                shortcut.executes(target.getCommand());
-            }
-            dispatcher.register(shortcut.redirect(target));
         }
     }
 

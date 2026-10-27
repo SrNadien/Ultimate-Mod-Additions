@@ -1,5 +1,13 @@
 # Changelog
 
+## Ultimate Mod Additions 1.0.6 — 2026-10-27
+
+### Changes
+
+- **Fix on servers with mods that add item rarities:** the shop no longer fails to build its zones (the price fallback accepts any rarity).
+- **/shop and /jobs shortcuts** are now complete commands instead of redirects, and they are skipped when another mod already uses that
+  name, so they cannot break the command tree sent to the clients.
+
 ## Ultimate Mod Additions 1.0.5 — 2026-10-26
 
 ### Additions
@@ -17,7 +25,7 @@
 
 ### Changes
 
-- **Shop sorted like EconomyShopGUI:** Stone, Wood, Natural, Decorative blocks, Farming, Food, Resources, Mob drops, Weapons, Armor,
+- **Shop sorted:** Stone, Wood, Natural, Decorative blocks, Farming, Food, Resources, Mob drops, Weapons, Armor,
   Tools, Redstone, Workstations, Storage, Decoration, Dyes, Potions, Music and Miscellaneous. Buy prices are multiplied by
   `[shop] price_multiplier` (10 by default). Items added automatically must have a recipe, cannot be creative only and ignore what
   KubeJS adds. The mod's creative tab now comes before the redstone tab.

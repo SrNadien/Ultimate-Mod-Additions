@@ -458,7 +458,7 @@ public final class ModShops {
             case COMMON -> 40.0D;
             case UNCOMMON -> 200.0D;
             case RARE -> 800.0D;
-            case EPIC -> 4000.0D;
+            default -> 4000.0D;
         };
     }
 }

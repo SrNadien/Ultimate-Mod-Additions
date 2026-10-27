@@ -490,7 +490,7 @@ public final class UMAConfig {
 
             builder.push("commands");
             rootCommandShortcuts = builder
-                    .comment("Subcommands of /uma that also work without the /uma prefix (for example shop makes /shop work).",
+                    .comment("Subcommands of /uma that also work without the /uma prefix (shop, jobs, money and daily). A name is skipped when another mod already has that command.",
                             "Leave it empty to keep every command under /uma and avoid clashes with other mods.")
                     .defineListAllowEmpty("root_shortcuts", List.of("shop", "jobs"), () -> "shop", value -> value instanceof String);
             builder.pop();
