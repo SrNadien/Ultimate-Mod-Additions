@@ -116,9 +116,12 @@ public final class ModShops {
         try {
             ModShops builder = new ModShops();
             builder.prepare(server);
-            zones = UMAConfig.COMMON.shopModZones.get() ? builder.buildZones() : Map.of();
+            boolean showZones = UMAConfig.COMMON.shopModZones.get();
+            Map<ResourceLocation, ShopCategory> built = showZones || UMAConfig.COMMON.dailyModEntries.get()
+                    ? builder.buildZones() : Map.of();
+            zones = showZones ? built : Map.of();
             fill = UMAConfig.COMMON.shopVanillaFill.get() ? builder.buildFill() : Map.of();
-            rewardCandidates = UMAConfig.COMMON.dailyModEntries.get() ? builder.buildRewardCandidates(zones) : Map.of();
+            rewardCandidates = UMAConfig.COMMON.dailyModEntries.get() ? builder.buildRewardCandidates(built) : Map.of();
         } catch (RuntimeException exception) {
             UMA.LOGGER.error("Could not build the generated parts of the shop", exception);
             zones = Map.of();

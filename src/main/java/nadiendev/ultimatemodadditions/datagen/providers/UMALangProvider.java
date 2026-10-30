@@ -291,6 +291,8 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.ban_empty_hand", "You are not holding anything");
         add("command.ultimatemodadditions.ban_unknown_item", "%s is not an item");
         add("command.ultimatemodadditions.ban_purged", "Cleared %s banned items from %s players and %s from the ground");
+        add("command.ultimatemodadditions.coliseum_returned", "Brought %s player(s) back from the coliseum");
+        add("command.ultimatemodadditions.coliseum_sent", "Sent %s player(s) to the coliseum");
         add("command.ultimatemodadditions.ban_not_found", "%s has no ban to remove (it may come from KubeJS)");
         add("command.ultimatemodadditions.ban_cleared_all", "Removed %s bans (%s from bans.yml, %s live). KubeJS bans stay until the script changes");
         add("command.ultimatemodadditions.ban_disabled", "%s is now disabled: it shows as DISABLED and nobody can use it");
@@ -762,6 +764,8 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.ban_empty_hand", "No tenés nada en la mano");
         add("command.ultimatemodadditions.ban_unknown_item", "%s no es un ítem");
         add("command.ultimatemodadditions.ban_purged", "Se sacaron %s ítems baneados a %s jugadores y %s del piso");
+        add("command.ultimatemodadditions.coliseum_returned", "Se trajo de vuelta a %s jugador(es) del coliseo");
+        add("command.ultimatemodadditions.coliseum_sent", "Se mandó a %s jugador(es) al coliseo");
         add("command.ultimatemodadditions.ban_not_found", "%s no tiene ningún baneo para sacar (puede venir de KubeJS)");
         add("command.ultimatemodadditions.ban_cleared_all", "Se sacaron %s baneos (%s de bans.yml, %s en vivo). Los de KubeJS siguen hasta cambiar el script");
         add("command.ultimatemodadditions.ban_disabled", "%s quedó deshabilitado: se muestra como DESHABILITADO y nadie puede usarlo");

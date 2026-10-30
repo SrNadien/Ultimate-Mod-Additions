@@ -176,7 +176,8 @@ public final class UMAConfig {
         public final ModConfigSpec.DoubleValue shopSellCommission;
         public final ModConfigSpec.IntValue shopMaxAmount;
         public final ModConfigSpec.BooleanValue shopAdminGui;
-        public final ModConfigSpec.DoubleValue shopPriceMultiplier;
+        public final ModConfigSpec.DoubleValue shopInflationPercent;
+        public final ModConfigSpec.BooleanValue shopInflationOnSell;
         public final ModConfigSpec.DoubleValue shopSellMultiplier;
         public final ModConfigSpec.BooleanValue shopGeneratedRequireRecipe;
         public final ModConfigSpec.BooleanValue shopGeneratedSkipCreative;
@@ -518,10 +519,14 @@ public final class UMAConfig {
                     .comment("Players with the uma.shop.add or uma.shop.remove permission (LuckPerms, FTB Ranks or op level 2)",
                             "can add and remove zones and items from the shop screen.")
                     .define("admin_gui", true);
-            shopPriceMultiplier = builder
-                    .comment("Every buy price of the shop (files, trades and generated items, but not coins and bills) is multiplied by this.",
+            shopInflationPercent = builder
+                    .comment("Argentine inflation: every buy price of the shop (files, trades and generated items, but not coins and bills)",
+                            "goes up by this percent over its base price. 200 means base price x 3. 0 turns it off.",
                             "Prices set by hand in the shop screen are not touched.")
-                    .defineInRange("price_multiplier", 10.0D, 0.01D, 100000.0D);
+                    .defineInRange("inflation_percent", 200.0D, 0.0D, 1000000.0D);
+            shopInflationOnSell = builder
+                    .comment("Also apply the inflation to the prices the shop pays when a player sells.")
+                    .define("inflation_applies_to_sell", false);
             shopSellMultiplier = builder
                     .comment("Every sell price of the shop (but not coins and bills) is multiplied by this.")
                     .defineInRange("sell_multiplier", 1.0D, 0.0D, 100000.0D);
@@ -537,8 +542,9 @@ public final class UMAConfig {
                     .defineListAllowEmpty("generated_ignored_namespaces", List.of("kubejs"),
                             () -> "kubejs", value -> value instanceof String);
             shopModZones = builder
-                    .comment("Add one zone to the shop for every installed mod, priced from what its items cost to craft.")
-                    .define("mod_zones", true);
+                    .comment("Add one zone to the shop for every installed mod, priced from what its items cost to craft.",
+                            "Off by default.")
+                    .define("mod_zones", false);
             shopModZoneBlacklist = builder
                     .comment("Mod ids that never get a generated zone.")
                     .defineListAllowEmpty("mod_zone_blacklist", List.of("minecraft", "neoforge", "ultimatemodadditions", "ftblibrary"),

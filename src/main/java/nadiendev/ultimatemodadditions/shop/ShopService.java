@@ -75,8 +75,10 @@ public final class ShopService {
     }
 
     private static void scalePrices(Map<ResourceLocation, ShopCategory> merged) {
-        double buyScale = UMAConfig.COMMON.shopPriceMultiplier.get();
-        double sellScale = UMAConfig.COMMON.shopSellMultiplier.get();
+        double inflation = 1.0D + UMAConfig.COMMON.shopInflationPercent.get() / 100.0D;
+        double buyScale = inflation;
+        double sellScale = UMAConfig.COMMON.shopSellMultiplier.get()
+                * (UMAConfig.COMMON.shopInflationOnSell.get() ? inflation : 1.0D);
         if (buyScale == 1.0D && sellScale == 1.0D) {
             return;
         }

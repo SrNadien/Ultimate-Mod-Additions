@@ -62,6 +62,7 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -108,14 +109,18 @@ public final class UMACommands {
     private static LiteralArgumentBuilder<CommandSourceStack> root() {
         return Commands.literal("uma")
                 .then(Commands.literal("coliseum")
-                        .then(Commands.literal("enter").executes(context -> {
-                            ServerPlayer player = context.getSource().getPlayerOrException();
-                            return ColiseumTravel.enter(player, context.getSource().getServer()) ? 1 : 0;
-                        }))
-                        .then(Commands.literal("leave").executes(context -> {
-                            ServerPlayer player = context.getSource().getPlayerOrException();
-                            return ColiseumTravel.leave(player, context.getSource().getServer()) ? 1 : 0;
-                        })))
+                        .then(Commands.literal("enter")
+                                .executes(context -> coliseumTravel(context, List.of(context.getSource().getPlayerOrException()), true))
+                                .then(Commands.argument("targets", EntityArgument.players())
+                                        .requires(source -> source.hasPermission(2))
+                                        .executes(context -> coliseumTravel(context,
+                                                EntityArgument.getPlayers(context, "targets"), true))))
+                        .then(Commands.literal("leave")
+                                .executes(context -> coliseumTravel(context, List.of(context.getSource().getPlayerOrException()), false))
+                                .then(Commands.argument("targets", EntityArgument.players())
+                                        .requires(source -> source.hasPermission(2))
+                                        .executes(context -> coliseumTravel(context,
+                                                EntityArgument.getPlayers(context, "targets"), false)))))
                 .then(Commands.literal("difficulty")
                         .then(Commands.literal("get").executes(context -> {
                             ResourceLocation current = ColiseumState.get(context.getSource().getServer()).difficulty();
@@ -149,6 +154,24 @@ public final class UMACommands {
                 .then(pingCommand())
                 .then(spawnersCommand())
                 .then(rebuildCommand());
+    }
+
+    private static int coliseumTravel(CommandContext<CommandSourceStack> context, Collection<ServerPlayer> players,
+                                      boolean enter) {
+        int moved = 0;
+        for (ServerPlayer player : players) {
+            boolean done = enter ? ColiseumTravel.enter(player, context.getSource().getServer())
+                    : ColiseumTravel.leave(player, context.getSource().getServer());
+            if (done) {
+                moved++;
+            }
+        }
+        if (players.size() > 1 || !players.contains(context.getSource().getEntity())) {
+            int count = moved;
+            context.getSource().sendSuccess(() -> Component.translatable(enter ? "command.ultimatemodadditions.coliseum_sent"
+                    : "command.ultimatemodadditions.coliseum_returned", count), true);
+        }
+        return moved;
     }
 
     private static int setDifficulty(CommandContext<CommandSourceStack> context) {

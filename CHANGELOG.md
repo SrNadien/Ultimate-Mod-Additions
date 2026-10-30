@@ -1,5 +1,13 @@
 # Changelog
 
+## Ultimate Mod Additions 1.0.7 — 2026-10-30
+
+### Changes
+
+- **Argentine inflation in the shop:** every buy price goes up by `[shop] inflation_percent` (200 by default, so base price x 3) before it is shown to the player. `inflation_applies_to_sell` (off by default) applies it to sell prices too. The old `price_multiplier` option is gone.
+- **Dynamic mod zones are off by default** (`[shop] mod_zones = false`); the daily bonus can still use their items.
+- **`/uma coliseum enter` and `leave` accept players** (`/uma coliseum enter @a`), for operators.
+
 ## Ultimate Mod Additions 1.0.6 — 2026-10-27
 
 ### Changes
