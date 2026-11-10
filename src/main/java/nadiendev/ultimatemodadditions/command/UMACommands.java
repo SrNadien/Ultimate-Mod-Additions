@@ -14,6 +14,7 @@ import com.mojang.brigadier.tree.LiteralCommandNode;
 import nadiendev.ultimatemodadditions.ban.BanCommands;
 import nadiendev.ultimatemodadditions.coliseum.ColiseumState;
 import nadiendev.ultimatemodadditions.coliseum.ColiseumTravel;
+import nadiendev.ultimatemodadditions.compat.ftb.EchoCommands;
 import nadiendev.ultimatemodadditions.compat.ftb.RentCommands;
 import nadiendev.ultimatemodadditions.compat.ftb.TeamBankCommands;
 import nadiendev.ultimatemodadditions.compat.ModIds;
@@ -85,6 +86,9 @@ public final class UMACommands {
         root.then(EventCommands.command());
         for (LiteralArgumentBuilder<CommandSourceStack> builder : List.of(moneyCommand(), shopCommand(), jobsCommand(), dailyCommand())) {
             root.then(builder);
+        }
+        if (ModIds.loaded(ModIds.FTB_ECHOES)) {
+            root.then(EchoCommands.root());
         }
         if (ModIds.loaded(ModIds.FTB_CHUNKS)) {
             root.then(RentCommands.root());

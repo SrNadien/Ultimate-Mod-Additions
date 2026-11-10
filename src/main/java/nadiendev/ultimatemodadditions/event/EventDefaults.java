@@ -40,6 +40,8 @@ public final class EventDefaults {
             // NPCs with delivery missions appear in front of players. Each level has a weight (chance), the items they can ask for
             // (deliveries: [item, min, max]), the prizes (prizes: [item, min, max], prize_count different ones) and experience.
             // Items of mods that are not installed are skipped. mobs: entity ids used as the NPC body (missing ones are skipped).
+            // max_active: NPCs alive at the same time in the whole server; a new one only appears for a connected player, in a chunk that is already loaded.
+            // lifetime_seconds: the NPC disappears after this many seconds without being served (300 = 5 minutes, 0 = never).
             """, EventDefaults::npc);
 
     public static final EventConfigs.Spec WELCOME = spec("welcome", """
@@ -194,7 +196,8 @@ public final class EventDefaults {
     private static JsonObject npc() {
         JsonObject root = new JsonObject();
         root.addProperty("spawn_period_ticks", 6000);
-        root.addProperty("search_radius", 48);
+        root.addProperty("lifetime_seconds", 300);
+        root.addProperty("max_active", 1);
         root.addProperty("distance_min", 6);
         root.addProperty("distance_max", 10);
         root.add("dimensions", JsonValues.array(List.of("minecraft:overworld")));

@@ -1,5 +1,15 @@
 # Changelog
 
+## Ultimate Mod Additions 1.0.8 — 2026-11-10
+
+### Changes
+
+- **NPC missions expire:** an NPC nobody served disappears after `lifetime_seconds` (300 = 5 minutes by default, 0 = never) in `npc_missions.json5`.
+- **Only one NPC at a time:** `max_active` (1 by default) limits the NPCs alive in the whole server, so two nearby players no longer get two. They only appear in front of a connected player and no longer force-load chunks.
+- **Mod detection is off by default:** `[shop] mod_zones`, `[daily] mod_entries` and `[daily] mod_bonus` now start disabled.
+- **Everything sells for 1 mango:** the shop pays `[shop] sell_price` (1 mango by default) for every item it buys from players, whatever its own sell price; 0 goes back to each item's own price. Items the shop does not buy stay unsellable.
+- FTB Echoes now works with our coins.
+
 ## Ultimate Mod Additions 1.0.7 — 2026-10-30
 
 ### Changes

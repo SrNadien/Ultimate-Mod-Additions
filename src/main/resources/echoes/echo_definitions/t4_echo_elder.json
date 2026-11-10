@@ -1,0 +1,216 @@
+{
+ "id": "ultimatemodadditions:t4_echo_elder",
+ "title": {
+  "translate": "echo.ultimatemodadditions.elder.title"
+ },
+ "all_complete": {
+  "translate": "echo.ultimatemodadditions.elder.completed"
+ },
+ "stages": [
+  {
+   "title": {
+    "translate": "echo.ultimatemodadditions.stage0.title"
+   },
+   "lore": [
+    {
+     "type": "ftbechoes:audio",
+     "location": "ultimatemodadditions:echo_voice",
+     "text": {
+      "translate": "echo.ultimatemodadditions.voice_over"
+     }
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.startup.lore"
+      }
+     ]
+    }
+   ],
+   "not_ready": {
+    "translate": "echo.ultimatemodadditions.unmet.lore"
+   },
+   "required_stage": "uma_echoes_open",
+   "ready": {
+    "translate": "echo.ultimatemodadditions.unmet.lore"
+   },
+   "completed": {
+    "translate": "echo.ultimatemodadditions.startup.completed"
+   },
+   "shop_unlock": [
+    {
+     "name": "Uranium Resource Node",
+     "item": {
+      "id": "oritech:resource_node_uranium",
+      "count": 1
+     },
+     "cost": 225,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.exclusive"
+     }
+    },
+    {
+     "name": "Superdense Energy Cell",
+     "item": {
+      "id": "megacells:mega_energy_cell",
+      "count": 1
+     },
+     "cost": 90
+    },
+    {
+     "name": "Artisan Scroll - Barbed Band",
+     "item": {
+      "id": "irons_jewelry:recipe",
+      "components": {
+       "irons_jewelry:stored_pattern": "irons_jewelry:barbed_band"
+      },
+      "count": 1
+     },
+     "cost": 300,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.irons_scroll.barbed_band"
+     }
+    },
+    {
+     "name": "Artisan Scroll - Superior Gemset Ring",
+     "item": {
+      "id": "irons_jewelry:recipe",
+      "components": {
+       "irons_jewelry:stored_pattern": "irons_jewelry:superior_gemset_ring"
+      },
+      "count": 1
+     },
+     "cost": 350,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.irons_scroll.superior_gemset_ring"
+     }
+    }
+   ]
+  },
+  {
+   "title": {
+    "translate": "echo.ultimatemodadditions.stage4.title"
+   },
+   "lore": [
+    {
+     "type": "ftbechoes:audio",
+     "location": "ultimatemodadditions:echo_voice",
+     "text": {
+      "translate": "echo.ultimatemodadditions.voice_over"
+     }
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.elder.stage4.task1.lore"
+      }
+     ]
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.elder.stage4.task1.lore2"
+      }
+     ]
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.elder.stage4.task1.lore3"
+      }
+     ]
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.elder.stage4.task1.lore4"
+      }
+     ]
+    }
+   ],
+   "not_ready": {
+    "translate": "echo.ultimatemodadditions.elder.stage4.task1.not_ready"
+   },
+   "required_stage": "uma_echoes_open",
+   "ready": {
+    "translate": "echo.ultimatemodadditions.elder.stage4.task1.ready"
+   },
+   "completed": {
+    "translate": "echo.ultimatemodadditions.elder.stage4.task1.completed"
+   },
+   "completion_reward": {
+    "experience": 100
+   },
+   "shop_unlock": [
+    {
+     "name": "Watch of Flowing Time",
+     "item": {
+      "id": "projecte:watch_of_flowing_time",
+      "count": 1
+     },
+     "cost": 325,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.exclusive"
+     }
+    },
+    {
+     "name": "Data Model - Elder Guardian",
+     "item": {
+      "id": "hostilenetworks:data_model",
+      "components": {
+       "hostilenetworks:data": 6,
+       "hostilenetworks:data_model": "hostilenetworks:elder_guardian"
+      },
+      "count": 1
+     },
+     "cost": 150,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.data_model.basic"
+     }
+    },
+    {
+     "name": "Data Model - Shulker",
+     "item": {
+      "id": "hostilenetworks:data_model",
+      "components": {
+       "hostilenetworks:data": 6,
+       "hostilenetworks:data_model": "hostilenetworks:shulker"
+      },
+      "count": 1
+     },
+     "cost": 90,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.data_model.basic"
+     }
+    },
+    {
+     "name": "Energy Collector Mk3",
+     "item": {
+      "id": "projecte:collector_mk3",
+      "count": 1
+     },
+     "cost": 150
+    },
+    {
+     "name": "Gateway - Apothic Pinnacle",
+     "item": {
+      "id": "gateways:gate_pearl",
+      "components": {
+       "gateways:gateway": "apotheosis:tiered/pinnacle"
+      },
+      "count": 1
+     },
+     "cost": 150,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.gate_pearl.apothic_pinnacle"
+     }
+    }
+   ]
+  }
+ ]
+}

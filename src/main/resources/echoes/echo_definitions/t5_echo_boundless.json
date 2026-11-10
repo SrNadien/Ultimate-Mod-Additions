@@ -1,0 +1,109 @@
+{
+ "id": "ultimatemodadditions:t5_echo_boundless",
+ "title": {
+  "translate": "echo.ultimatemodadditions.boundless.title"
+ },
+ "all_complete": {
+  "translate": "echo.ultimatemodadditions.boundless.completed"
+ },
+ "stages": [
+  {
+   "title": {
+    "translate": "echo.ultimatemodadditions.stage0.title"
+   },
+   "lore": [
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.boundless.intro"
+      }
+     ]
+    }
+   ],
+   "not_ready": {
+    "translate": "echo.ultimatemodadditions.boundless.stage0.not_ready"
+   },
+   "required_stage": "uma_echoes_open",
+   "ready": {
+    "translate": "echo.ultimatemodadditions.boundless.stage0.ready"
+   },
+   "completed": {
+    "translate": "echo.ultimatemodadditions.boundless.stage0.completed"
+   },
+   "shop_unlock": []
+  },
+  {
+   "title": {
+    "translate": "echo.ultimatemodadditions.stage5.title"
+   },
+   "lore": [
+    {
+     "type": "ftbechoes:audio",
+     "location": "ultimatemodadditions:echo_voice",
+     "text": {
+      "translate": "echo.ultimatemodadditions.voice_over"
+     }
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.boundless.stage5.task1.lore"
+      }
+     ]
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.boundless.stage5.task1.lore2"
+      }
+     ]
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.boundless.stage5.task1.lore3"
+      }
+     ]
+    },
+    {
+     "type": "ftbechoes:text",
+     "text": [
+      {
+       "translate": "echo.ultimatemodadditions.boundless.stage5.task1.lore4"
+      }
+     ]
+    }
+   ],
+   "not_ready": {
+    "translate": "echo.ultimatemodadditions.boundless.stage5.task1.not_ready"
+   },
+   "required_stage": "uma_echoes_open",
+   "ready": {
+    "translate": "echo.ultimatemodadditions.boundless.stage5.task1.ready"
+   },
+   "completed": {
+    "translate": "echo.ultimatemodadditions.boundless.stage5.task1.completed"
+   },
+   "completion_reward": {
+    "experience": 100
+   },
+   "shop_unlock": [
+    {
+     "name": "Stack Upgrade Omega Tier",
+     "item": {
+      "id": "sophisticatedstorage:stack_upgrade_omega_tier",
+      "count": 1
+     },
+     "cost": 500,
+     "description": {
+      "translate": "echo.ultimatemodadditions.echo_shop.description.exclusive"
+     }
+    }
+   ]
+  }
+ ]
+}

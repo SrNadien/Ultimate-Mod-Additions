@@ -24,7 +24,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -42,8 +41,10 @@ public final class NpcEvents {
     private static final String LEVEL_KEY = "uma_npc_level";
     private static final String ITEM_KEY = "uma_npc_item";
     private static final String COUNT_KEY = "uma_npc_count";
+    private static final String SPAWN_KEY = "uma_npc_spawn";
 
     private static int clock;
+    private static int expireClock;
 
     private NpcEvents() {
     }
@@ -56,6 +57,11 @@ public final class NpcEvents {
     public static void onTick(ServerTickEvent.Post event) {
         MinecraftServer server = event.getServer();
         JsonObject config = config();
+        expireClock++;
+        if (expireClock >= 20) {
+            expireClock = 0;
+            expire(server, JsonValues.integer(config, "lifetime_seconds", 300));
+        }
         clock++;
         if (clock < Math.max(20, JsonValues.integer(config, "spawn_period_ticks", 6000))) {
             return;
@@ -64,18 +70,57 @@ public final class NpcEvents {
         if (!EventState.get(server).enabled(ID)) {
             return;
         }
+        if (active(server) >= Math.max(1, JsonValues.integer(config, "max_active", 1))) {
+            return;
+        }
         List<String> dimensions = JsonValues.strings(config, "dimensions");
-        int radius = JsonValues.integer(config, "search_radius", 48);
+        List<ServerPlayer> candidates = new ArrayList<>();
         for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-            ServerLevel level = player.serverLevel();
-            if (player.isSpectator() || !dimensions.contains(level.dimension().location().toString())) {
-                continue;
+            if (player.isAlive() && !player.isSpectator()
+                    && dimensions.contains(player.serverLevel().dimension().location().toString())) {
+                candidates.add(player);
             }
-            AABB area = player.getBoundingBox().inflate(radius);
-            if (!level.getEntitiesOfClass(Mob.class, area, mob -> mob.getTags().contains(TAG)).isEmpty()) {
-                continue;
+        }
+        if (!candidates.isEmpty()) {
+            ServerPlayer chosen = candidates.get(server.overworld().getRandom().nextInt(candidates.size()));
+            spawnInFront(chosen, config);
+        }
+    }
+
+    private static int active(MinecraftServer server) {
+        int count = 0;
+        for (ServerLevel level : server.getAllLevels()) {
+            for (Entity entity : level.getAllEntities()) {
+                if (entity instanceof Mob mob && mob.getTags().contains(TAG)) {
+                    count++;
+                }
             }
-            spawnInFront(player, config);
+        }
+        return count;
+    }
+
+    private static void expire(MinecraftServer server, int lifetimeSeconds) {
+        if (lifetimeSeconds <= 0) {
+            return;
+        }
+        long lifetime = lifetimeSeconds * 20L;
+        for (ServerLevel level : server.getAllLevels()) {
+            long now = level.getGameTime();
+            List<Mob> gone = new ArrayList<>();
+            for (Entity entity : level.getAllEntities()) {
+                if (!(entity instanceof Mob mob) || !mob.getTags().contains(TAG)) {
+                    continue;
+                }
+                if (!mob.getPersistentData().contains(SPAWN_KEY)) {
+                    mob.getPersistentData().putLong(SPAWN_KEY, now);
+                } else if (now - mob.getPersistentData().getLong(SPAWN_KEY) >= lifetime) {
+                    gone.add(mob);
+                }
+            }
+            for (Mob mob : gone) {
+                level.sendParticles(ParticleTypes.POOF, mob.getX(), mob.getY() + 1.0D, mob.getZ(), 12, 0.3D, 0.5D, 0.3D, 0.02D);
+                mob.discard();
+            }
         }
     }
 
@@ -88,7 +133,9 @@ public final class NpcEvents {
         double radius = min + random.nextDouble() * (max - min);
         int x = (int) Math.floor(player.getX() + Math.cos(angle) * radius);
         int z = (int) Math.floor(player.getZ() + Math.sin(angle) * radius);
-        level.getChunk(x >> 4, z >> 4);
+        if (!level.hasChunkAt(new BlockPos(x, level.getMinBuildHeight(), z))) {
+            return false;
+        }
         int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z);
         if (y <= level.getMinBuildHeight() + 1) {
             y = player.getBlockY();
@@ -127,6 +174,7 @@ public final class NpcEvents {
         npc.getPersistentData().putString(LEVEL_KEY, mission.level);
         npc.getPersistentData().putString(ITEM_KEY, BuiltInRegistries.ITEM.getKey(mission.item).toString());
         npc.getPersistentData().putInt(COUNT_KEY, mission.count);
+        npc.getPersistentData().putLong(SPAWN_KEY, level.getGameTime());
         npc.setNoAi(true);
         npc.setInvulnerable(true);
         npc.setSilent(true);

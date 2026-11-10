@@ -79,7 +79,8 @@ public final class ShopService {
         double buyScale = inflation;
         double sellScale = UMAConfig.COMMON.shopSellMultiplier.get()
                 * (UMAConfig.COMMON.shopInflationOnSell.get() ? inflation : 1.0D);
-        if (buyScale == 1.0D && sellScale == 1.0D) {
+        double fixedSell = UMAConfig.COMMON.shopSellPrice.get();
+        if (buyScale == 1.0D && sellScale == 1.0D && fixedSell <= 0.0D) {
             return;
         }
         merged.replaceAll((id, category) -> {
@@ -88,7 +89,8 @@ public final class ShopService {
                 if (item.stack().getItem() instanceof CashItem) {
                     items.add(item);
                 } else {
-                    items.add(new ShopItem(item.stack(), item.buy() * buyScale, item.sell() * sellScale, item.taxed()));
+                    double sell = fixedSell > 0.0D && item.sell() > 0.0D ? fixedSell : item.sell() * sellScale;
+                    items.add(new ShopItem(item.stack(), item.buy() * buyScale, sell, item.taxed()));
                 }
             }
             return new ShopCategory(category.name(), category.icon(), category.order(), items);
@@ -148,7 +150,7 @@ public final class ShopService {
         return Money.totalBig(player);
     }
 
-    private static boolean charge(ServerPlayer player, BigInteger cents) {
+    public static boolean charge(ServerPlayer player, BigInteger cents) {
         if (UMAConfig.COMMON.bankEnabled.get()) {
             BigInteger taken = BankService.withdraw(player.server, player.getUUID(), cents);
             if (taken.compareTo(cents) < 0) {

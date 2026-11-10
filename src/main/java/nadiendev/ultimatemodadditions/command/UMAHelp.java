@@ -92,6 +92,7 @@ public final class UMAHelp {
             new Entry("admin", "ban_reload", "/uma ban reload", OPERATOR),
             new Entry("admin", "event_list", "/uma event list [active]", OPERATOR),
             new Entry("admin", "event_status", "/uma event <event> status [true|false]", OPERATOR),
+            new Entry("admin", "echo_open", "/uma echo <echo> [players]", OPERATOR),
             new Entry("admin", "event_spawn", "/uma event bee|boss|npc_missions spawn [player]", OPERATOR));
 
     private UMAHelp() {

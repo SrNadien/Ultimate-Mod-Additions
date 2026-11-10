@@ -1,9 +1,17 @@
 package nadiendev.ultimatemodadditions.datagen.providers;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import nadiendev.ultimatemodadditions.UMA;
 import nadiendev.ultimatemodadditions.currency.Denomination;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
 
 public class UMALangProvider extends LanguageProvider {
 
@@ -20,6 +28,18 @@ public class UMALangProvider extends LanguageProvider {
             english();
         } else {
             spanish();
+        }
+    }
+
+    private void echoTexts(String file) {
+        try (InputStream stream = UMALangProvider.class.getResourceAsStream("/echoes/" + file)) {
+            if (stream == null) {
+                return;
+            }
+            JsonObject texts = new Gson().fromJson(new InputStreamReader(stream, StandardCharsets.UTF_8), JsonObject.class);
+            texts.entrySet().forEach(entry -> add(entry.getKey(), entry.getValue().getAsString()));
+        } catch (IOException exception) {
+            throw new UncheckedIOException(exception);
         }
     }
 
@@ -48,6 +68,7 @@ public class UMALangProvider extends LanguageProvider {
     private void english() {
         add("itemGroup.ultimatemodadditions", "Ultimate Mod Additions");
         cashItems(false);
+        echoTexts("lang_en.json");
         add("ftbquests.reward.ultimatemodadditions.money", "Money");
         add("ftbquests.reward.ultimatemodadditions.money.to_account", "Pay into the bank account");
         add("message.ultimatemodadditions.rent_title", "Claim rent");
@@ -291,6 +312,8 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.ban_empty_hand", "You are not holding anything");
         add("command.ultimatemodadditions.ban_unknown_item", "%s is not an item");
         add("command.ultimatemodadditions.ban_purged", "Cleared %s banned items from %s players and %s from the ground");
+        add("currency.ultimatemodadditions.mangos", "Mangos");
+        add("currency.ultimatemodadditions.mango", "Mango");
         add("command.ultimatemodadditions.coliseum_returned", "Brought %s player(s) back from the coliseum");
         add("command.ultimatemodadditions.coliseum_sent", "Sent %s player(s) to the coliseum");
         add("command.ultimatemodadditions.ban_not_found", "%s has no ban to remove (it may come from KubeJS)");
@@ -350,6 +373,8 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.help.ban_list", "Lists the live bans");
         add("command.ultimatemodadditions.help.event_list", "Lists the events and whether they are on");
         add("command.ultimatemodadditions.help.event_status", "Shows or changes whether an event is on (bee, boss, npc_missions, welcome)");
+        add("command.ultimatemodadditions.echo_unknown", "Unknown echo");
+        add("command.ultimatemodadditions.help.echo_open", "Opens an FTB Echoes echo for you or other players (guide, tinkerer, mystic, steward, weaver, smith, pathfinder, spark, ember, prism, drakesmith, dusk, elder, boundless, dawn, discord)");
         add("command.ultimatemodadditions.help.event_spawn", "Triggers the bee, the boss or an NPC mission now");
         add("command.ultimatemodadditions.help.title", "Ultimate Mod Additions - commands");
         add("command.ultimatemodadditions.help.hint", "Click a section, or use /uma help <section>");
@@ -521,6 +546,7 @@ public class UMALangProvider extends LanguageProvider {
     private void spanish() {
         add("itemGroup.ultimatemodadditions", "Ultimate Mod Additions");
         cashItems(true);
+        echoTexts("lang_es.json");
         add("ftbquests.reward.ultimatemodadditions.money", "Dinero");
         add("ftbquests.reward.ultimatemodadditions.money.to_account", "Pagar a la cuenta del banco");
         add("message.ultimatemodadditions.rent_title", "Renta de claims");
@@ -764,6 +790,8 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.ban_empty_hand", "No tenés nada en la mano");
         add("command.ultimatemodadditions.ban_unknown_item", "%s no es un ítem");
         add("command.ultimatemodadditions.ban_purged", "Se sacaron %s ítems baneados a %s jugadores y %s del piso");
+        add("currency.ultimatemodadditions.mangos", "Mangos");
+        add("currency.ultimatemodadditions.mango", "Mango");
         add("command.ultimatemodadditions.coliseum_returned", "Se trajo de vuelta a %s jugador(es) del coliseo");
         add("command.ultimatemodadditions.coliseum_sent", "Se mandó a %s jugador(es) al coliseo");
         add("command.ultimatemodadditions.ban_not_found", "%s no tiene ningún baneo para sacar (puede venir de KubeJS)");
@@ -823,6 +851,8 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.help.ban_list", "Lista los baneos en vivo");
         add("command.ultimatemodadditions.help.event_list", "Lista los eventos y si están activos");
         add("command.ultimatemodadditions.help.event_status", "Muestra o cambia si un evento está activo (bee, boss, npc_missions, welcome)");
+        add("command.ultimatemodadditions.echo_unknown", "Echo desconocido");
+        add("command.ultimatemodadditions.help.echo_open", "Abre un echo de FTB Echoes para vos u otros jugadores (guide, tinkerer, mystic, steward, weaver, smith, pathfinder, spark, ember, prism, drakesmith, dusk, elder, boundless, dawn, discord)");
         add("command.ultimatemodadditions.help.event_spawn", "Lanza ahora la abeja, el jefe o una misión de NPC");
         add("command.ultimatemodadditions.help.title", "Ultimate Mod Additions - comandos");
         add("command.ultimatemodadditions.help.hint", "Tocá una sección, o usá /uma help <sección>");

@@ -178,7 +178,10 @@ public final class UMAConfig {
         public final ModConfigSpec.BooleanValue shopAdminGui;
         public final ModConfigSpec.DoubleValue shopInflationPercent;
         public final ModConfigSpec.BooleanValue shopInflationOnSell;
+        public final ModConfigSpec.BooleanValue shopEchoesCurrency;
+        public final ModConfigSpec.BooleanValue echoesPack;
         public final ModConfigSpec.DoubleValue shopSellMultiplier;
+        public final ModConfigSpec.DoubleValue shopSellPrice;
         public final ModConfigSpec.BooleanValue shopGeneratedRequireRecipe;
         public final ModConfigSpec.BooleanValue shopGeneratedSkipCreative;
         public final ModConfigSpec.ConfigValue<List<? extends String>> shopGeneratedIgnoredNamespaces;
@@ -527,9 +530,21 @@ public final class UMAConfig {
             shopInflationOnSell = builder
                     .comment("Also apply the inflation to the prices the shop pays when a player sells.")
                     .define("inflation_applies_to_sell", false);
+            shopEchoesCurrency = builder
+                    .comment("When FTB Echoes is installed, its shops and rewards use mangos as currency (1 Echoes coin = 1 mango),",
+                            "paid from the bank account when the bank is enabled, or from cash and wallets otherwise.")
+                    .define("ftb_echoes_currency", true);
+            echoesPack = builder
+                    .comment("When FTB Echoes is installed, add the echoes of this mod.",
+                            "Shop entries and rewards with items of mods that are not installed are skipped.")
+                    .define("echoes_pack", true);
             shopSellMultiplier = builder
                     .comment("Every sell price of the shop (but not coins and bills) is multiplied by this.")
                     .defineInRange("sell_multiplier", 1.0D, 0.0D, 100000.0D);
+            shopSellPrice = builder
+                    .comment("Fixed price, in mangos, the shop pays for every item it buys from players (coins and bills excluded).",
+                            "Items the shop does not buy stay unsellable. 0 uses the sell price of each item instead.")
+                    .defineInRange("sell_price", 1.0D, 0.0D, 1.0E9D);
             shopGeneratedRequireRecipe = builder
                     .comment("Items added automatically (mod zones and vanilla fill) must have a recipe.")
                     .define("generated_require_recipe", true);
@@ -593,10 +608,10 @@ public final class UMAConfig {
             dailyModEntries = builder
                     .comment("Add one reward entry per installed mod to the daily, weekly and monthly lists.",
                             "Only items that have a recipe, are not creative or operator items, and cost less than the cap of the period are used.")
-                    .define("mod_entries", true);
+                    .define("mod_entries", false);
             dailyModBonus = builder
                     .comment("Every claim also gives a random item from an installed mod, picked from the shop mod zones.")
-                    .define("mod_bonus", true);
+                    .define("mod_bonus", false);
             dailyModBonusChance = builder
                     .comment("Percent chance, per installed mod and per claim, of getting one of that mod's items.")
                     .defineInRange("mod_bonus_chance_percent", 1.0D, 0.0D, 100.0D);
