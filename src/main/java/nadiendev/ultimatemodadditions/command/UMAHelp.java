@@ -60,6 +60,7 @@ public final class UMAHelp {
             new Entry("jobs", "jobs_boost", "/uma jobs boost add|clear|list", OPERATOR),
             new Entry("jobs", "jobs_admin", "/uma jobs admin employ|fire|setlevel|addxp", OPERATOR),
             new Entry("daily", "daily_open", "/uma daily", ANYONE),
+            new Entry("daily", "daily_alias", "/rewards", ANYONE),
             new Entry("daily", "daily_claim", "/uma daily claim [daily|weekly|monthly]", ANYONE),
             new Entry("daily", "daily_config", "/uma daily config", DailyPermissions::canConfigure),
             new Entry("daily", "daily_reset", "/uma daily reset", DailyPermissions::canConfigure),

@@ -108,6 +108,9 @@ public final class UMACommands {
                 dispatcher.register(factory.get());
             }
         }
+        if (dispatcher.getRoot().getChild("rewards") == null) {
+            dispatcher.register(dailyCommand("rewards"));
+        }
     }
 
     private static LiteralArgumentBuilder<CommandSourceStack> root() {
@@ -504,7 +507,11 @@ public final class UMACommands {
             Component.translatable("command.ultimatemodadditions.shop_too_far"));
 
     private static LiteralArgumentBuilder<CommandSourceStack> dailyCommand() {
-        return Commands.literal("daily")
+        return dailyCommand("daily");
+    }
+
+    private static LiteralArgumentBuilder<CommandSourceStack> dailyCommand(String name) {
+        return Commands.literal(name)
                 .requires(source -> UMAConfig.COMMON.dailyEnabled.get())
                 .executes(UMACommands::dailyOpen)
                 .then(Commands.literal("claim")

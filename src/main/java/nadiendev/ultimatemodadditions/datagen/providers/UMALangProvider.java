@@ -240,7 +240,7 @@ public class UMALangProvider extends LanguageProvider {
         add("screen.ultimatemodadditions.daily_config_restore", "Restore defaults");
         add("screen.ultimatemodadditions.daily_config_row", "Day %s: %s");
         add("message.ultimatemodadditions.daily_no_permission", "You need the uma.daily.config permission");
-        add("message.ultimatemodadditions.daily_available", "You have a reward to claim. Use /uma daily");
+        add("message.ultimatemodadditions.daily_available", "You have a reward to claim. Use /rewards");
         add("message.ultimatemodadditions.daily_not_ready", "That reward is not ready yet");
         add("message.ultimatemodadditions.daily_claimed_daily", "Daily reward claimed");
         add("message.ultimatemodadditions.daily_claimed_weekly", "Weekly reward claimed");
@@ -375,6 +375,7 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.help.event_status", "Shows or changes whether an event is on (bee, boss, npc_missions, welcome)");
         add("command.ultimatemodadditions.echo_unknown", "Unknown echo");
         add("command.ultimatemodadditions.help.echo_open", "Opens an FTB Echoes echo for you or other players (guide, tinkerer, mystic, steward, weaver, smith, pathfinder, spark, ember, prism, drakesmith, dusk, elder, boundless, dawn, discord)");
+        add("command.ultimatemodadditions.help.daily_alias", "Same as /uma daily (opens the daily, weekly and monthly rewards)");
         add("command.ultimatemodadditions.help.event_spawn", "Triggers the bee, the boss or an NPC mission now");
         add("command.ultimatemodadditions.help.title", "Ultimate Mod Additions - commands");
         add("command.ultimatemodadditions.help.hint", "Click a section, or use /uma help <section>");
@@ -718,7 +719,7 @@ public class UMALangProvider extends LanguageProvider {
         add("screen.ultimatemodadditions.daily_config_restore", "Restaurar originales");
         add("screen.ultimatemodadditions.daily_config_row", "Día %s: %s");
         add("message.ultimatemodadditions.daily_no_permission", "Te falta el permiso uma.daily.config");
-        add("message.ultimatemodadditions.daily_available", "Tenés una recompensa para reclamar. Usá /uma daily");
+        add("message.ultimatemodadditions.daily_available", "Tenés una recompensa para reclamar. Usá /rewards");
         add("message.ultimatemodadditions.daily_not_ready", "Esa recompensa todavía no está lista");
         add("message.ultimatemodadditions.daily_claimed_daily", "Recompensa diaria reclamada");
         add("message.ultimatemodadditions.daily_claimed_weekly", "Recompensa semanal reclamada");
@@ -853,6 +854,7 @@ public class UMALangProvider extends LanguageProvider {
         add("command.ultimatemodadditions.help.event_status", "Muestra o cambia si un evento está activo (bee, boss, npc_missions, welcome)");
         add("command.ultimatemodadditions.echo_unknown", "Echo desconocido");
         add("command.ultimatemodadditions.help.echo_open", "Abre un echo de FTB Echoes para vos u otros jugadores (guide, tinkerer, mystic, steward, weaver, smith, pathfinder, spark, ember, prism, drakesmith, dusk, elder, boundless, dawn, discord)");
+        add("command.ultimatemodadditions.help.daily_alias", "Igual que /uma daily (abre las recompensas diaria, semanal y mensual)");
         add("command.ultimatemodadditions.help.event_spawn", "Lanza ahora la abeja, el jefe o una misión de NPC");
         add("command.ultimatemodadditions.help.title", "Ultimate Mod Additions - comandos");
         add("command.ultimatemodadditions.help.hint", "Tocá una sección, o usá /uma help <sección>");

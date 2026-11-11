@@ -1,5 +1,12 @@
 # Changelog
 
+## Ultimate Mod Additions 1.0.9 — 2026-11-11
+
+### Changes
+
+- **New command `/rewards`:** same as `/uma daily`.
+- **Fix crash with FTB Quests 2101.1.38:** the money quest reward no longer crashes the server when it is claimed (the reward now matches the new FTB Quests claim signature, so FTB Quests 2101.1.38 or newer is required for it).
+
 ## Ultimate Mod Additions 1.0.8 — 2026-11-10
 
 ### Changes

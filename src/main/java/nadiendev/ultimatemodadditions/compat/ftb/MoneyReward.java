@@ -76,11 +76,11 @@ public class MoneyReward extends Reward {
     }
 
     @Override
-    public void claim(ServerPlayer player, boolean notify) {
+    public boolean claim(ServerPlayer player, boolean notify) {
         BigInteger cents = BigInteger.valueOf(Money.toCents(amount));
         BigInteger given = Payout.give(player, cents, toAccount ? PayTarget.ACCOUNT : PayTarget.CASH);
         if (given.signum() == 0) {
-            return;
+            return false;
         }
         if (notify) {
             Component text = Component.translatable("ftbquests.reward.ultimatemodadditions.money").append(": ")
@@ -88,6 +88,7 @@ public class MoneyReward extends Reward {
             NetworkManager.sendToPlayer(player, new NotifyRewardMessage(id, text,
                     Icon.getIcon(UMA.MODID + ":item/20_lucas"), disableRewardScreenBlur));
         }
+        return true;
     }
 
     @Override
