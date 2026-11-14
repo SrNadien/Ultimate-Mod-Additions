@@ -9,7 +9,9 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.saveddata.SavedData;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -48,6 +50,10 @@ public final class Bank extends SavedData {
         });
         tag.put(ACCOUNTS, accounts);
         return tag;
+    }
+
+    public List<UUID> accountIds() {
+        return new ArrayList<>(balances.keySet());
     }
 
     public BigInteger balance(UUID id) {

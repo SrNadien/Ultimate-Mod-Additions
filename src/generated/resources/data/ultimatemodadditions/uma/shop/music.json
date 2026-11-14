@@ -21,8 +21,141 @@
         "id": "minecraft:note_block"
       },
       "sell": 16.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_13"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_cat"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_blocks"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_chirp"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_creator"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_creator_music_box"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_far"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_mall"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_mellohi"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_stal"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_strad"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_ward"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_11"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_wait"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_otherside"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_relic"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_5"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_pigstep"
+      },
+      "sell": 150.0
+    },
+    {
+      "buy": 1500.0,
+      "item": {
+        "id": "minecraft:music_disc_precipice"
+      },
+      "sell": 150.0
     }
   ],
   "name": "shop.ultimatemodadditions.category.music",
-  "order": 18
+  "order": 19
 }

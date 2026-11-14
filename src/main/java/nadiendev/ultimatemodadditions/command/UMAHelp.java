@@ -45,6 +45,7 @@ public final class UMAHelp {
             new Entry("money", "money_balance", "/uma money balance", ANYONE),
             new Entry("money", "money_balance_other", "/uma money balance <player>", OPERATOR),
             new Entry("money", "money_pay", "/uma money pay <player> <amount>", ANYONE),
+            new Entry("money", "money_reset_all", "/uma money take all", OPERATOR),
             new Entry("money", "money_adjust", "/uma money give|take|set <players> <amount>", OPERATOR),
             new Entry("money", "money_team", "/uma money team balance|deposit|withdraw", FTB),
             new Entry("shop", "shop_open", "/uma shop", ANYONE),
@@ -93,6 +94,8 @@ public final class UMAHelp {
             new Entry("admin", "ban_reload", "/uma ban reload", OPERATOR),
             new Entry("admin", "event_list", "/uma event list [active]", OPERATOR),
             new Entry("admin", "event_status", "/uma event <event> status [true|false]", OPERATOR),
+            new Entry("admin", "config_view", "/uma config [list [section]|get <key>]", OPERATOR),
+            new Entry("admin", "config_edit", "/uma config set|reset <key> [value]", OPERATOR),
             new Entry("admin", "echo_open", "/uma echo <echo> [players]", OPERATOR),
             new Entry("admin", "event_spawn", "/uma event bee|boss|npc_missions spawn [player]", OPERATOR));
 

@@ -1,16 +1,17 @@
-// 1.21.1	2026-11-11T13:38:41.4649373	Shop zones
+// 1.21.1	2026-11-13T22:29:23.0022898	Shop zones
 78cc58220f4e96e5422f005512cf0876c5098af7 data/ultimatemodadditions/uma/shop/armor.json
 148e43d66afb46fd4d2361bf6028ef6acd750bb6 data/ultimatemodadditions/uma/shop/coins.json
 8cea1a4afbdac7bfdc629ebb442a2364085f225c data/ultimatemodadditions/uma/shop/crops.json
 5df3955256699bbe1cd9119ee05a9145786be7ee data/ultimatemodadditions/uma/shop/decoration.json
 b2f8fb2e4c9fab9f644fad98350d583b983bab72 data/ultimatemodadditions/uma/shop/decorative_blocks.json
-7f71576a173196a20eef951422ff54edc8218382 data/ultimatemodadditions/uma/shop/dyes.json
+7ad5cdaf67581b1f6cec30ee2cb440eb44e83e04 data/ultimatemodadditions/uma/shop/dyes.json
+ec2988d43d13056e1b54d686f1888e43dc406c43 data/ultimatemodadditions/uma/shop/flowers.json
 4b5673405ce448048fe6a053035ea34883dbe6c7 data/ultimatemodadditions/uma/shop/food.json
-7e6bb970ca517af008f15791002abecf9d25ff28 data/ultimatemodadditions/uma/shop/misc.json
+cb36a5a31add62a0b4dced169b62f1148aedc33f data/ultimatemodadditions/uma/shop/misc.json
 ec8854796a5328ac016f1ff8a4dbb02a9aabb7df data/ultimatemodadditions/uma/shop/mob_drops.json
-2e52a80688258291e249cf7d749d3012b91c4568 data/ultimatemodadditions/uma/shop/music.json
+faa3cc14dff31f3b9ea350f7db685a0313135e75 data/ultimatemodadditions/uma/shop/music.json
 94bce010b8c0e32396bcb37d8937c163ba800150 data/ultimatemodadditions/uma/shop/natural.json
-66c57fae212331724b1292eee613b1be7e5de0a1 data/ultimatemodadditions/uma/shop/potions.json
+fe31fe4c6f0074e6e88f726ba7fc5b42fe33bb53 data/ultimatemodadditions/uma/shop/potions.json
 84a042475c185d874a1d86d0ad0ef6e2c20f4b5c data/ultimatemodadditions/uma/shop/redstone.json
 48e48c5362e90354ba53763ad698ca19896d04ae data/ultimatemodadditions/uma/shop/resources.json
 892b793a7971ecbaa423b46ef0e76c38cafa2330 data/ultimatemodadditions/uma/shop/stone.json

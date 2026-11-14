@@ -1,5 +1,19 @@
 # Changelog
 
+## Ultimate Mod Additions 1.0.10 — 2026-11-13
+
+### Changes
+
+- **Prices follow demand:** the more an item is bought, the more it costs for everybody (2 to 6 purchases +10 %, 7 to 10 +20 %, 11 to 19 +50 %, 20 to 50 +70 %, more than 50 +200 %), and items nobody buys slowly get 1 % cheaper. Everything is in the new `[shop_demand]` config section.
+- **Ban commands no longer freeze the server:** changing a ban no longer resends recipes and tags to every player (that restarted JEI for everybody on big modpacks). Bans and unbans apply at once, the recipes of banned items are updated on the server a moment later, and the JEI search words for banned items refresh when a player rejoins or on `/reload`. `refresh_clients: true` in `bans.yml` brings the old behavior back.
+- **Starting prices per section, built into the mod:** stone 12700, wood 27900, natural 80000, decorative blocks 40000, crops 10000, food 7000, resources 45000, mob drops 9900, weapons 300000, armor 600000, tools 600000, redstone 1200000, workstations 1500, storage 7900, decoration 40000, dyes 900, flowers 4500, potions 99000, music 10000, miscellaneous 89000 and the FTB Quests zone 500000. The cheapest item of a section costs that and the rest goes up by the same amount, so the order of the prices is kept. The most powerful items start at 100000, the nether star costs 12 million and every mob head 2.5 million. The demand then raises or lowers them.
+- **New Flowers section, every potion type and every music disc** in the shop; the FTB Quests screen configurator is no longer sold.
+- **Coins section is optional:** the shop section where players buy coins and bills is now `[shop] coins_section`, off by default.
+- **Mission NPCs can be killed:** they are no longer invulnerable and any tool or weapon kills them in one hit (`invulnerable`, `one_hit_tools` and `drops` in `npc_missions.json5`); they drop nothing when killed.
+- **New command `/uma money take all`:** puts the bank account of every player, online or not, back to the starting money (2500 by default).
+- **Selling is off by default:** `[shop] sell_enabled` is false, so nothing can be sold until you turn it on.
+- **Developer config:** `config/ultimatemodadditions/developer.properties` and `/uma config list|get|set|reset` edit the server config from the game for the developers you list, with developer mode off by default.
+
 ## Ultimate Mod Additions 1.0.9 — 2026-11-11
 
 ### Changes

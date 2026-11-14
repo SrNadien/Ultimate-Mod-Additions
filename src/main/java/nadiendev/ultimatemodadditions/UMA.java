@@ -6,6 +6,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import nadiendev.ultimatemodadditions.compat.CompatModules;
+import nadiendev.ultimatemodadditions.config.DeveloperConfig;
 import nadiendev.ultimatemodadditions.config.UMAConfig;
 import nadiendev.ultimatemodadditions.registry.UMARegistries;
 import org.slf4j.Logger;
@@ -18,6 +19,7 @@ public final class UMA {
 
     public UMA(IEventBus modBus, ModContainer container) {
         UMAConfig.register(container);
+        DeveloperConfig.load();
         UMARegistries.register(modBus);
         CompatModules.init(modBus);
     }

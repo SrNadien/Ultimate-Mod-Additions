@@ -30,9 +30,10 @@ public final class ShopLayout {
             new Def("storage", 14, "minecraft:chest"),
             new Def("decoration", 15, "minecraft:painting"),
             new Def("dyes", 16, "minecraft:red_dye"),
-            new Def("potions", 17, "minecraft:brewing_stand"),
-            new Def("music", 18, "minecraft:jukebox"),
-            new Def("misc", 19, "minecraft:name_tag"));
+            new Def("flowers", 17, "minecraft:poppy"),
+            new Def("potions", 18, "minecraft:brewing_stand"),
+            new Def("music", 19, "minecraft:jukebox"),
+            new Def("misc", 20, "minecraft:name_tag"));
 
     public static final Set<String> IDS = ALL.stream().map(Def::id).collect(Collectors.toSet());
 

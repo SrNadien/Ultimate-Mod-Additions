@@ -8,6 +8,7 @@ import nadiendev.ultimatemodadditions.config.EventConfigs;
 import nadiendev.ultimatemodadditions.config.JsonValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -19,13 +20,19 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
@@ -97,6 +104,47 @@ public final class NpcEvents {
             }
         }
         return count;
+    }
+
+    @SubscribeEvent
+    public static void onDamage(LivingIncomingDamageEvent event) {
+        LivingEntity target = event.getEntity();
+        if (!target.getTags().contains(TAG) || !(event.getSource().getEntity() instanceof LivingEntity attacker)) {
+            return;
+        }
+        if (JsonValues.bool(config(), "one_hit_tools", true) && holdsToolOrWeapon(attacker.getMainHandItem())) {
+            event.setAmount(target.getMaxHealth() + target.getAbsorptionAmount() + 1.0F);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onDrops(LivingDropsEvent event) {
+        if (event.getEntity().getTags().contains(TAG) && !JsonValues.bool(config(), "drops", false)) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onExperience(LivingExperienceDropEvent event) {
+        if (event.getEntity().getTags().contains(TAG) && !JsonValues.bool(config(), "drops", false)) {
+            event.setDroppedExperience(0);
+        }
+    }
+
+    private static boolean holdsToolOrWeapon(ItemStack stack) {
+        if (stack.isEmpty()) {
+            return false;
+        }
+        if (stack.has(DataComponents.TOOL)) {
+            return true;
+        }
+        for (ItemAttributeModifiers.Entry entry : stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS,
+                ItemAttributeModifiers.EMPTY).modifiers()) {
+            if (entry.attribute().equals(Attributes.ATTACK_DAMAGE)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void expire(MinecraftServer server, int lifetimeSeconds) {
@@ -176,7 +224,7 @@ public final class NpcEvents {
         npc.getPersistentData().putInt(COUNT_KEY, mission.count);
         npc.getPersistentData().putLong(SPAWN_KEY, level.getGameTime());
         npc.setNoAi(true);
-        npc.setInvulnerable(true);
+        npc.setInvulnerable(JsonValues.bool(config, "invulnerable", false));
         npc.setSilent(true);
         npc.setPersistenceRequired();
         npc.setCustomName(Component.translatable("entity.ultimatemodadditions.npc_mission",

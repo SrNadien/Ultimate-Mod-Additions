@@ -67,30 +67,50 @@ public final class ShopService {
         });
         addTrades(merged);
         merged.putAll(ModShops.get(server));
-        scalePrices(merged);
+        if (!UMAConfig.COMMON.shopCoinsSection.get()) {
+            merged.remove(UMA.id("coins"));
+        }
+        scalePrices(merged, server);
         ShopEdits edits = ShopEdits.get(server);
-        merged.putAll(edits.custom());
+        merged.putAll(UMAConfig.COMMON.shopSellEnabled.get() ? edits.custom() : withoutSelling(edits.custom()));
         edits.hidden().forEach(merged::remove);
         return merged;
     }
 
-    private static void scalePrices(Map<ResourceLocation, ShopCategory> merged) {
+    private static Map<ResourceLocation, ShopCategory> withoutSelling(Map<ResourceLocation, ShopCategory> categories) {
+        Map<ResourceLocation, ShopCategory> result = new LinkedHashMap<>();
+        categories.forEach((id, category) -> {
+            List<ShopItem> items = new ArrayList<>(category.items().size());
+            for (ShopItem item : category.items()) {
+                items.add(new ShopItem(item.stack(), item.buy(), 0.0D, item.taxed()));
+            }
+            result.put(id, new ShopCategory(category.name(), category.icon(), category.order(), items));
+        });
+        return result;
+    }
+
+    private static void scalePrices(Map<ResourceLocation, ShopCategory> merged, MinecraftServer server) {
+        boolean sellEnabled = UMAConfig.COMMON.shopSellEnabled.get();
+        boolean demandOn = UMAConfig.COMMON.demandEnabled.get();
+        ShopDemand demand = demandOn ? ShopDemand.get(server) : null;
+        ShopDemand.Curve curve = demandOn ? ShopDemand.curve() : null;
         double inflation = 1.0D + UMAConfig.COMMON.shopInflationPercent.get() / 100.0D;
         double buyScale = inflation;
         double sellScale = UMAConfig.COMMON.shopSellMultiplier.get()
                 * (UMAConfig.COMMON.shopInflationOnSell.get() ? inflation : 1.0D);
         double fixedSell = UMAConfig.COMMON.shopSellPrice.get();
-        if (buyScale == 1.0D && sellScale == 1.0D && fixedSell <= 0.0D) {
-            return;
-        }
+        ShopFloors floors = ShopFloors.current();
         merged.replaceAll((id, category) -> {
             List<ShopItem> items = new ArrayList<>(category.items().size());
+            double shift = floors.shift(id.getPath(), category, buyScale);
             for (ShopItem item : category.items()) {
                 if (item.stack().getItem() instanceof CashItem) {
                     items.add(item);
                 } else {
-                    double sell = fixedSell > 0.0D && item.sell() > 0.0D ? fixedSell : item.sell() * sellScale;
-                    items.add(new ShopItem(item.stack(), item.buy() * buyScale, sell, item.taxed()));
+                    double sell = !sellEnabled ? 0.0D : fixedSell > 0.0D && item.sell() > 0.0D ? fixedSell : item.sell() * sellScale;
+                    double demandScale = demand == null ? 1.0D : demand.multiplier(curve, item.stack().getItem());
+                    double start = floors.apply(item.stack(), item.buy() * buyScale, shift);
+                    items.add(new ShopItem(item.stack(), start * demandScale, sell, item.taxed()));
                 }
             }
             return new ShopCategory(category.name(), category.icon(), category.order(), items);
@@ -177,6 +197,12 @@ public final class ShopService {
 
     public static void openTiendita(ServerPlayer player) {
         send(player, true, true, true, true);
+    }
+
+    public static void refreshAll(MinecraftServer server) {
+        for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+            send(player, false, false, false, true);
+        }
     }
 
     public static void send(ServerPlayer player, boolean open, boolean stand, boolean tiendita, boolean reload) {
@@ -359,6 +385,9 @@ public final class ShopService {
             return;
         }
         boolean overflow = give(player, item.stack(), times);
+        if (UMAConfig.COMMON.demandEnabled.get() && ShopDemand.get(player.server).record(item.stack().getItem(), times)) {
+            refreshAll(player.server);
+        }
         message(player, Component.translatable("message.ultimatemodadditions.shop_bought", times,
                 item.stack().getHoverName(), Money.format(total)), ChatFormatting.GREEN);
         if (overflow) {
@@ -368,6 +397,10 @@ public final class ShopService {
     }
 
     private static void sell(ServerPlayer player, ShopItem item, int amount) {
+        if (!UMAConfig.COMMON.shopSellEnabled.get()) {
+            message(player, Component.translatable("message.ultimatemodadditions.shop_sell_disabled"), ChatFormatting.RED);
+            return;
+        }
         if (!item.sellable()) {
             return;
         }

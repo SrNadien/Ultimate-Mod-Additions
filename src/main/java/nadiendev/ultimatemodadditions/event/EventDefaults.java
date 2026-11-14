@@ -41,6 +41,8 @@ public final class EventDefaults {
             // (deliveries: [item, min, max]), the prizes (prizes: [item, min, max], prize_count different ones) and experience.
             // Items of mods that are not installed are skipped. mobs: entity ids used as the NPC body (missing ones are skipped).
             // max_active: NPCs alive at the same time in the whole server; a new one only appears for a connected player, in a chunk that is already loaded.
+            // invulnerable: true makes the NPCs unkillable. one_hit_tools: any tool or weapon in the main hand kills an NPC in one hit.
+            // drops: whether a killed NPC drops its loot and experience (false by default).
             // lifetime_seconds: the NPC disappears after this many seconds without being served (300 = 5 minutes, 0 = never).
             """, EventDefaults::npc);
 
@@ -198,6 +200,9 @@ public final class EventDefaults {
         root.addProperty("spawn_period_ticks", 6000);
         root.addProperty("lifetime_seconds", 300);
         root.addProperty("max_active", 1);
+        root.addProperty("invulnerable", false);
+        root.addProperty("one_hit_tools", true);
+        root.addProperty("drops", false);
         root.addProperty("distance_min", 6);
         root.addProperty("distance_max", 10);
         root.add("dimensions", JsonValues.array(List.of("minecraft:overworld")));
@@ -270,6 +275,7 @@ public final class EventDefaults {
         root.addProperty("enabled", true);
         root.addProperty("ops_bypass", true);
         root.addProperty("remove_recipes", true);
+        root.addProperty("refresh_clients", false);
         root.addProperty("scan_interval_ticks", 10);
         root.addProperty("notify_cooldown_ticks", 40);
         root.addProperty("log_all", false);

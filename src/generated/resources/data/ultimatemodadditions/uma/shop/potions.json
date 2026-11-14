@@ -21,8 +21,2168 @@
         "id": "minecraft:tipped_arrow"
       },
       "sell": 9.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:mundane"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:mundane"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:mundane"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:mundane"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:thick"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:thick"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:thick"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:thick"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:awkward"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:awkward"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:awkward"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:awkward"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:night_vision"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:night_vision"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:night_vision"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:night_vision"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_night_vision"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_night_vision"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_night_vision"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_night_vision"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:invisibility"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:invisibility"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:invisibility"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:invisibility"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_invisibility"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_invisibility"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_invisibility"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_invisibility"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:leaping"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:leaping"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:leaping"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:leaping"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_leaping"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_leaping"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_leaping"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_leaping"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_leaping"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_leaping"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_leaping"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_leaping"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:fire_resistance"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:fire_resistance"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:fire_resistance"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:fire_resistance"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_fire_resistance"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_fire_resistance"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_fire_resistance"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_fire_resistance"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:swiftness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:swiftness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:swiftness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:swiftness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_swiftness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_swiftness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_swiftness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_swiftness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_swiftness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_swiftness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_swiftness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_swiftness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slowness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slowness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slowness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slowness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slowness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slowness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slowness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slowness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_slowness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_slowness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_slowness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_slowness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:turtle_master"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:turtle_master"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:turtle_master"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:turtle_master"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_turtle_master"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_turtle_master"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_turtle_master"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_turtle_master"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_turtle_master"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_turtle_master"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_turtle_master"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_turtle_master"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:water_breathing"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:water_breathing"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:water_breathing"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:water_breathing"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_water_breathing"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_water_breathing"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_water_breathing"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_water_breathing"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:healing"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:healing"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:healing"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:healing"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_healing"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_healing"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_healing"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_healing"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:harming"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:harming"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:harming"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:harming"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_harming"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_harming"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_harming"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_harming"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:poison"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:poison"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:poison"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:poison"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_poison"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_poison"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_poison"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_poison"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_poison"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_poison"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_poison"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_poison"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:regeneration"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:regeneration"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:regeneration"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:regeneration"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_regeneration"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_regeneration"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_regeneration"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_regeneration"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_regeneration"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_regeneration"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_regeneration"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_regeneration"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strength"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strength"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strength"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strength"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_strength"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_strength"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_strength"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_strength"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_strength"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 400.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_strength"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 40.0
+    },
+    {
+      "buy": 600.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_strength"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 60.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:strong_strength"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weakness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weakness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weakness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weakness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_weakness"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_weakness"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_weakness"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_weakness"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:luck"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:luck"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:luck"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:luck"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slow_falling"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slow_falling"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slow_falling"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:slow_falling"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 225.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slow_falling"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 23.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slow_falling"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 450.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slow_falling"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 45.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:long_slow_falling"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:wind_charged"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:wind_charged"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:wind_charged"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:wind_charged"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weaving"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weaving"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weaving"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:weaving"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:oozing"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:oozing"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:oozing"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:oozing"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
+    },
+    {
+      "buy": 150.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:infested"
+          }
+        },
+        "id": "minecraft:potion"
+      },
+      "sell": 15.0
+    },
+    {
+      "buy": 200.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:infested"
+          }
+        },
+        "id": "minecraft:splash_potion"
+      },
+      "sell": 20.0
+    },
+    {
+      "buy": 300.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:infested"
+          }
+        },
+        "id": "minecraft:lingering_potion"
+      },
+      "sell": 30.0
+    },
+    {
+      "buy": 100.0,
+      "item": {
+        "components": {
+          "minecraft:potion_contents": {
+            "potion": "minecraft:infested"
+          }
+        },
+        "id": "minecraft:tipped_arrow"
+      },
+      "sell": 10.0
     }
   ],
   "name": "shop.ultimatemodadditions.category.potions",
-  "order": 17
+  "order": 18
 }

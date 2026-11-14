@@ -5,12 +5,16 @@ import nadiendev.ultimatemodadditions.data.ShopItem;
 import nadiendev.ultimatemodadditions.shop.ModShops;
 import nadiendev.ultimatemodadditions.shop.ShopLayout;
 import nadiendev.ultimatemodadditions.shop.ShopSections;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionContents;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -465,26 +469,61 @@ public class UMAShopProvider extends UMAJsonProvider {
                 byCategory.get(category).add(row);
             }
         }
+        Map<String, List<ShopItem>> extra = new LinkedHashMap<>();
+        extra.put("potions", potions());
+        extra.put("music", discs(placed));
         for (ShopLayout.Def def : ShopLayout.ALL) {
             List<String> rows = byCategory.get(def.id());
-            if (!rows.isEmpty()) {
+            List<ShopItem> more = extra.getOrDefault(def.id(), List.of());
+            if (!rows.isEmpty() || !more.isEmpty()) {
                 category(emitter, def.id(), "shop.ultimatemodadditions.category." + def.id(), def.icon(), def.order(),
-                        rows.toArray(new String[0]));
+                        rows.toArray(new String[0]), more);
             }
         }
+    }
+
+    private static List<ShopItem> potions() {
+        List<ShopItem> items = new ArrayList<>();
+        Item[] kinds = {Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION, Items.TIPPED_ARROW};
+        double[] prices = {150.0D, 200.0D, 300.0D, 100.0D};
+        for (Holder.Reference<Potion> potion : BuiltInRegistries.POTION.holders().toList()) {
+            if (potion.key().location().getPath().equals("water")) {
+                continue;
+            }
+            String name = potion.key().location().getPath();
+            double factor = name.startsWith("strong_") ? 2.0D : name.startsWith("long_") ? 1.5D : 1.0D;
+            for (int i = 0; i < kinds.length; i++) {
+                double buy = prices[i] * factor;
+                items.add(new ShopItem(PotionContents.createItemStack(kinds[i], potion), buy, Math.round(buy / 10.0D), true));
+            }
+        }
+        return items;
+    }
+
+    private static List<ShopItem> discs(Set<String> placed) {
+        List<ShopItem> items = new ArrayList<>();
+        for (Item item : BuiltInRegistries.ITEM) {
+            ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
+            if ("minecraft".equals(key.getNamespace()) && key.getPath().startsWith("music_disc_") && !placed.contains(key.toString())) {
+                items.add(new ShopItem(new ItemStack(item), 1500.0D, 150.0D, true));
+            }
+        }
+        return items;
     }
 
     private static Item item(String id) {
         return BuiltInRegistries.ITEM.get(ResourceLocation.parse(id));
     }
 
-    private static void category(Emitter emitter, String file, String name, String icon, int order, String[] rows) {
+    private static void category(Emitter emitter, String file, String name, String icon, int order, String[] rows,
+                                 List<ShopItem> more) {
         List<ShopItem> items = new ArrayList<>();
         for (String row : rows) {
             String[] part = row.split(" ");
             items.add(new ShopItem(new ItemStack(item(part[0])), Double.parseDouble(part[1]),
                     Double.parseDouble(part[2]), part.length < 4));
         }
+        items.addAll(more);
         emitter.accept(file, ShopCategory.CODEC, new ShopCategory(name, item(icon), order, items));
     }
 }

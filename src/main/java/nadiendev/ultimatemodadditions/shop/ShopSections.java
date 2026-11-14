@@ -52,11 +52,12 @@ public final class ShopSections {
                 + "music_disc_mall music_disc_mellohi music_disc_otherside music_disc_pigstep music_disc_precipice "
                 + "music_disc_relic music_disc_stal music_disc_strad music_disc_wait music_disc_ward note_block");
         add("dyes",
-                "allium azure_bluet black_dye blue_dye blue_orchid brown_dye cornflower cyan_dye dandelion "
-                + "glow_ink_sac gray_dye green_dye ink_sac light_blue_dye light_gray_dye lilac lily_of_the_valley "
-                + "lily_pad lime_dye magenta_dye orange_dye orange_tulip oxeye_daisy peony pink_dye pink_petals "
-                + "pink_tulip pitcher_plant poppy purple_dye red_dye red_tulip rose_bush sunflower torchflower "
-                + "white_dye white_tulip wither_rose yellow_dye");
+                "black_dye blue_dye brown_dye cyan_dye glow_ink_sac gray_dye green_dye ink_sac light_blue_dye "
+                + "light_gray_dye lime_dye magenta_dye orange_dye pink_dye purple_dye red_dye white_dye yellow_dye");
+        add("flowers",
+                "allium azure_bluet blue_orchid cornflower dandelion lilac lily_of_the_valley lily_pad orange_tulip "
+                + "oxeye_daisy peony pink_petals pink_tulip pitcher_plant poppy red_tulip rose_bush sunflower "
+                + "torchflower white_tulip wither_rose");
         add("crops",
                 "bamboo bee_nest beehive beetroot beetroot_seeds bone_meal brown_mushroom cactus carrot chorus_flower "
                 + "chorus_fruit cocoa_beans crimson_fungus dried_kelp dried_kelp_block egg glow_berries hay_block "

@@ -180,6 +180,15 @@ public final class UMAConfig {
         public final ModConfigSpec.BooleanValue shopInflationOnSell;
         public final ModConfigSpec.BooleanValue shopEchoesCurrency;
         public final ModConfigSpec.BooleanValue echoesPack;
+        public final ModConfigSpec.BooleanValue shopSellEnabled;
+        public final ModConfigSpec.BooleanValue shopCoinsSection;
+        public final ModConfigSpec.BooleanValue demandEnabled;
+        public final ModConfigSpec.BooleanValue demandCountUnits;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> demandTiers;
+        public final ModConfigSpec.IntValue demandDecayHours;
+        public final ModConfigSpec.IntValue demandCountDecay;
+        public final ModConfigSpec.DoubleValue demandIdleDiscount;
+        public final ModConfigSpec.DoubleValue demandIdleDiscountMax;
         public final ModConfigSpec.DoubleValue shopSellMultiplier;
         public final ModConfigSpec.DoubleValue shopSellPrice;
         public final ModConfigSpec.BooleanValue shopGeneratedRequireRecipe;
@@ -538,6 +547,13 @@ public final class UMAConfig {
                     .comment("When FTB Echoes is installed, add the echoes of this mod.",
                             "Shop entries and rewards with items of mods that are not installed are skipped.")
                     .define("echoes_pack", true);
+            shopSellEnabled = builder
+                    .comment("Players can sell items to the shop. When off, no item can be sold and no sell price is shown.")
+                    .define("sell_enabled", false);
+            shopCoinsSection = builder
+                    .comment("Shows the Coins section of the shop, where players buy coins and bills with the money they already have.",
+                            "Off by default.")
+                    .define("coins_section", false);
             shopSellMultiplier = builder
                     .comment("Every sell price of the shop (but not coins and bills) is multiplied by this.")
                     .defineInRange("sell_multiplier", 1.0D, 0.0D, 100000.0D);
@@ -587,6 +603,34 @@ public final class UMAConfig {
             shopVanillaFillSellRatio = builder
                     .comment("Sell price of an auto added vanilla item as a fraction of its buy price.")
                     .defineInRange("vanilla_fill_sell_ratio", 0.1D, 0.0D, 1.0D);
+            builder.pop();
+
+            builder.push("shop_demand");
+            demandEnabled = builder
+                    .comment("Shop prices follow demand: the more an item is bought, the more it costs for everybody.",
+                            "Items nobody buys slowly get cheaper.")
+                    .define("enabled", true);
+            demandCountUnits = builder
+                    .comment("true counts every unit bought, false counts every purchase (buying 64 at once is one purchase).")
+                    .define("count_units", false);
+            demandTiers = builder
+                    .comment("Price increase for everybody by number of recent purchases of an item. Format: from:percent.",
+                            "A count below the first step does not change the price.",
+                            "Default: 2 to 6 purchases +10 %, 7 to 10 +20 %, 11 to 19 +50 %, 20 to 50 +70 %, more than 50 +200 %.")
+                    .defineListAllowEmpty("tiers", List.of("2:10", "7:20", "11:50", "20:70", "51:200"), () -> "2:10",
+                            value -> value instanceof String text && text.matches("\\s*\\d+\\s*:\\s*\\d+(\\.\\d+)?\\s*"));
+            demandDecayHours = builder
+                    .comment("Real hours between two demand updates (purchase counts go down, idle items get cheaper).")
+                    .defineInRange("decay_hours", 24, 1, 8760);
+            demandCountDecay = builder
+                    .comment("Percent of the purchase count that is forgotten at every update in which nobody bought the item (at least 1).")
+                    .defineInRange("count_decay_percent", 25, 1, 100);
+            demandIdleDiscount = builder
+                    .comment("Percent the price goes down at every update in which nobody bought an item whose count is already 0.")
+                    .defineInRange("idle_discount_percent", 1.0D, 0.0D, 100.0D);
+            demandIdleDiscountMax = builder
+                    .comment("Most an idle item can get cheaper, in percent.")
+                    .defineInRange("idle_discount_max_percent", 30.0D, 0.0D, 95.0D);
             builder.pop();
 
             builder.push("daily");

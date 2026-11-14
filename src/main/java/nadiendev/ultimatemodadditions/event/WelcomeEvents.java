@@ -44,6 +44,11 @@ public final class WelcomeEvents {
         questNotice(player, state, JsonValues.object(config, "quest_notice"));
     }
 
+    public static BigInteger startingCents() {
+        JsonObject money = JsonValues.object(EventConfigs.get(EventDefaults.WELCOME), "starting_money");
+        return Wealth.centsOfMangos(BigInteger.valueOf(Math.max(0L, JsonValues.number(money, "mangos", 2500L))));
+    }
+
     private static void startingMoney(ServerPlayer player, EventState state, JsonObject money) {
         String key = JsonValues.string(money, "key", "starting_money_1");
         long mangos = JsonValues.number(money, "mangos", 2500L);

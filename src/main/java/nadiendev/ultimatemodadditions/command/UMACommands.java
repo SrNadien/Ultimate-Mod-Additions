@@ -19,11 +19,13 @@ import nadiendev.ultimatemodadditions.compat.ftb.RentCommands;
 import nadiendev.ultimatemodadditions.compat.ftb.TeamBankCommands;
 import nadiendev.ultimatemodadditions.compat.ModIds;
 import nadiendev.ultimatemodadditions.config.UMAConfig;
+import nadiendev.ultimatemodadditions.currency.Bank;
 import nadiendev.ultimatemodadditions.currency.BankService;
 import nadiendev.ultimatemodadditions.currency.LootBagItem;
 import nadiendev.ultimatemodadditions.currency.Money;
 import nadiendev.ultimatemodadditions.daily.DailyConfigService;
 import nadiendev.ultimatemodadditions.event.EventCommands;
+import nadiendev.ultimatemodadditions.event.WelcomeEvents;
 import nadiendev.ultimatemodadditions.daily.DailyEdits;
 import nadiendev.ultimatemodadditions.daily.DailyPermissions;
 import nadiendev.ultimatemodadditions.daily.DailyService;
@@ -53,6 +55,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -64,9 +67,12 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -83,6 +89,7 @@ public final class UMACommands {
         LiteralArgumentBuilder<CommandSourceStack> root = root();
         root.then(UMAHelp.command());
         root.then(BanCommands.command());
+        root.then(ConfigCommands.command());
         root.then(EventCommands.command());
         for (LiteralArgumentBuilder<CommandSourceStack> builder : List.of(moneyCommand(), shopCommand(), jobsCommand(), dailyCommand())) {
             root.then(builder);
@@ -392,7 +399,8 @@ public final class UMACommands {
                         .then(Commands.argument("player", EntityArgument.player())
                                 .then(amount().executes(UMACommands::moneyPay))))
                 .then(moneyAdmin("give", Operation.GIVE))
-                .then(moneyAdmin("take", Operation.TAKE))
+                .then(moneyAdmin("take", Operation.TAKE)
+                        .then(Commands.literal("all").executes(UMACommands::moneyResetAll)))
                 .then(moneyAdmin("set", Operation.SET));
     }
 
@@ -430,6 +438,23 @@ public final class UMACommands {
         if (!UMAConfig.COMMON.bankEnabled.get()) {
             throw BANK_DISABLED.create();
         }
+    }
+
+    private static int moneyResetAll(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+        requireBank();
+        MinecraftServer server = context.getSource().getServer();
+        BigInteger cents = WelcomeEvents.startingCents();
+        Set<UUID> accounts = new LinkedHashSet<>(Bank.get(server).accountIds());
+        for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+            accounts.add(player.getUUID());
+        }
+        for (UUID id : accounts) {
+            BankService.set(server, id, cents);
+        }
+        UMA.LOGGER.info("[money] {} reset {} accounts to {}", context.getSource().getTextName(), accounts.size(), cents);
+        context.getSource().sendSuccess(() -> Component.translatable("command.ultimatemodadditions.money_reset_all",
+                accounts.size(), Money.format(cents)), true);
+        return accounts.size();
     }
 
     private static int moneyBalance(CommandContext<CommandSourceStack> context, ServerPlayer target)

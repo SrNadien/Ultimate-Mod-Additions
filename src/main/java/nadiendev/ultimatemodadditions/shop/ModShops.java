@@ -58,7 +58,7 @@ public final class ModShops {
     private static final Set<String> EXCLUDED = Set.of("air", "barrier", "command_block", "chain_command_block",
             "repeating_command_block", "command_block_minecart", "structure_block", "structure_void", "jigsaw", "light",
             "debug_stick", "knowledge_book", "spawner", "trial_spawner", "vault", "reinforced_deepslate", "bedrock",
-            "end_portal_frame", "written_book", "filled_map", "potion", "splash_potion", "lingering_potion",
+            "end_portal_frame", "written_book", "task_screen_configurator", "filled_map", "potion", "splash_potion", "lingering_potion",
             "tipped_arrow", "enchanted_book", "ominous_bottle", "test_block", "test_instance_block", "petrified_oak_slab",
             "farmland", "dirt_path", "frogspawn", "budding_amethyst", "infested_stone", "infested_cobblestone",
             "infested_stone_bricks", "infested_mossy_stone_bricks", "infested_cracked_stone_bricks",
